@@ -1,0 +1,17 @@
+---
+title: "My Digital Notebook"
+---
+
+<!-- <img src="/images/IMG_20160506_131437.jpg" height="300" class="center"/> <img src="/images/DSC09144.JPG" height="300" class="center"/> <img src="/images/DSC00750.JPG" height="300" class="center"/>  -->
+
+
+:::{layout-ncol=1 layout-halign="right"}
+<img src="/images/banner.jpg" height="300" class="center"/> 
+:::
+
+Welcome to my website! My name is Gabriela Palomo and I am a carnivore ecologist. I use this website to keep my blog called **My Digital Notebook**, content from my workshops, and information on how to contact me. 
+
+You can follow me on: 
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/gabbspalomo.svg?style=social&label=Follow%20%40gabbspalomo)](https://twitter.com/gabbspalomo)  or on [![Github](https://img.shields.io/github/followers/GabsPalomo?label=GitHub&style=social)](https://github.com/GabsPalomo)
+
+

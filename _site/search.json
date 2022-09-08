@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "My name is Gabriela Palomo, I am a carnivore ecologist, and this is my digital notebook. The idea behind this blog is to have a place that I can use as a digital notebook with notes on how to code my most used models and new ones I learn as I go. I like the idea of having a centralized website with an organized repository to all my scripts instead of having them scattered across multiple laptops and external hard drives. However, I think that others may find my code and explanations (i.e., blog posts) useful and I hope this blog can help others learn as well. I plan to cover from the most basic models to the more complex ones I learn.\nYou can follow me on , where I am very active -for the most part."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Digital Notebook",
+    "section": "",
+    "text": "Welcome to my website! My name is Gabriela Palomo and I am a carnivore ecologist. I use this website to keep my blog called My Digital Notebook, content from my workshops, and information on how to contact me.\nYou can follow me on:  or on"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "blog.html#running-code",
+    "href": "blog.html#running-code",
+    "title": "Blog",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "projects.html#running-code",
+    "href": "projects.html#running-code",
+    "title": "Projects",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  }
+]
