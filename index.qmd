@@ -1,5 +1,5 @@
 ---
-title: "My Digital Notebook"
+title: ""
 ---
 
 <!-- <img src="/images/IMG_20160506_131437.jpg" height="300" class="center"/> <img src="/images/DSC09144.JPG" height="300" class="center"/> <img src="/images/DSC00750.JPG" height="300" class="center"/>  -->
