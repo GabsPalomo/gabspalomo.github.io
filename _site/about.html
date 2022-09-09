@@ -33,7 +33,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -63,7 +62,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -82,10 +81,12 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./index.html">Home</a>
   </li>  
-  <li class="dropdown-header">
- projects.qmd</li>
-  <li class="dropdown-header">
- blog.qmd</li>
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./projects.html">Projects</a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page">About</a>
   </li>  
@@ -99,35 +100,39 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-about-jolla">
+ <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">About</h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-    
   </div>
-  
-
-</header>
-
-<p><img style="float: left; padding-right:25px" width="150" src="https://raw.githubusercontent.com/GabsPalomo/gabspalomo.github.io/master/images/IMG_0973.JPG"></p>
-<p>My name is Gabriela Palomo, I am a carnivore ecologist, and this is my digital notebook. The idea behind this blog is to have a place that I can use as a digital notebook with notes on how to code my most used models and new ones I learn as I go. I like the idea of having a centralized website with an organized repository to all my scripts instead of having them scattered across multiple laptops and external hard drives. However, I think that others may find my code and explanations (i.e., blog posts) useful and I hope this blog can help others learn as well. I plan to cover from the most basic models to the more complex ones I learn.</p>
-<p>You can follow me on <a href="https://twitter.com/gabbspalomo"><img src="https://img.shields.io/twitter/url/https/twitter.com/gabbspalomo.svg?style=social&amp;label=Follow%20%40gabbspalomo" class="img-fluid" alt="Twitter"></a>, where I am very active -for the most part.</p>
+</header><main class="content" id="quarto-document-content">
+<p><img style="float: left; padding-right:25px" width="250" src="https://raw.githubusercontent.com/GabsPalomo/gabspalomo.github.io/master/images/IMG_0973.JPG"></p>
+<p>My name is Gabriela Palomo, I am a carnivore ecologist. I started this website to mainly talk about my projects and house my blog called <code>My digital notebook</code>. The idea behind my blog was to have a place that I can use as a digital notebook with notes on how I am learning and improving how to code in R. I like the idea of having a centralized website with an organized repository of all my scripts instead of having them scattered across multiple laptops and external hard drives. However, I think that others may find my code and explanations (i.e., blog posts) useful so I hope this blog can help others learn as well. I plan to cover from the most basic tasks/models to the more complex ones.</p>
+<p>The easiest way to contact me is on <strong>Twitter</strong>, where I’m very active, or you can send me an email to <strong>gpalomo (at) ksu.edu</strong></p>
 
 
-
-</main> <!-- /main -->
+</main> 
+  <hr class="about-sep">
+   <div class="about-links">
+  <a href="https://twitter.com/gabbspalomo" class="about-link">
+    <i class="bi bi-twitter"></i>
+     <span class="about-link-text">Twitter</span>
+  </a>
+  <a href="https://github.com/gabspalomo" class="about-link">
+    <i class="bi bi-code-square"></i>
+     <span class="about-link-text">Github</span>
+  </a>
+  <a href="mailto:gpalomo@ksu.edu" class="about-link">
+    <i class="bi bi-envelope-check"></i>
+     <span class="about-link-text">email</span>
+  </a>
+</div>
+</div>
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -148,13 +153,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const clipboard = new window.ClipboardJS('.code-copy-button', {
     target: function(trigger) {
       return trigger.previousElementSibling;

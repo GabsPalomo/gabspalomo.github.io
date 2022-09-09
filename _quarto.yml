@@ -3,19 +3,31 @@ project:
 
 website:
   title: "My Digital Notebook"
+  page-navigation: true
   navbar:
+    background: primary
     search: true
     left:
       - href: index.qmd
         text: Home
-      - projects.qmd
+      - text: "Blog"
+        file: blog.qmd
       #- workshops.qmd
-      - blog.qmd
+      - text: "Projects"
+        file: projects.qmd
       - about.qmd
+sidebar:
+  - title: "Projects"
+    style: "docked"
+    background: light
+    contents:
+      - projects.qmd
+      - project-01.qmd
+      - project-02.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: Sandstone
     css: styles.css
     toc: true
 
