@@ -23,21 +23,28 @@
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "My Digital Notebook",
+    "title": "Gabriela Palomo",
     "section": "",
     "text": "Welcome To My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2022\n\n\nGabby Palomo\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "My Digital Notebook",
+    "title": "Gabriela Palomo",
     "section": "",
-    "text": "Welcome to my website! My name is Gabriela Palomo and I am a carnivore ecologist. I use this website to keep my blog called My Digital Notebook, content from my workshops, and information on how to contact me.\nYou can follow me on: , on GitHub , or write me an email at gpalomo (at) ksu.com"
+    "text": "::: {.column-page}\nWelcome to my website! My name is Gabriela Palomo and I am a carnivore ecologist from Guatemala (Central America) doing a post doc in the US at Kansas State University. I use this website to keep my blog called My Digital Notebook, content from my workshops, and information on how to contact me."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Gabriela Palomo",
+    "section": "Education",
+    "text": "Education\n** University of Nebraska Lincoln, School of Natural Resources ** Lincoln, NE Ph.D. in Natural Resources | August 2017 - January 2022\n** Universidad del Valle de Guatemala, Facultad de Educacion ** Guatemala City, Guatemala M.A. in Higher Education | August 2015 - June 2017\n** Universidad de San Carlos de Guatemala, Facultad de Medicina Veterinaria Guatemala City, Guatemala M.Sc. in Wildlife Management | August 2008 - June 2010\n** Universidad del Valle de Guatemala, Facultad de Educacion ** Guatemala City, Guatemala B.Sc in Biology | January 2001 - June 2007"
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
-    "title": "My Digital Notebook",
+    "title": "Gabriela Palomo",
     "section": "",
     "text": "No matching items"
   }

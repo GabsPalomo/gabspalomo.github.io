@@ -3,20 +3,20 @@ project:
   output-dir: docs
 
 website:
-  title: "My Digital Notebook"
+  title: "Gabriela Palomo"
   page-navigation: true
   navbar:
     background: primary
     search: true
-    left:
+    right:
       - href: index.qmd
         text: Home
-      - text: "Blog"
+      - text: "My Digital Notebook"
         file: blog.qmd
       #- workshops.qmd
       - text: "Projects"
         file: projects.qmd
-      - about.qmd
+      # - about.qmd
 sidebar:
   - title: "Projects"
     style: "docked"
