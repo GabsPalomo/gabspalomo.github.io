@@ -7,7 +7,9 @@ categories: [news]
 
 Welcome to my blog! I decided to name it My Digital Notebook because I am used to take notes on notebooks whenever I'm reading a book or learning a new topic. For example, the notebook here is my Spatial Analysis in R notebook where I keep all my notes regarding this topic, for example, from reading a book chapter or watching a YouTube video, etc. That included code. This is not efficient for two reasons, first because I am constantly moving and need to keep as few things as I can, and second because code is not analogue! So I decided to create a blog to keep all my scripts perfectly organized so I can reference them in the future and have my code ready for whenever I need it instead of rummaging through my folders in external hard drives. 
 
+::: {layout="[[-10, 20, -10]]"}
 ![](notebook.JPG)
+:::
 
 I also think that some of these scripts may be useful to others to learn or improve their code. I would also love to write posts with others so I can have the opportunity to learn from others too. I think this could be a good space to have that. 
 
