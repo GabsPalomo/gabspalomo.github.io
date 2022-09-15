@@ -2,7 +2,7 @@
 title: "Welcome To My Digital Notebook"
 author: "Gabby Palomo"
 date: "2022-09-09"
-image: "notebook.JPG"
+image: notebook.JPG
 categories: [news]
 ---
 

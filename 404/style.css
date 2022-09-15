@@ -1,0 +1,53 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat", Sans-Serif;
+  min-height: 100vh;
+  background-color: #ffffff;
+  background-image: url("404page.png");
+  background-repeat: no-repeat, repeat;
+  background-color: #cccccc;
+  background-image: url("404page.png"); /* The image used */
+  background-color: #ffffff; /* Used if the image is unavailable */
+  height: 60px; /* You must set a specified height */
+  background-position: top 100% right 45%; /* Position the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 50%; /* Resize the background image */
+}
+
+.container{
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  text-align: center;
+}
+
+.container h1{
+  font-size: 100px;
+  margin: 0;
+  color: #2b2d42;
+}
+
+.container h2{
+  font-size: 30px;
+  margin: 0;
+  color: #2b2d42;
+}
+
+.container a{
+  text-decoration: none;
+  background: #8e9aaf;
+  color: #2b2d42;
+  padding: 12px 24px;
+  display: inline-block;
+  border-radius: 25px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.container a-hover{
+  background: #9ea4b8;
+}
+
