@@ -10,7 +10,7 @@ body{
   background-image: url("404page.png"); /* The image used */
   background-color: #ffffff; /* Used if the image is unavailable */
   height: 60px; /* You must set a specified height */
-  background-position: top 100% right 45%; /* Position the image */
+  background-position: top 60% right 45%; /* Position the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: 50%; /* Resize the background image */
 }
