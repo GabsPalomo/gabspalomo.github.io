@@ -4,14 +4,10 @@ body{
   font-family: "montserrat", Sans-Serif;
   min-height: 100vh;
   background-color: #ffffff;
-  background-image: url("404page.png");
-  background-repeat: no-repeat, repeat;
-  background-color: #cccccc;
-  background-image: url("404page.png"); /* The image used */
-  background-color: #ffffff; /* Used if the image is unavailable */
+  background-image: url("../images/404image.png");
+  background-repeat: no-repeat;
   height: 60px; /* You must set a specified height */
-  background-position: top 60% right 45%; /* Position the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
+  background-position: top 65% right 45%; /* Position the image */
   background-size: 50%; /* Resize the background image */
 }
 
@@ -34,8 +30,11 @@ body{
   color: #2b2d42;
 }
 
-.container a{
+.container home{
   text-decoration: none;
+  position: absolute;
+  bottom: -40%;
+  right: 46%;
   background: #8e9aaf;
   color: #2b2d42;
   padding: 12px 24px;
@@ -47,7 +46,21 @@ body{
   transition: 0.4s;
 }
 
-.container a-hover{
-  background: #9ea4b8;
+footer {
+  position: absolute;
+  bottom: 30%;
+  right: 47%;
+  text-align: center;
+  font-size: 0.8em;
+  text-transform: none;
+  padding: 10px;
+  color: #gray;
+  font-family: $body;
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    &:hover {
+      color: #7d7d7d;
+    }
+  }
 }
-

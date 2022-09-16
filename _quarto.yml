@@ -29,7 +29,7 @@ sidebar:
 format:
   html:
     theme: Sandstone
-    css: styles.css
+    css: css/styles.css
     toc: true
 
 
