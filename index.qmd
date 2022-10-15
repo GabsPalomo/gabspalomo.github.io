@@ -2,7 +2,7 @@
 title: "Gabriela Palomo"
 about: 
   template: trestles
-  image: /images/banner.jpg
+  image: /images/Collage.jpg
   links: 
     - icon: twitter
       text: Twitter
