@@ -9,16 +9,22 @@ website:
     background: primary
     search: true
     right:
-      - href: index.qmd
-        text: Home
+      - text: "Home"
+        href: index.qmd
       - text: "My Digital Notebook"
-        file: blog.qmd
-      #- workshops.qmd
+        href: blog.qmd
       - text: "Silhouettes"
-        file: silhouettes.qmd
+        href: silhouettes.qmd
       - text: "Projects"
-        file: projects.qmd
-      # - about.qmd
+        href: projects.qmd
+        menu:
+          - text: "Project 1"
+            #icon: "bug"
+            href: projects/project1.qmd
+          - text: "Project 2"
+            #icon: "chat-right-te
+            href: projects/project.qmd
+          
 sidebar:
   - title: "Projects"
     style: "docked"
