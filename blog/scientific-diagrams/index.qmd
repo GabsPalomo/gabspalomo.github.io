@@ -7,7 +7,7 @@ bibliography: references.bib
 nocite: |
   @*
 image: "image.jpg"
-draft: true
+#draft: true
 ---
 
 ## Scientific Diagrams 

@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blog/scientific-diagrams/index.html",
       "/blog/welcome/index.html"
     ]
   },
