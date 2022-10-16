@@ -1,12 +1,12 @@
 ---
 title: "Scientific Diagrams"
+image: "image.jpg"
 author: "Gabriela Palomo-Munoz"
 date: "2022-10-15"
 categories: []
 bibliography: references.bib 
 nocite: |
   @*
-image: "image.jpg"
 #draft: true
 ---
 
@@ -95,7 +95,11 @@ Forecasting species distributions: Correlation does not equal causation.
 
 [![](https://onlinelibrary.wiley.com/cms/asset/9149494c-a504-490c-a881-9704b868e81b/ddi13480-fig-0003-m.png)](https://onlinelibrary.wiley.com/cms/asset/9149494c-a504-490c-a881-9704b868e81b/ddi13480-fig-0003-m.png) 
 
+13. **Ford & Goheen. 2015.**
 
+Conceptual Framework for Evaluating Alternative Hypotheses for a Three-Level Trophic Cascade Involving a Large Carnivore, its Herbivorous Prey, and Plants. 
+
+[![](https://ars.els-cdn.com/content/image/1-s2.0-S0169534715002487-gr2.jpg)](https://ars.els-cdn.com/content/image/1-s2.0-S0169534715002487-gr2.jpg)
 
  <a href="#top" style="color:steelblue;" >Back to top</a>
 
