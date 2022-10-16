@@ -4,7 +4,7 @@ listing:
   contents: silhouettes
   sort: "date desc"
   type: default
-  categories: true
+  categories: false
   sort-ui: false
   filter-ui: false
   fields: [title, subtitle, author, description, date] 
@@ -12,6 +12,6 @@ page-layout: full
 title-block-banner: true
 ---
 
-# Projects
+# Silhouettes
 
 <br>
