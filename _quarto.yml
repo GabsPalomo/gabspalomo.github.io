@@ -28,7 +28,7 @@ sidebar:
 
 format:
   html:
-    theme: Sandstone
+    theme: Lux
     css: css/styles.css
     toc: true
 
