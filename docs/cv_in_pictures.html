@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Gabriela Palomo</title>
+<title>Gabriela Palomo -</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,9 +30,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -57,12 +60,42 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-subtitle','listing-author','listing-description','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: [],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -79,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">Home</a>
+    <a class="nav-link" href="./index.html">Home</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./blog.html">My Digital Notebook</a>
@@ -91,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./projects.html">Projects</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv_in_pictures.html">CV in pictures</a>
+    <a class="nav-link active" href="./cv_in_pictures.html" aria-current="page">CV in pictures</a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -100,62 +133,41 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#cv-in-pictures" id="toc-cv-in-pictures" class="nav-link active" data-scroll-target="#cv-in-pictures">CV in pictures</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-trestles page-columns page-full">
-  <div class="about-entity">
-    <img src="/images/Collage.jpg" class="about-image
-  rounded " style="width: 20em;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Gabriela Palomo</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://twitter.com/gabbspalomo" class="about-link">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">Twitter</span>
-  </a>
-  <a href="https://github.com/gabspalomo" class="about-link">
-    <i class="bi bi-code-square"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="mailto:gpalomo@ksu.edu" class="about-link">
-    <i class="bi bi-envelope-check"></i>
-     <span class="about-link-text">email</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents page-columns page-full"><main class="content page-columns page-full" id="quarto-document-content">
-<!-- <img src="/images/IMG_20160506_131437.jpg" height="300" class="center"/> <img src="/images/DSC09144.JPG" height="300" class="center"/> <img src="/images/DSC00750.JPG" height="300" class="center"/>  -->
-<!-- :::{layout="[[-0.05,1,-0.05]]"} -->
-<!-- <img src="/images/banner.jpg" height="300" class="center"/>  -->
-<div class="column-page">
-<p>Welcome to my website! My name is Gabriela Palomo and I am a carnivore ecologist from Guatemala (Central America) doing a post doc in the US at Kansas State University. I use this website to keep my blog called <a href="blog.html">My Digital Notebook</a>, description of my projects, my <a href="./docs/gabriela_palomo_cv.pdf">CV</a>, and information on how to contact me.</p>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">Education</h2>
-<p><strong>University of Nebraska Lincoln, School of Natural Resources</strong> Lincoln, NE<br>
-Ph.D.&nbsp;in Natural Resources | August 2017 - January 2022</p>
-<p><strong>Universidad del Valle de Guatemala, Facultad de Educacion</strong> Guatemala City, Guatemala<br>
-M.A.&nbsp;in Higher Education | August 2015 - June 2017</p>
-<p><strong>Universidad de San Carlos de Guatemala, Facultad de Medicina Veterinaria</strong> Guatemala City, Guatemala<br>
-M.Sc. in Wildlife Management | August 2008 - June 2010</p>
-<p><strong>Universidad del Valle de Guatemala, Facultad de Educacion</strong> Guatemala City, Guatemala<br>
-B.Sc in Biology | January 2001 - June 2007</p>
-<p>
-</p>
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+<section id="cv-in-pictures" class="level1">
+<h1>CV in pictures</h1>
+<blockquote class="blockquote">
+<p>Here is a link to my CV but I include here photographs of everything I included as a way to represent my professional experience in pictures.</p>
+</blockquote>
+
+
+
 </section>
-</div>
 
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
 
-</main></div>
 </div>
- <!-- /main -->
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -176,6 +188,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const clipboard = new window.ClipboardJS('.code-copy-button', {
     target: function(trigger) {
       return trigger.previousElementSibling;

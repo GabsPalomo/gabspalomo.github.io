@@ -1,0 +1,19 @@
+---
+title: ""
+listing:
+  contents: cv_in_pictures
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  fields: [title, subtitle, author, description, date] 
+page-layout: full
+title-block-banner: true
+---
+
+# CV in pictures 
+
+> Here is a link to my [CV](/docs/gabriela_palomo_cv.pdf) but I include here photographs of everything I included as a way to represent my professional experience in pictures. 
+
+

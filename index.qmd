@@ -22,7 +22,7 @@ about:
 <!-- <img src="/images/banner.jpg" height="300" class="center"/>  -->
 
 ::: column-page
-Welcome to my website! My name is Gabriela Palomo and I am a carnivore ecologist from Guatemala (Central America) doing a post doc in the US at Kansas State University. I use this website to keep my blog called [My Digital Notebook](blog.html), content from my workshops, and information on how to contact me.
+Welcome to my website! My name is Gabriela Palomo and I am a carnivore ecologist from Guatemala (Central America) doing a post doc in the US at Kansas State University. I use this website to keep my blog called [My Digital Notebook](blog.html), description of my projects, my [CV](/docs/gabriela_palomo_cv.pdf), and information on how to contact me.
 
 ## Education
 

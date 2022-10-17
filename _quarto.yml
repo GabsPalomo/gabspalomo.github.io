@@ -24,7 +24,9 @@ website:
           - text: "Project 2"
             #icon: "chat-right-te
             href: projects/project.qmd
-          
+      - text: "CV in pictures"
+        href: cv_in_pictures.qmd
+        
 sidebar:
   - title: "Projects"
     style: "docked"
