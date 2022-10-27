@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Silhouettes"
 listing:
   contents: silhouettes
   sort: "date desc"
@@ -12,6 +12,15 @@ page-layout: full
 title-block-banner: true
 ---
 
-# Silhouettes
 
-<br>
+
+> All silhouettes are protected under a **Creative Commons Attribution-NonCommercial 3.0 Unported license** which means that you can use them freely for any scientific purpose EXCEPT in commercial publications or websites. If you want to use them for commercial purposes then please [contact me](mailto:gabriella.palomo@gmail.com). I only ask that if you are going to use them, please credit me. For example: *Silhouette created by Gabriela Palomo-Munoz.* This can be in the acknowledgment section of a paper, or under the image in a presentation. 
+
+## Camera Trap
+
+![](./silhouettes/CameraTrap.png)
+
+---
+<p align='center'>
+  <img width='100' src='./silhouettes/by-nc.png'>
+</p>
