@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "CV in pictures"
 listing:
   contents: cv_in_pictures
   sort: "date desc"
@@ -10,14 +10,19 @@ listing:
   fields: [title, subtitle, author, description, date] 
 page-layout: full
 title-block-banner: true
+format: 
+  html: 
+    toc: true
+    toc-title: On this page
+    toc-depth: 3
 ---
 
-# CV in pictures 
+<p><h1>My CV in pictures</h1></p>
 
 > Here is a link to my [CV](/docs/gabriela_palomo_cv.pdf) but I include here photographs of everything I included as a way to represent my professional experience in pictures. 
 
-## Director of del Valle University Botanical Garden
-### 2013-2017
+### Director of del Valle University Botanical Garden 
+#### 2013-2017
 
 > This Botanical Garden is housed inside del Valle University in Guatemala and it has one of the largest live orchid and bromeliad collections in the country. The collection has more than 150 different orchid species and more than 60 bromeliad species from Guatemala. 
 
