@@ -1,6 +1,6 @@
 ---
 title: "Scientific Diagrams"
-image: "image.jpg"
+image: image.jpg
 author: "Gabriela Palomo-Munoz"
 date: "2022-10-15"
 categories: []

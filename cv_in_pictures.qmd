@@ -16,4 +16,6 @@ title-block-banner: true
 
 > Here is a link to my [CV](/docs/gabriela_palomo_cv.pdf) but I include here photographs of everything I included as a way to represent my professional experience in pictures. 
 
+## Director of the Botanical Garden at del Valle University
+### 2013-2017
 
