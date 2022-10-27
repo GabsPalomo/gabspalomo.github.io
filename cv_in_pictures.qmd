@@ -16,6 +16,18 @@ title-block-banner: true
 
 > Here is a link to my [CV](/docs/gabriela_palomo_cv.pdf) but I include here photographs of everything I included as a way to represent my professional experience in pictures. 
 
-## Director of the Botanical Garden at del Valle University
+## Director of del Valle University Botanical Garden
 ### 2013-2017
 
+> This Botanical Garden is housed inside del Valle University in Guatemala and it has one of the largest live orchid and bromeliad collections in the country. The collection has more than 150 different orchid species and more than 60 bromeliad species from Guatemala. 
+
+:::{layout="[[30,52],[15,-30]]"}
+![](./images/cv/IMG_20160322_161044.jpg)
+
+![](./images/cv/IMG_20160204_144539.jpg)
+
+![](./images/cv/20150218_101445.jpg)
+
+
+
+:::
