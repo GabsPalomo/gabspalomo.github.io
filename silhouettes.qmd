@@ -14,7 +14,7 @@ title-block-banner: true
 
 <p><h1>Silhouettes</h1></p>
 
-Many of you know I draw silhouettes for [phylopic](phylopic.org). However, I realized that researchers require other silhouettes, not just of species, such as a silhouette of a camera trap. Here, I will put a series of silhouettes freely available (but protected under a CC license, see below) for anyone to use. They are mostly relevant to my work as an ecologist, but feel free to [email me](mailto:gabriella.palomo@gmail.com) and make other requests! 
+Many of you know I draw silhouettes for [phylopic](phylopic.org). However, I realized that researchers require other silhouettes (not just of species), for example of a camera trap. Here, I will put a series of silhouettes freely available (but protected under a CC license, see below) for anyone to use. They are mostly relevant to my work as an ecologist, but feel free to [email me](mailto:gabriella.palomo@gmail.com) and make other requests! 
 
 > All silhouettes are protected under a Creative Commons Attribution-NonCommercial 3.0 Unported license which means that you can use them freely for any scientific purpose EXCEPT in commercial publications or websites. If you want to use them for commercial purposes then please [contact me](mailto:gabriella.palomo@gmail.com). I only ask that if you are going to use them, please credit me. For example: *Silhouette created by Gabriela Palomo-Munoz.* This can be in the acknowledgment section of a paper, or under the image in a presentation. 
 
