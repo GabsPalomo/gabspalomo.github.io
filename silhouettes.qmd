@@ -18,18 +18,24 @@ Many of you know I draw silhouettes for [phylopic](phylopic.org). However, I rea
 
 > All silhouettes are protected under a Creative Commons Attribution-NonCommercial 3.0 Unported license which means that you can use them freely for any scientific purpose EXCEPT in commercial publications or websites. If you want to use them for commercial purposes then please [contact me](mailto:gabriella.palomo@gmail.com). I only ask that if you are going to use them, please credit me. For example: *Silhouette created by Gabriela Palomo-Munoz.* This can be in the acknowledgment section of a paper, or under the image in a presentation. 
 
+## Binoculars
+
+<a href="./silhouettes/Binoculars_.png" download="binoculars_GPalomo">
+  <img src="./silhouettes/Binoculars_.png" alt="GPalomo_binoculars" width="400">
+</a>
+
 ## Camera Trap
 
 <a href="./silhouettes/CameraTrap.png" download="cameratrap_GPalomo">
   <img src="./silhouettes/CameraTrap.png" alt="GPalomo_cameratrap" width="400">
 </a>
 
+## Radio Collar
 
-## Binoculars
-
-<a href="./silhouettes/Binoculars_.png" download="binoculars_GPalomo">
-  <img src="./silhouettes/Binoculars_.png" alt="GPalomo_binoculars" width="400">
+<a href="./silhouettes/collar.png" download="collar_GPalomo">
+  <img src="./silhouettes/collar.png" alt="GPalomo_telemmetry_collar" width="400">
 </a>
+
 
 
 ## Buy Me a Coffee
