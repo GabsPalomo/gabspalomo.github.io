@@ -20,11 +20,17 @@ Many of you know I draw silhouettes for [phylopic](phylopic.org). However, I rea
 
 ## Camera Trap
 
-![](./silhouettes/CameraTrap.png)
+<a href="./silhouettes/CameraTrap.png" download="cameratrap_GPalomo">
+  <img src="./silhouettes/CameraTrap.png" alt="GPalomo_cameratrap" width="400">
+</a>
+
 
 ## Binoculars
 
-![](./silhouettes/Binoculars_.png)
+<a href="./silhouettes/Binoculars_.png" download="binoculars_GPalomo">
+  <img src="./silhouettes/Binoculars_.png" alt="GPalomo_binoculars" width="400">
+</a>
+
 
 ## Buy Me a Coffee
 
