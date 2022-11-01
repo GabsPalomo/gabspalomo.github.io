@@ -21,18 +21,47 @@ format:
 
 > Here is a link to my [CV](/docs/gabriela_palomo_cv.pdf) but I include here photographs of everything I included as a way to represent my professional experience in pictures. 
 
-### Director of del Valle University Botanical Garden 
+### Director of the Botanical Garden at del Valle University
 #### 2013-2017
+#### Guatemala, City
 
 > This Botanical Garden is housed inside del Valle University in Guatemala and it has one of the largest live orchid and bromeliad collections in the country. The collection has more than 150 different orchid species and more than 60 bromeliad species from Guatemala. 
 
-:::{layout="[[30,52],[15,-30]]"}
+:::{layout="[[30,52],[15,15, 35], [11,20]]"}
 ![](./images/cv/IMG_20160322_161044.jpg)
 
 ![](./images/cv/IMG_20160204_144539.jpg)
 
+![](./images/cv/P1030161.JPG)
+
+![](./images/cv/P1030163.JPG)
+
+![](./images/cv/IMG_20160322_160753.jpg)
+
 ![](./images/cv/20150218_101445.jpg)
 
+![](./images/cv/IMG_20160415_160635.jpg)
 
+:::
+
+### Curator of the Vertebrate Collection at Del Valle University 
+#### 2011-2017
+#### Guatemala City
+
+> For six years, I was the curator of the vertebrate collection at del Valle University in Guatemala City. Guatemala only has two Zoological Collections. I worked here as an undergrad so when the University offered me this job I jumped at the opportunity. 
+
+:::{layout="[[15,15],[15,15],[10,10]]"}
+
+![](./images/cv/DSC01669.JPG)
+
+![](./images/cv/aves.JPG)
+
+![](./images/cv/P1030299.JPG)
+
+![](./images/cv/P1030300.JPG)
+
+![](./images/cv/P1030297.JPG)
+
+![](./images/cv/DSC06847.JPG)
 
 :::
