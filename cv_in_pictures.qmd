@@ -19,7 +19,7 @@ format:
 
 <p><h1>My CV in pictures</h1></p>
 
-> Here is a link to my [CV](/docs/gabriela_palomo_cv.pdf) but I include here photographs of everything I included as a way to represent my professional experience in pictures. 
+> Here is a link to my [CV](/docs/gabriela_palomo_cv.pdf) but I include here photographs of everything I included as a way to represent my professional experience in pictures. Some of these were taken with a cellphone so the quality may not be ideal. The point, however, is to show some of the work I've done previously as well as the places where I've worked. 
 
 ### Director of the Botanical Garden at del Valle University
 #### 2013-2017
