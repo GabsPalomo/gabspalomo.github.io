@@ -37,6 +37,12 @@ Many of you know I draw silhouettes for [phylopic](https://beta.phylopic.org/). 
   <img src="./silhouettes/CameraTrap.png" alt="GPalomo_cameratrap" width="400">
 </a>
 
+## Drone
+
+<a href="./silhouettes/Drone.png" download="drone_GPalomo">
+  <img src="./silhouettes/Drone.png" alt="GPalomo_drone" width="400">
+</a>
+
 ## GPS unit
 
 <a href="./silhouettes/GPS.png" download="GPS_GPalomo">
