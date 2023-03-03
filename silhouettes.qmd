@@ -43,6 +43,13 @@ Many of you know I draw silhouettes for [phylopic](https://beta.phylopic.org/). 
   <img src="./silhouettes/Drone.png" alt="GPalomo_drone" width="400">
 </a>
 
+## Drone (low saturation of color)
+
+<a href="./silhouettes/Drone_lowsat.png" download="drone_lowsat_GPalomo">
+  <img src="./silhouettes/Drone_lowsat.png" alt="GPalomo_drone_lowsat" width="400">
+</a>
+
+
 ## GPS unit
 
 <a href="./silhouettes/GPS.png" download="GPS_GPalomo">

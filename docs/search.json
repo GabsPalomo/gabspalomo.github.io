@@ -4,7 +4,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "My name is Gabriela Palomo, I am a carnivore ecologist. I started this website to mainly talk about my projects and house my blog called My digital notebook. The idea behind my blog was to have a place that I can use as a digital notebook with notes on how I am learning and improving how to code in R. I like the idea of having a centralized website with an organized repository of all my scripts instead of having them scattered across multiple laptops and external hard drives. However, I think that others may find my code and explanations (i.e., blog posts) useful so I hope this blog can help others learn as well. I plan to cover from the most basic tasks/models to the more complex ones.\nThe easiest way to contact me is on Twitter, where I’m very active, or you can send me an email to gpalomo (at) ksu.edu"
+    "text": "My name is Gabriela Palomo, I am a carnivore ecologist. I started this website to mainly talk about my projects and house my blog called My digital notebook. The idea behind my blog was to have a place that I can use as a digital notebook with notes on how I am learning and improving how to code in R. I like the idea of having a centralized website with an organized repository of all my scripts instead of having them scattered across multiple laptops and external hard drives. However, I think that others may find my code and explanations (i.e., blog posts) useful so I hope this blog can help others learn as well. I plan to cover from the most basic tasks/models to the more complex ones.\nThe easiest way to contact me is on Twitter, where I’m very active, or you can send me an email to gpalomo (at) umd.edu"
   },
   {
     "objectID": "blog/welcome/index.html",
@@ -152,5 +152,12 @@
     "title": "Silhouettes",
     "section": "Drone",
     "text": "Drone"
+  },
+  {
+    "objectID": "silhouettes.html#drone-low-saturation-of-color",
+    "href": "silhouettes.html#drone-low-saturation-of-color",
+    "title": "Silhouettes",
+    "section": "Drone (low saturation of color)",
+    "text": "Drone (low saturation of color)"
   }
 ]
