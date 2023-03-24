@@ -35,13 +35,15 @@ I went to grad school of Natural Resources at the University of Nebraska Lincoln
 
 ### **Github**
 
-If you use r or python chances are you have a github account. You can have a profile on your github so that you include a short bio of yourself, ways to contact you, a picture, your research interests, etc. This is (my github profile)\[<https://github.com/GabsPalomo>\].
+If you use r or python chances are you have a github account. You can have a profile on your github so that you include a short bio of yourself, ways to contact you, a picture, your research interests, etc. This is [my github profile](<https://github.com/GabsPalomo>).
 
 ![](/blog/make_email_easy_to_find/github.png)
 
 If you notice, I have icons for all the ways in which you can contact me: Twitter, email, my website. Like I mentioned earlier, I control the narrative of how I present myself. So even if you don't have any repositories yet on your github account, you can at least have your profile ready!
 
 Here's a video showing you step-by-step instructions on how to create a [github profile](https://youtu.be/-otyb0ngsa4) and more ways to customize it [here](https://dev.to/github/how-to-create-a-github-profile-readme-jha).
+
+{{< video https://youtu.be/-otyb0ngsa4 >}}
 
 And that's it! I've given you 4 easy ways to make your email easy to find for other researchers/employers, etc. Hope you find them useful.
 
