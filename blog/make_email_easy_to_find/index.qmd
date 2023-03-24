@@ -1,5 +1,5 @@
 ---
-title: "Make your email easy to find"
+title: "Make your email public and easy to find"
 image: photo.jpg
 author: "Gabriela Palomo-Munoz"
 date: "2023-03-23"
@@ -7,7 +7,7 @@ categories: []
 # draft: true
 ---
 
-## Why is it important to make your email easy to find?
+## Why is it important to make your email public?
 
 If you are a researcher, one of my biggest pieces of advice is to make a website. It doesn't matter if you are just starting grad school or have already graduated. The main idea behind having a website is to control how other researchers ---or the media, potential employers, etc.--- may find you. And then, of course, so that you can have all your papers readily available, as well as your CV/resume, etc. However, if you DO NOT have a website or have been postponing it because why do it today if you can do it tomorrow, then at least make sure other researchers can easily find ways to contact you.
 
@@ -17,7 +17,7 @@ Here, I give you some ideas on how to make your email easy to find without havin
 
 ### **ORCID**
 
-If you don't have an (ORCID ID)\[orcid.org\] then I suggest you start one today. Basically, it's like having a website for academics who publish but without photos. Every time you publish a paper, it will appear listed on your orcid website. In their website, orcid states that 'You can connect your iD with your professional information --- affiliations, grants, publications, peer review, and more.'. Another great thing is that you can have all the ways in which your name may appear on a publication. For example, if your name is Andrew but sometimes people call you Andy or Drew then you can list them all here so that your publications can be linked here no matter the way your name was spelled.
+If you don't have an (ORCID ID)[orcid.org] then I suggest you start one today. Basically, it's like having a website for academics who publish but without photos. Every time you publish a paper, it will appear listed on your orcid website. In their website, orcid states that 'You can connect your iD with your professional information --- affiliations, grants, publications, peer review, and more.'. Another great thing is that you can have all the ways in which your name may appear on a publication. For example, if your name is Andrew but sometimes people call you Andy or Drew then you can list them all here so that your publications can be linked here no matter the way your name was spelled.
 
 Great! How do you make your email be visible here?
 
