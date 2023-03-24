@@ -1,5 +1,5 @@
 ---
-title: "Make your email public and easy to find"
+title: "Make your email easy to find"
 image: photo.jpg
 author: "Gabriela Palomo-Munoz"
 date: "2023-03-23"
@@ -7,13 +7,13 @@ categories: []
 # draft: true
 ---
 
-## Why is it important to make your email public?
+## Why is it important to make your email easy to find?
 
 If you are a researcher, one of my biggest pieces of advice is to make a website. It doesn't matter if you are just starting grad school or have already graduated. The main idea behind having a website is to control how other researchers ---or the media, potential employers, etc.--- may find you. And then, of course, so that you can have all your papers readily available, as well as your CV/resume, etc. However, if you DO NOT have a website or have been postponing it because why do it today if you can do it tomorrow, then at least make sure other researchers can easily find ways to contact you.
 
 Last week, I emailed a group of researchers about a possible collaboration with me. I could find everyone's email within seconds EXCEPT for one. I kept looking, but after 7 minutes I gave up, which meant that I wouldn't be able to contact him/her and they would lose the opportunity to be in this collaboration -or at least to know about it even if they decline to be involved. So I started thinking about ways to make your email public without necessarily having a website.
 
-Here, I give you some ideas on how to make your email easy to find without having to create a website.
+**Here, I give you some ideas on how to make your email easy to find without having to create a website.**
 
 ### **ORCID**
 
