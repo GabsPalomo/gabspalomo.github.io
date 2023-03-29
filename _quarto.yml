@@ -5,6 +5,9 @@ project:
 website:
   title: "Gabriela Palomo"
   page-navigation: true
+  open-graph: true
+  twitter-card: 
+    creator: "@gabspalomo"
   navbar:
     background: primary
     search: true
@@ -45,5 +48,7 @@ format:
 comments:
   giscus:
     repo: gabspalomo/gabspalomo.github.io
+    
+    
 
 
