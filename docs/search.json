@@ -179,7 +179,7 @@
     "href": "blog/rphylopic_ggplot2/index.html#what-is-phylopic",
     "title": "Placing silhouettes inside plots (ggplot2) using rphylopic",
     "section": "What is phylopic?",
-    "text": "What is phylopic?\nPhylopic is this amazing website created by Mike Keesey where digital artists (like me!) upload their silhouettes representing a taxonomic category. Usually, they represent a species, but sometimes you also have silhouettes for a family or a genus. If you find yourself using a lot of silhouettes for your work, I highly encourage you to donate to his patreon (https://www.patreon.com/tmkeesey). I have done so in the past. Oh and be sure to follow Mike and phylopic on twitter or mastodon too."
+    "text": "What is phylopic?\nPhylopic is this amazing website created by Mike Keesey where digital artists (like me!) upload their silhouettes representing a taxonomic category. Usually, they represent a species, but sometimes you also have silhouettes for a family or a genus. If you find yourself using a lot of silhouettes for your work, I highly encourage you to donate to his patreon. I have done so in the past. Oh and be sure to follow Mike and phylopic on twitter or mastodon too."
   },
   {
     "objectID": "blog/rphylopic_ggplot2/index.html#lets-put-a-silhouette-in-a-ggplot-graph",

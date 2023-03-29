@@ -15,7 +15,7 @@ The documentation for phylopic is available [here](https://github.com/palaeovers
 
 ## What is phylopic?
 
-Phylopic is this amazing website created by Mike Keesey where digital artists (like me!) upload their silhouettes representing a taxonomic category. Usually, they represent a species, but sometimes you also have silhouettes for a family or a genus. If you find yourself using a lot of silhouettes for your work, I highly encourage you to donate to his patreon (https://www.patreon.com/tmkeesey). I have done so in the past. Oh and be sure to follow [Mike](https://twitter.com/tmkeesey) and [phylopic](https://twitter.com/PhyloPic) on twitter or mastodon too.
+Phylopic is this amazing website created by Mike Keesey where digital artists (like me!) upload their silhouettes representing a taxonomic category. Usually, they represent a species, but sometimes you also have silhouettes for a family or a genus. If you find yourself using a lot of silhouettes for your work, I highly encourage you to donate to his [patreon](https://www.patreon.com/tmkeesey). I have done so in the past. Oh and be sure to follow [Mike](https://twitter.com/tmkeesey) and [phylopic](https://twitter.com/PhyloPic) on twitter or mastodon too.
 
 ## Let's put a silhouette on a ggplot graph
 
