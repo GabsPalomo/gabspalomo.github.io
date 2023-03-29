@@ -1,0 +1,159 @@
+---
+title: "Placing silhouettes inside plots (ggplot2) using rphylopic"
+image: rphylopic.png
+author: "Gabriela Palomo-Munoz"
+date: "2023-03-29"
+categories: [ggplot2, rphylopic, silhouettes]
+# draft: true
+---
+
+## What is rphylopic?
+
+'rphylopic' is one of my most used r packages. It basically allows users to look for silhouettes that are freely available in [phylopic.org](www.phylopic.org) and place them on any graph created in either base R or ggplot2. You can also use these silhouettes on maps or other plots, **but here I will show you how to use rphylopic with ggplot2.**
+
+The documentation for phylopic is available [here](https://github.com/palaeoverse-community/rphylopic). This package is not new, it was created by Scott Chamberlain in 2018. *Fun fact*, I designed the original [cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/rphylopic.pdf) for this package back in 2019. Now it's maintained by William Gearty and Lewis A Jones from the [Paleoverse](https://rphylopic.palaeoverse.org/) team.
+
+## What is phylopic?
+
+Phylopic is this amazing website created by [Mike Keesey](https://www.patreon.com/tmkeesey) where digital artists (like me!) upload their silhouettes representing a taxonomic category. Usually, they represent a species, but sometimes you also have silhouettes for a family or a genera. I put the link to his patreon and if you find yourself using a lot of silhouettes for your work, I highly encourage you to donate to his patreon. I have done so in the past. Oh and be sure to follow [Mike](https://twitter.com/tmkeesey) and [phylopic](https://twitter.com/PhyloPic) on twitter or mastodon too.
+
+## Let's put a silhouette on a ggplot graph
+
+First we will start by installing 'rphylopic':
+
+```{r, eval = FALSE}
+# Stable version from CRAN
+install.packages('rphylopic')
+
+# Development version from github
+# install.packages('devtools')
+devtools::install_github('palaeoverse-community/rphylopic')
+```
+
+Then we load the following packages and dataset that we will use:
+
+```{r, message=FALSE}
+library(ggplot2)
+library(rphylopic)
+library(dplyr)
+# We will use the tree dataset 
+data("trees")
+```
+
+The trees dataset provides measurements of diameter, height, and volume of timber in 31 felled black cherry trees. The diameter is labled as girth in the dataset so let's start by renaming it to diameter.
+
+```{r}
+trees <- trees %>% 
+  rename(Diameter = Girth) # new name = old name
+
+# Let's check that it worked 
+names(trees)
+```
+
+Now let's fit a linear regression between Diameter and Volume. This is just a silly example just to have a graph on which we can plot a silhouette.
+
+```{r}
+ggplot(trees,aes(Diameter, Volume)) +
+  geom_point() +
+  geom_smooth(method='lm', formula = y~x) +
+  theme_classic()+
+  theme(axis.title = element_text(face = 'bold', size = 16),
+        axis.text = element_text(size = 14)) -> ourplot
+ourplot 
+```
+
+### Now let's put a silhouette on that plot!
+
+Let's start by checking if we have silhouettes for the species we want. In this case a black cherry tree which is *Prunus serotina*
+
+```{r, eval=FALSE}
+bct <- pick_phylopic(name = 'Prunus serotina')
+```
+
+[ Error in get_uuid(name = name, n = n, url = FALSE) : Image resource not available for `name`. Ensure provided name is a valid taxonomic name or try a species/genus resolution name. ]{style="color:red;"}
+
+We got an error saying there are no available silhouettes for this species (*note to self, we should draw this and upload it asap!*). So let's check another one that looks like our black cherry trees. How about Flowering Dogwood, *Cornus florida*. It's not the same species obviously but the silhouette could represent either tree. Not ideal but for this example I suppose it's ok.
+
+```{r}
+bct <- pick_phylopic(name='Cornus florida')
+```
+
+It shows a warning saying we only have one silhouette for this species. Sometimes, you get a species with more than one silhouettes and you can see them all by clicking 1 on the console when prompted. See my [tweet here for an example on how to do this](https://twitter.com/gabbspalomo/status/1639645295209267201?s=20).
+
+Now back to our plot. Let's add a silhouette. To know where to place the silhouette, think of the arguments x and y as coordinates on your graph and the silhouette as if it was a point you want to place there. So here I wanted it on the lower left part of the plot, which correxponds with x=20 and y = 10. The center of the silhouette will be placed on that point. The ysize is in relation to the y-axis scale.
+
+```{r}
+ourplot +
+  add_phylopic(img = bct,
+               x=20, # based on x axis coordinates
+               y=10, # based on y axis coordinates 
+               ysize = 20) -> ourplot 
+ourplot
+```
+
+If you want to add more than one silhouette, then just use the 'add_phylopic()' function again. I re-used the same silhouette, but you could use another one here.
+
+```{r}
+ourplot +
+  add_phylopic(img = bct,
+               x=20, # based on x axis coordinates
+               y=10, # based on y axis coordinates 
+               ysize = 20)+ # based on y axis coordinates 
+  add_phylopic(img=bct, 
+             x=10, 
+             y=70, 
+             ysize = 30)
+```
+
+If you wanted the points to be little trees instead of points, then you can do so like this. I personally don't like plots like this but I am showing you it's possible:
+
+```{r}
+ggplot(trees,
+       aes(Diameter, Volume)) +
+    geom_point() +
+    geom_smooth(method='lm', formula = y~x) +
+    theme_classic()+
+    theme(axis.title = element_text(face = 'bold', size = 16),
+          axis.text = element_text(size = 14)) -> plot2
+
+for(i in 1:nrow(trees)){
+    plot2 <-  plot2 + # These two names must match 
+    add_phylopic(img = bct, 
+                 x = trees$Diameter[i],
+                 y = trees$Volume[i], 
+                 ysize = 5)
+}
+
+plot2
+```
+
+Now let's not forget to add the attribution of the silhouette to the plot! You can also add the attribution in the caption or in the acknowledgment section of a publication.
+
+```{r}
+uuid_bct <- get_uuid(name = 'Cornus florida')
+get_attribution(uuid_bct)
+```
+
+## Final graph!
+
+```{r}
+att <- get_attribution(uuid_bct)$contributor 
+
+ourplot +
+  labs(caption = paste0('Silhouette available in phylopic.org, designed by ', att))
+
+```
+
+And don't forget to cite rphylopic too:
+
+```{r}
+citation("rphylopic")
+```
+
+And that's it, that's all I have for now. I will do another blog post with an example in base R and a map.
+
+[Gabby]{style="color:deepskyblue4;font-size:40px;"} 
+
+:::{.callout-note}
+if you want to save the silhouette then use the function 'save_phylopic(img = bct, path = './bct.png')'.
+:::

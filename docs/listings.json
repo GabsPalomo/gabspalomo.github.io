@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blog/rphylopic_ggplot2/index.html",
       "/blog/make_email_easy_to_find/index.html",
       "/blog/scientific-diagrams/index.html",
       "/blog/welcome/index.html"
