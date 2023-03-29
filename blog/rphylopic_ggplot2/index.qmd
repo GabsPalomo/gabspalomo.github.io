@@ -154,6 +154,8 @@ And that's it, that's all I have for now. I will do another blog post with an ex
 
 [Gabby]{style="color:deepskyblue4;font-size:40px;"} 
 
-:::{.callout-note}
-if you want to save the silhouette then use the function 'save_phylopic(img = bct, path = './bct.png')'.
+:::{.callout-note title='How to save silhouettes'}
+if you want to save the silhouette in a specific directory then use the function 'save_phylopic(img = bct, path = './bct.png', bg = 'transparent')'.
+
+The bg argument is so that the silhouette is saved using a transparent bakcground and not a white one which would appear on your plot as a white square every time you wanted to insert the saved silhouette into a graph. 
 :::
