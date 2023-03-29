@@ -109,9 +109,9 @@ ggplot(trees,aes(Diameter, Volume)) +
       # overlaps the silhouette
         legend.background = element_rect(fill="transparent"))+
   add_phylopic(img = bct, # silhouette 
-               x=12.5, # based on x axis coordinates
+               x=13, # based on x axis coordinates
       # The y must be set to negative so it's outside the plot
-               y=-20, # based on y axis coordinates 
+               y=-19, # based on y axis coordinates 
                ysize = 8) -> ourplot_legend 
 ourplot_legend
 ```
