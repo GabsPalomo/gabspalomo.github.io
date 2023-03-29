@@ -42,5 +42,8 @@ format:
     css: css/styles.css
     toc: true
 
+comments:
+  giscus:
+    repo: gabspalomo/gabspalomo.github.io
 
 
