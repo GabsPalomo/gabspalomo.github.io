@@ -24,6 +24,23 @@ Many of you know I draw silhouettes for [phylopic](https://beta.phylopic.org/). 
   <img src="./silhouettes/ARU.png" alt="GPalomo_ARU" width="400">
 </a>
 
+## Audiomoth - Armygreen
+
+<a href="./silhouettes/Audiomoth_armygreen.png" download="AudiomothArmyGreen_GPalomo">
+  <img src="./silhouettes/Audiomoth_armygreen.png" alt="GPalomo_AudiomothAG" width="400">
+</a>
+
+## Audiomoth - Black
+
+<a href="./silhouettes/Audiomoth_black.png" download="AudiomothBlack_GPalomo">
+  <img src="./silhouettes/Audiomoth_black.png" alt="GPalomo_AudiomothB" width="400">
+</a>
+
+## Audiomoth - Green
+
+<a href="./silhouettes/Audiomoth_green.png" download="AudiomothGreen_GPalomo">
+  <img src="./silhouettes/Audiomoth_green.png" alt="GPalomo_G" width="400">
+</a>
 
 ## Binoculars
 
