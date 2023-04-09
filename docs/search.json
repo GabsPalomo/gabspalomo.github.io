@@ -18,7 +18,7 @@
     "href": "blog.html",
     "title": "Gabriela Palomo",
     "section": "",
-    "text": "My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nPlacing silhouettes inside plots (ggplot2) using rphylopic\n\n\n\n\n\n\n\n\n\n\n\n\nMar 29, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nMake your email easy to find\n\n\n\n\n\n\n\n\n\n\n\n\nMar 23, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nScientific Diagrams\n\n\n\n\n\n\n\n\n\n\n\n\nOct 15, 2022\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2022\n\n\nGabby Palomo\n\n\n\n\n\n\nNo matching items"
+    "text": "My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nPlacing silhouettes in base r plots using rphylopic\n\n\n\n\n\n\n\n\n\n\n\n\nApr 9, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nPlacing silhouettes inside plots (ggplot2) using rphylopic\n\n\n\n\n\n\n\n\n\n\n\n\nMar 29, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nMake your email easy to find\n\n\n\n\n\n\n\n\n\n\n\n\nMar 23, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nScientific Diagrams\n\n\n\n\n\n\n\n\n\n\n\n\nOct 15, 2022\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2022\n\n\nGabby Palomo\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -229,5 +229,82 @@
     "title": "Silhouettes",
     "section": "Audiomoth - Green",
     "text": "Audiomoth - Green"
+  },
+  {
+    "objectID": "blog/rphylopic_baser/index.html",
+    "href": "blog/rphylopic_baser/index.html",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "",
+    "text": "I explained a little of what phylopic and the rphylopic package are here. I wanted to continue this series with explaining how to use this versatile package but this time in base r."
+  },
+  {
+    "objectID": "blog/rphylopic_baser/index.html#basic-plot-in-base-r",
+    "href": "blog/rphylopic_baser/index.html#basic-plot-in-base-r",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "Basic plot in base r",
+    "text": "Basic plot in base r\nWe will use again the tree dataset and plot a simple linear model.\n\n# Let's call the data trees available in the dataset package\ndata(trees)\n## Let's see the names of the variables\nnames(trees)\n\n[1] \"Girth\"  \"Height\" \"Volume\"\n\n## Let's rename the variable 'girth' to 'dbh' \n## which stands for diameter at breast height\nnames(trees) <- c('dbh', 'Height', 'Volume')\n## Let's check that it worked \nnames(trees)\n\n[1] \"dbh\"    \"Height\" \"Volume\"\n\n\n\n## Let's do the model first\nm <- lm(dbh ~ Height, data = trees)\n## We have to predict some values to estimate the confidence intervals\nnd <- seq(min(trees$Height), max(trees$Height), length.out=100)\npred <- predict(m, newdata = data.frame(Height=nd), interval = 'confidence')\n## Let's make a new data frame with our x, predicted y, and conf.int.\nnd <- data.frame(cbind(nd, pred))\n\n## Now the basic scatter plot \nplot(dbh ~ Height, data = trees)\n## Now let's add the fitted line from the lm model\nabline(m)\n## Let's add some lines for our confidence intervals \nlines(nd$nd, nd$lwr, lty = 'dashed', col = 'gray70')\nlines(nd$nd, nd$upr, lty = 'dashed', col = 'gray70')"
+  },
+  {
+    "objectID": "blog/rphylopic_baser/index.html#customizing-the-base-plot",
+    "href": "blog/rphylopic_baser/index.html#customizing-the-base-plot",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "Customizing the base plot",
+    "text": "Customizing the base plot\nNow that we have the basic plot, let’s customize it a little bit.\n\n## Now the basic scatter plot \nplot(dbh ~ Height, data = trees,\n     xlab = 'Height', \n     ylab = 'DBH',\n     font.lab = 14, # x and y labels Using font 14 which is \n     font.axis = 14,\n     ylim=c(0,20),\n     pch = 20)\ntitle(main = \"Graph in base r\",\n     adj = 0,\n     font.main = 15, # main title font 14 which is in bold\n     cex.main = 2) # font size of main title)\ntitle(sub = \"Source: trees\",\n      font.sub = 14,\n      cex.sub = 0.75,\n      adj = 1,)\n## I want shaded confidence intervals so for that we will use \n## the function polygon()\npolygon(c(nd$nd, rev(nd$nd)),\n        c(nd$lwr,rev(nd$upr)),\n        col=adjustcolor('dodgerblue', alpha=0.1),\n        border=NA)\n## Now let's add the fitted line from the lm model\nabline(m, col = \"#00688B\",  lwd = 2)"
+  },
+  {
+    "objectID": "blog/rphylopic_baser/index.html#now-lets-put-a-silhouette-to-this-base-plot",
+    "href": "blog/rphylopic_baser/index.html#now-lets-put-a-silhouette-to-this-base-plot",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "Now let’s put a silhouette to this base plot",
+    "text": "Now let’s put a silhouette to this base plot\nTo add a silhouette to a base plot you can do it three ways using the add_phylopic_base() function:\n\nby calling the uuid directly: add_phylopic_base(uuid=uuid). Remember that you can always check the uuid for any silhouette by first running the function get_uuid(name = ‘genus species’).\nby calling the species name: add_phylopic_base(name=‘genus species’), or\nby loading a saved image in your working directory: add_phylopic_base(img=img)\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you are using RStudio, then you can visualize the silhouettes for any species -or whatever taxonomic category- in the viewer. This is especially useful for species that have multiple silhouettes.\npick_phylopic(name = ‘Canis lupus’)\nAnd type 1 in the console to change to the following silhouettes.\nOnce you picked a specific silhouette, then you can do the following which will save the uuid to ‘sil’. sil <- pick_phylopic(name = ‘Canis lupus’, n=1)\n\n\n\n\n## First we load the rphylopic package \n# install.packages('rphylopic')\nlibrary(rphylopic)\n\n## Then we make the plot \n## Now the basic scatter plot \nplot(dbh ~ Height, data = trees,\n     xlab = 'Height', \n     ylab = 'DBH',\n     font.lab = 14, # x and y labels Using font 14 which I think is Century Gothic. \n     font.axis = 14,\n     ylim=c(0,20),\n     pch = 20)\ntitle(main = \"Graph in base r\",\n     adj = 0,\n     font.main = 15, # main title font family 15 is 14 in bold\n     cex.main = 2) # font size of main title)\ntitle(sub = \"Source: trees\",\n      font.sub = 14,\n      cex.sub = 0.75,\n      adj = 1,)\n## I want shaded confidence intervals so for that we will use \n## the function polygon()\npolygon(c(nd$nd, rev(nd$nd)),\n        c(nd$lwr,rev(nd$upr)),\n        col=adjustcolor('dodgerblue', alpha=0.1),\n        border=NA)\n## Now let's add the fitted line from the lm model\nabline(m, col = \"#00688B\",  lwd = 2)\n\n## Now we add the silhouette! \nadd_phylopic_base(name = 'Cornus florida', \n                  x = 85, \n                  y = 5,  \n                  ysize = 7) # This is in the same scale as your y-axis"
+  },
+  {
+    "objectID": "blog/rphylopic_baser/index.html#dont-forget-about-the-attribution",
+    "href": "blog/rphylopic_baser/index.html#dont-forget-about-the-attribution",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "Don’t forget about the attribution!",
+    "text": "Don’t forget about the attribution!\n\nuuid <- get_uuid(name = \"Cornus florida\")\n# Get attribution data for uuid\nat <- get_attribution(uuid = uuid)\nat\n\n$contributor\n[1] \"Gabriela Palomo-Munoz\"\n\n$contributor_uuid\n[1] \"f57cf3c4-210c-4bcf-a759-9fcbc0cd8ba1\"\n\n$created\n[1] \"2022-08-13\"\n\n$contact\n[1] \"gabriella.palomo@gmail.com\"\n\n$image_uuid\n[1] \"8b16a223-4e27-4ce5-83a4-904b86287d49\"\n\n$license\n[1] \"https://creativecommons.org/licenses/by/4.0/\""
+  },
+  {
+    "objectID": "blog/rphylopic_baser/index.html#final-plot",
+    "href": "blog/rphylopic_baser/index.html#final-plot",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "Final plot",
+    "text": "Final plot\n\n## First we load the rphylopic package \n# install.packages('rphylopic')\nlibrary(rphylopic)\n\n## Then we make the plot \n## Now the basic scatter plot \nplot(dbh ~ Height, data = trees,\n     xlab = 'Height', \n     ylab = 'DBH',\n     font.lab = 14, # x and y labels Using font 14 which is \n     font.axis = 14,\n     ylim=c(0,20),\n     pch = 20)\ntitle(main = \"Graph in base r\",\n     adj = 0,\n     font.main = 15, # main title font 14 which is in bold\n     cex.main = 2) # font size of main title)\ntitle(sub = paste0(\"Source: trees\", \"; silhouette by:\" , at$contributor), # at is the attribution of the silhouette \n      font.sub = 14,\n      cex.sub = 0.75,\n      adj = 1,)\n## I want shaded confidence intervals so for that we will use \n## the function polygon()\npolygon(c(nd$nd, rev(nd$nd)),\n        c(nd$lwr,rev(nd$upr)),\n        col=adjustcolor('dodgerblue', alpha=0.1),\n        border=NA)\n## Now let's add the fitted line from the lm model\nabline(m, col = \"#00688B\",  lwd = 2)\n\n## Now we add the silhouette! \nadd_phylopic_base(name = 'Cornus florida', \n                  x = 85, \n                  y = 5,  \n                  ysize = 7) # This is in the same scale as your y-axis"
+  },
+  {
+    "objectID": "blog/rphylopic_baser/index.html#dont-forget-to-cite-it-in-your-manuscript-or-work",
+    "href": "blog/rphylopic_baser/index.html#dont-forget-to-cite-it-in-your-manuscript-or-work",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "Don’t forget to cite it in your manuscript or work:",
+    "text": "Don’t forget to cite it in your manuscript or work:\n\ncitation('rphylopic')\n\n\nTo cite rphylopic in publications, use the following citation:\n\n  Gearty, W., Jones, L.A., Chamberlain, S. 2023. rphylopic: an R\n  package for accessing and plotting PhyloPic silhouettes.\n\nA BibTeX entry for LaTeX users is\n\n  @Article{,\n    title = {rphylopic: an R package for accessing and plotting PhyloPic silhouettes},\n    author = {William Gearty and Lewis A. Jones and Scott Chamberlain},\n    year = {2023},\n    journal = {TBD},\n  }\n\n\nAnd that’s it, that’s all I have for you. If you have any questions don’t hesitate to contact me.\nGabby"
+  },
+  {
+    "objectID": "blog/rphylopic_baser/index.html#now-lets-add-a-silhouette-to-this-plot",
+    "href": "blog/rphylopic_baser/index.html#now-lets-add-a-silhouette-to-this-plot",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "Now let’s add a silhouette to this plot",
+    "text": "Now let’s add a silhouette to this plot\nTo add a silhouette to a base plot you can do it three ways using the add_phylopic_base() function:\n\nby calling the uuid directly: add_phylopic_base(uuid=uuid). Remember that you can always check the uuid for any silhouette by first running the function get_uuid(name = ‘genus species’).\nby calling the species name: add_phylopic_base(name=‘genus species’), or\nby loading a saved image in your working directory: add_phylopic_base(img=img)\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you are using RStudio, then you can visualize the silhouettes for any species -or whatever taxonomic category- in the viewer. This is especially useful for species that have multiple silhouettes.\npick_phylopic(name = ‘Canis lupus’)\nAnd type 1 in the console to change to the following silhouettes.\nOnce you picked a specific silhouette, then you can do the following which will save the uuid to ‘sil’.\nsil <- pick_phylopic(name = ‘Canis lupus’, n=1)\n\n\n\n\n## First we load the rphylopic package \n# install.packages('rphylopic')\nlibrary(rphylopic)\n\n## Then we make the plot \n## Now the basic scatter plot \nplot(dbh ~ Height, data = trees,\n     xlab = 'Height', \n     ylab = 'DBH',\n     font.lab = 14, # x and y labels Using font 14 which I think is Century Gothic. \n     font.axis = 14,\n     ylim=c(0,20),\n     pch = 20)\ntitle(main = \"Graph in base r\",\n     adj = 0,\n     font.main = 15, # main title font family 15 is 14 in bold\n     cex.main = 2) # font size of main title)\ntitle(sub = \"Source: trees\",\n      font.sub = 14,\n      cex.sub = 0.75,\n      adj = 1,)\n## I want shaded confidence intervals so for that we will use \n## the function polygon()\npolygon(c(nd$nd, rev(nd$nd)),\n        c(nd$lwr,rev(nd$upr)),\n        col=adjustcolor('dodgerblue', alpha=0.1),\n        border=NA)\n## Now let's add the fitted line from the lm model\nabline(m, col = \"#00688B\",  lwd = 2)\n\n## Now we add the silhouette! \nadd_phylopic_base(name = 'Cornus florida', \n                  x = 85, \n                  y = 5,  \n                  ysize = 7) # This is in the same scale as your y-axis\n\n\n\n\nThe key thing to keep in mind is that what guides the position and size of the silhouette inside the plot is the scale you are using in that plot. In this case, the size I chose for the silhouette ysize=7 is in relation to the y-axis scale, which in this case is 7 units in y-axis. The position corresponds with the x- and y-axis coordinates. See how the center of the silhouette is at x=85 and y=5."
+  },
+  {
+    "objectID": "blog/rphylopic_baser/index.html#dont-forget-the-attribution",
+    "href": "blog/rphylopic_baser/index.html#dont-forget-the-attribution",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "Don’t forget the attribution!",
+    "text": "Don’t forget the attribution!\n\nuuid <- get_uuid(name = \"Cornus florida\")\n# Get attribution data for uuid\nat <- get_attribution(uuid = uuid)\nat\n\n$contributor\n[1] \"Gabriela Palomo-Munoz\"\n\n$contributor_uuid\n[1] \"f57cf3c4-210c-4bcf-a759-9fcbc0cd8ba1\"\n\n$created\n[1] \"2022-08-13\"\n\n$contact\n[1] \"gabriella.palomo@gmail.com\"\n\n$image_uuid\n[1] \"8b16a223-4e27-4ce5-83a4-904b86287d49\"\n\n$license\n[1] \"https://creativecommons.org/licenses/by/4.0/\""
+  },
+  {
+    "objectID": "blog/rphylopic_baser/index.html#cite-rphylopic-in-your-manuscript-or-work",
+    "href": "blog/rphylopic_baser/index.html#cite-rphylopic-in-your-manuscript-or-work",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "Cite rphylopic in your manuscript or work:",
+    "text": "Cite rphylopic in your manuscript or work:\n\ncitation('rphylopic')\n\n\nTo cite rphylopic in publications, use the following citation:\n\n  Gearty, W., Jones, L.A., Chamberlain, S. 2023. rphylopic: an R\n  package for accessing and plotting PhyloPic silhouettes.\n\nA BibTeX entry for LaTeX users is\n\n  @Article{,\n    title = {rphylopic: an R package for accessing and plotting PhyloPic silhouettes},\n    author = {William Gearty and Lewis A. Jones and Scott Chamberlain},\n    year = {2023},\n    journal = {TBD},\n  }\n\n\nAnd that’s it, that’s all I have for you. If you have any questions don’t hesitate to contact me.\nGabby"
+  },
+  {
+    "objectID": "blog/rphylopic_baser/index.html#what-if-you-want-the-silhouette-outside-the-plot",
+    "href": "blog/rphylopic_baser/index.html#what-if-you-want-the-silhouette-outside-the-plot",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "What if you want the silhouette outside the plot",
+    "text": "What if you want the silhouette outside the plot\nJust try negative values for x and y. That will help you position it outside the plot area, for example next to the legend. For example, try the plot above but using x=85 and y = -5"
   }
 ]
