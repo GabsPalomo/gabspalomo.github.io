@@ -14,6 +14,7 @@ website:
     right:
       - text: "Home"
         href: index.qmd
+        comments: false
       - text: "My Digital Notebook"
         href: blog.qmd
       - text: "Silhouettes"
@@ -48,7 +49,6 @@ format:
 comments:
   giscus:
     repo: gabspalomo/gabspalomo.github.io
-    
     
 
 

@@ -7,228 +7,11 @@
     "text": "My name is Gabriela Palomo, I am a carnivore ecologist. I started this website to mainly talk about my projects and house my blog called My digital notebook. The idea behind my blog was to have a place that I can use as a digital notebook with notes on how I am learning and improving how to code in R. I like the idea of having a centralized website with an organized repository of all my scripts instead of having them scattered across multiple laptops and external hard drives. However, I think that others may find my code and explanations (i.e., blog posts) useful so I hope this blog can help others learn as well. I plan to cover from the most basic tasks/models to the more complex ones.\nThe easiest way to contact me is on Twitter, where I’m very active, or you can send me an email to gpalomo (at) umd.edu"
   },
   {
-    "objectID": "blog/welcome/index.html",
-    "href": "blog/welcome/index.html",
-    "title": "Welcome To My Digital Notebook",
-    "section": "",
-    "text": "My Spatial Ecology Notebook\n\n\n\n\n\n\n\nMy GEE Notebbok\n\n\n\n\n\nI also think that some of these scripts may be useful to others to learn or improve their code. I would also love to write posts with others so I can have the opportunity to learn from others too. I think this could be a good space to have that.\nThanks for reading!\nG"
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Gabriela Palomo",
-    "section": "",
-    "text": "My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nPlacing silhouettes in base r plots using rphylopic\n\n\n\n\n\n\n\n\n\n\n\n\nApr 9, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nPlacing silhouettes inside plots (ggplot2) using rphylopic\n\n\n\n\n\n\n\n\n\n\n\n\nMar 29, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nMake your email easy to find\n\n\n\n\n\n\n\n\n\n\n\n\nMar 23, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nScientific Diagrams\n\n\n\n\n\n\n\n\n\n\n\n\nOct 15, 2022\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2022\n\n\nGabby Palomo\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Gabriela Palomo",
-    "section": "",
-    "text": "Welcome to my website! My name is Gabriela Palomo and I am a carnivore ecologist from Guatemala (Central America) doing a post doc in the US at Kansas State University. I use this website to keep my blog called My Digital Notebook, description of my projects, my CV, and information on how to contact me.\n\n\nUniversity of Nebraska Lincoln, School of Natural Resources Lincoln, NE\nPh.D. in Natural Resources | August 2017 - January 2022\nUniversidad del Valle de Guatemala, Facultad de Educacion Guatemala City, Guatemala\nM.A. in Higher Education | August 2015 - June 2017\nUniversidad de San Carlos de Guatemala, Facultad de Medicina Veterinaria Guatemala City, Guatemala\nM.Sc. in Wildlife Management | August 2008 - June 2010\nUniversidad del Valle de Guatemala, Facultad de Educacion Guatemala City, Guatemala\nB.Sc in Biology | January 2001 - June 2007"
-  },
-  {
-    "objectID": "old_404.html",
-    "href": "old_404.html",
-    "title": "Page Not Found",
-    "section": "",
-    "text": "You may want to try searching to find the page’s new location."
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Gabriela Palomo",
-    "section": "",
-    "text": "No matching items"
-  },
-  {
-    "objectID": "blog/scientific-diagrams/index.html",
-    "href": "blog/scientific-diagrams/index.html",
-    "title": "Scientific Diagrams",
-    "section": "",
-    "text": "References\n\nBroadley, Kate, A. Cole Burton, Tal Avgar, and Stan Boutin. 2019. “Density-Dependent Space Use Affects Interpretation of Camera Trap Detection Rates.” Ecology and Evolution 9 (24): 14031–41. https://doi.org/10.1002/ece3.5840.\n\n\nFord, Adam T., and Jacob R. Goheen. 2015. “Trophic Cascades by Large Carnivores: A Case for Strong Inference and Mechanism.” Trends in Ecology & Evolution 30 (12): 725–35. https://doi.org/10.1016/j.tree.2015.09.012.\n\n\nGámez, Siria, and Nyeema C. Harris. 2022. “Conceptualizing the 3D Niche and Vertical Space Use.” Trends in Ecology & Evolution 37 (11): 953–62. https://doi.org/10.1016/j.tree.2022.06.012.\n\n\nGrames, Eliza M., Danielle Schwartz, and Chris S. Elphick. 2022. “A Systematic Method for Hypothesis Synthesis and Conceptual Model Development.” Methods in Ecology and Evolution 13 (9): 2078–87. https://doi.org/10.1111/2041-210X.13940.\n\n\nMagle, Seth B., and Mason Fidino. 2018. “Long-Term Declines of a Highly Interactive Urban Species.” Biodiversity and Conservation 27 (14): 3693–3706. https://doi.org/10.1007/s10531-018-1621-z.\n\n\nNaves-Alegre, L., Z. Morales-Reyes, J. A. Sánchez-Zapata, and E. Sebastián-González. n.d. “Scavenger Assemblages Are Structured by Complex Competition and Facilitation Processes Among Vultures.” Journal of Zoology n/a (n/a). Accessed October 16, 2022. https://doi.org/10.1111/jzo.13016.\n\n\nPalmer, Meredith S., Kaitlyn M. Gaynor, Justine A. Becker, Joel O. Abraham, Matthew A. Mumma, and Robert M. Pringle. 2022. “Dynamic Landscapes of Fear: Understanding Spatiotemporal Risk.” Trends in Ecology & Evolution 37 (10): 911–25. https://doi.org/10.1016/j.tree.2022.06.007.\n\n\nPilowsky, Julia A., Robert K. Colwell, Carsten Rahbek, and Damien A. Fordham. 2022. “Process-Explicit Models Reveal the Structure and Dynamics of Biodiversity Patterns.” Science Advances 8 (31): eabj2271. https://doi.org/10.1126/sciadv.abj2271.\n\n\nRiva, Federico, and Scott E. Nielsen. 2020. “Six Key Steps for Functional Landscape Analyses of Habitat Change.” Landscape Ecology 35 (7): 1495–1504. https://doi.org/10.1007/s10980-020-01048-y.\n\n\nRodrigues, Ariane A., Marcia N. Macedo, Divino V. Silvério, Leandro Maracahipes, Michael T. Coe, Paulo M. Brando, Julia Z. Shimbo, Raoni Rajão, Britaldo Soares-Filho, and Mercedes M. C. Bustamante. n.d. “Cerrado Deforestation Threatens Regional Climate and Water Availability for Agriculture and Ecosystems.” Global Change Biology n/a (n/a). Accessed October 16, 2022. https://doi.org/10.1111/gcb.16386.\n\n\nSirén, Alexej P. K., Chris S. Sutherland, Ambarish V. Karmalkar, Matthew J. Duveneck, and Toni Lyn Morelli. 2022. “Forecasting Species Distributions: Correlation Does Not Equal Causation.” Diversity and Distributions 28 (4): 756–69. https://doi.org/10.1111/ddi.13480.\n\n\nSoares, Filipa C., Jorge M. Palmeirim, Ana S. L. Rodrigues, Pedro Cardoso, and Ricardo F. de Lima. n.d. “Bird Extinctions and Introductions Are Causing Taxonomic and Functional Homogenization in Oceanic Islands.” Functional Ecology n/a (n/a). Accessed October 15, 2022. https://doi.org/10.1111/1365-2435.14196.\n\n\nSuraci, Justin P., Justine A. Smith, Simon Chamaillé-Jammes, Kaitlyn M. Gaynor, Menna Jones, Barney Luttbeg, Euan G. Ritchie, Michael J. Sheriff, and Andrew Sih. 2022. “Beyond Spatial Overlap: Harnessing New Technologies to Resolve the Complexities of Predator–Prey Interactions.” Oikos 2022 (8): e09004. https://doi.org/10.1111/oik.09004."
-  },
-  {
-    "objectID": "silhouettes.html",
-    "href": "silhouettes.html",
-    "title": "Silhouettes",
-    "section": "",
-    "text": "Many of you know I draw silhouettes for phylopic. However, I realized that researchers require other silhouettes for presentations, papers, posters, for example of a camera trap. Here, I will put a series of silhouettes/clip arts freely available (but protected under a CC license, see below) for anyone to use. They are mostly relevant to my work as an ecologist, but feel free to email me and make other requests!"
-  },
-  {
-    "objectID": "cv_in_pictures.html",
-    "href": "cv_in_pictures.html",
-    "title": "CV in pictures",
-    "section": "",
-    "text": "My CV in pictures\n\n\n\nHere is a link to my CV but I include here photographs of everything I included as a way to represent my professional experience in pictures. Some of these were taken with a cellphone so the quality may not be ideal. The point, however, is to show some of the work I’ve done previously as well as the places where I’ve worked.\n\n\nDirector of the Botanical Garden at del Valle University\n\n2013-2017\n\n\nGuatemala, City\n\nThis Botanical Garden is housed inside del Valle University in Guatemala and it has one of the largest live orchid and bromeliad collections in the country. The collection has more than 150 different orchid species and more than 60 bromeliad species from Guatemala.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCurator of the Vertebrate Collection at Del Valle University\n\n2011-2017\n\n\nGuatemala City\n\nFor six years, I was the curator of the vertebrate collection at del Valle University in Guatemala City. Guatemala only has two Zoological Collections. I worked here as an undergrad so when the University offered me this job I jumped at the opportunity.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "silhouettes.html#camera-trap",
-    "href": "silhouettes.html#camera-trap",
-    "title": "Silhouettes",
-    "section": "Camera Trap",
-    "text": "Camera Trap"
-  },
-  {
-    "objectID": "cv_in_pictures.html#director-of-del-valle-university-botanical-garden",
-    "href": "cv_in_pictures.html#director-of-del-valle-university-botanical-garden",
-    "title": "CV in pictures",
-    "section": "Director of del Valle University Botanical Garden",
-    "text": "Director of del Valle University Botanical Garden\n\n2013-2017\n\nThis Botanical Garden is housed inside del Valle University in Guatemala and it has one of the largest live orchid and bromeliad collections in the country. The collection has more than 150 different orchid species and more than 60 bromeliad species from Guatemala."
-  },
-  {
-    "objectID": "silhouettes.html#buy-me-a-coffee",
-    "href": "silhouettes.html#buy-me-a-coffee",
-    "title": "Silhouettes",
-    "section": "Buy Me a Coffee",
-    "text": "Buy Me a Coffee\nAll my silhouettes are free but if you’d like to say thank you via a ‘buy me a coffee’ donation, I will be very thankful. Just click the button below and follow the steps:"
-  },
-  {
-    "objectID": "silhouettes.html#binoculars",
-    "href": "silhouettes.html#binoculars",
-    "title": "Silhouettes",
-    "section": "Binoculars",
-    "text": "Binoculars"
-  },
-  {
-    "objectID": "silhouettes.html#radio-collar",
-    "href": "silhouettes.html#radio-collar",
-    "title": "Silhouettes",
-    "section": "Radio Collar",
-    "text": "Radio Collar"
-  },
-  {
-    "objectID": "silhouettes.html#aru---automated-recording-units---call-logger---acoustics-devices",
-    "href": "silhouettes.html#aru---automated-recording-units---call-logger---acoustics-devices",
-    "title": "Silhouettes",
-    "section": "ARU - Automated Recording Units - Call Logger - Acoustics Devices",
-    "text": "ARU - Automated Recording Units - Call Logger - Acoustics Devices"
-  },
-  {
-    "objectID": "silhouettes.html#havahart",
-    "href": "silhouettes.html#havahart",
-    "title": "Silhouettes",
-    "section": "Havahart",
-    "text": "Havahart"
-  },
-  {
-    "objectID": "silhouettes.html#owl-box-nest",
-    "href": "silhouettes.html#owl-box-nest",
-    "title": "Silhouettes",
-    "section": "Owl Box Nest",
-    "text": "Owl Box Nest"
-  },
-  {
-    "objectID": "silhouettes.html#scope",
-    "href": "silhouettes.html#scope",
-    "title": "Silhouettes",
-    "section": "Scope",
-    "text": "Scope"
-  },
-  {
-    "objectID": "silhouettes.html#gps-unit",
-    "href": "silhouettes.html#gps-unit",
-    "title": "Silhouettes",
-    "section": "GPS unit",
-    "text": "GPS unit"
-  },
-  {
-    "objectID": "silhouettes.html#chemical-bottle",
-    "href": "silhouettes.html#chemical-bottle",
-    "title": "Silhouettes",
-    "section": "Chemical bottle",
-    "text": "Chemical bottle"
-  },
-  {
-    "objectID": "silhouettes.html#satellite-landsat",
-    "href": "silhouettes.html#satellite-landsat",
-    "title": "Silhouettes",
-    "section": "Satellite, Landsat",
-    "text": "Satellite, Landsat"
-  },
-  {
-    "objectID": "silhouettes.html#drone",
-    "href": "silhouettes.html#drone",
-    "title": "Silhouettes",
-    "section": "Drone",
-    "text": "Drone"
-  },
-  {
-    "objectID": "silhouettes.html#drone-low-saturation-of-color",
-    "href": "silhouettes.html#drone-low-saturation-of-color",
-    "title": "Silhouettes",
-    "section": "Drone (low saturation of color)",
-    "text": "Drone (low saturation of color)"
-  },
-  {
     "objectID": "blog/make_email_easy_to_find/index.html",
     "href": "blog/make_email_easy_to_find/index.html",
     "title": "Make your email easy to find",
     "section": "",
     "text": "If you are a researcher, one of my biggest pieces of advice is to make a website. It doesn’t matter if you are just starting grad school or have already graduated. The main idea behind having a website is to control how other researchers —or the media, potential employers, etc.— may find you. And then, of course, so that you can have all your papers readily available, as well as your CV/resume, etc. However, if you DO NOT have a website or have been postponing it because why do it today if you can do it tomorrow, then at least make sure other researchers can easily find ways to contact you.\nLast week, I emailed a group of researchers about a possible collaboration with me. I could find everyone’s email within seconds EXCEPT for one. I kept looking, but after 7 minutes I gave up, which meant that I wouldn’t be able to contact him/her and they would lose the opportunity to be in this collaboration -or at least to know about it even if they decline to be involved. So I started thinking about ways to make your email public without necessarily having a website.\nHere, I give you some ideas on how to make your email easy to find without having to create a website.\n\n\nIf you don’t have an (ORCID ID)[orcid.org] then I suggest you start one today. Basically, it’s like having a website for academics who publish but without photos. Every time you publish a paper, it will appear listed on your orcid website. In their website, orcid states that ‘You can connect your iD with your professional information — affiliations, grants, publications, peer review, and more.’. Another great thing is that you can have all the ways in which your name may appear on a publication. For example, if your name is Andrew but sometimes people call you Andy or Drew then you can list them all here so that your publications can be linked here no matter the way your name was spelled.\nGreat! How do you make your email be visible here?\n\nOn orcid’s website, you can control if you want all or just some of your emails public (green circle), only visible to orcid users who have logged in (yellow circle with a key), or private, which is visible only to you (red circle with lock). Having a public orcid profile means that whenever someone googles you, they see your orcid page as one of the top searches, and right at the top left corner is your email.\n\n\n\nAnother easy solution is to ask your advisor to include your email on his/her website. Chances are they already have one with a list of all the people working in his lab and a brief description of each one. If anyone googles you they can find your advisor’s website with your name, email, and information listed there.\n\n\n\nI went to grad school at the School of Natural Resources at the University of Nebraska Lincoln. On their website, they have a list of all their students, faculty, and staff. They have the option for students to have some information other than just their names listed on their website. So essentially, if you are a student, you have access to having a mini-website with a one-paragraph bio, email, CV/resume, list of publications, research interests, and a picture. Most schools will have something similar, so I encourage you to ask your school or look into it if it’s possible. My guess is that you’d just have to write an email to whoever is in charge of maintaining the website, including a picture of yourself and the rest of the information that you wish to appear on their website. An email is an easy thing to write, no?\n\n\n\nIf you use r or python chances are you have a github account. You can have a profile on your github so that you include a short bio of yourself, ways to contact you, a picture, your research interests, etc. This is my github profile.\n\nIf you notice, I have icons for all the ways in which you can contact me: Twitter, email, my website. Like I mentioned earlier, I control the narrative of how I present myself. So even if you don’t have any repositories yet on your github account, you can at least have your profile ready!\nHere’s a video showing you step-by-step instructions on how to create a github profile and more ways to customize it here.\n\nAnd that’s it! I’ve given you 4 easy ways to make your email easy to find for other researchers/employers, etc. Hope you find them useful.\nAlso, I didn’t leave the researcher out. I asked a friend for his email so I included him in the invitation to the paper. However, he didn’t reply. Maybe his email is not current or is not interested.\nGabby"
-  },
-  {
-    "objectID": "blog/rphylopic_ggplot2/index.html",
-    "href": "blog/rphylopic_ggplot2/index.html",
-    "title": "Placing silhouettes inside plots (ggplot2) using rphylopic",
-    "section": "",
-    "text": "‘rphylopic’ is one of my most used r packages. It basically allows users to look for silhouettes that are freely available in phylopic.org and place them on any graph created in either base R or ggplot2. You can also use these silhouettes on maps or other plots, but here I will show you how to use rphylopic with ggplot2.\nThe documentation for phylopic is available here. This package is not new, it was created by Scott Chamberlain in 2018. Fun fact, I designed the original cheatsheet for this package back in 2019. Now it’s maintained by William Gearty and Lewis A Jones from the Paleoverse team."
-  },
-  {
-    "objectID": "blog/rphylopic_ggplot2/index.html#what-is-phylopic",
-    "href": "blog/rphylopic_ggplot2/index.html#what-is-phylopic",
-    "title": "Placing silhouettes inside plots (ggplot2) using rphylopic",
-    "section": "What is phylopic?",
-    "text": "What is phylopic?\nPhylopic is this amazing website created by Mike Keesey where digital artists (like me!) upload their silhouettes representing a taxonomic category. Usually, they represent a species, but sometimes you also have silhouettes for a family or a genus. If you find yourself using a lot of silhouettes for your work, I highly encourage you to donate to his patreon. I have done so in the past. Oh and be sure to follow Mike and phylopic on twitter or mastodon too."
-  },
-  {
-    "objectID": "blog/rphylopic_ggplot2/index.html#lets-put-a-silhouette-in-a-ggplot-graph",
-    "href": "blog/rphylopic_ggplot2/index.html#lets-put-a-silhouette-in-a-ggplot-graph",
-    "title": "Placing silhouettes inside plots (ggplot2) using rphylopic",
-    "section": "Let’s put a silhouette in a ggplot graph",
-    "text": "Let’s put a silhouette in a ggplot graph\nFirst we will start by installing ‘rphylopic’:\n\n# Stable version from CRAN\ninstall.packages('rphylopic')\n\n# Development version from github\n# install.packages('devtools')\ndevtools::install_github('palaeoverse-community/rphylopic')\n\nThen we load the following packages and dataset that we will use:\n\nlibrary(ggplot2)\nlibrary(rphylopic)\nlibrary(dplyr)\n# We will use the tree dataset \ndata(\"trees\")\n\nThe trees dataset provides measurements of diameter, height, and volume of timber in 31 felled black cherry trees. The diameter is labled as girth in the dataset so let’s start by renaming it to diameter.\n\ntrees <- trees %>% \n  rename(Diameter = Girth) # new name = old name\n\n# Let's check that it worked \nnames(trees)\n\n[1] \"Diameter\" \"Height\"   \"Volume\"  \n\n\nNow let’s fit a linear regression between Diameter and Volume. This is just a silly example just to have a graph on which we can plot a silhouette.\n\nggplot(trees,aes(Diameter, Volume)) +\n  geom_point() +\n  geom_smooth(method='lm', formula = y~x) +\n  theme_classic()+\n  theme(axis.title = element_text(face = 'bold', size = 16),\n        axis.text = element_text(size = 14)) -> ourplot\nourplot \n\n\n\n\n\nNow let’s put a silhouette on that plot!\nLet’s start by checking if we have silhouettes for the species we want. In this case a black cherry tree which is Prunus serotina\n\nbct <- pick_phylopic(name = 'Prunus serotina')\n\nError in get_uuid(name = name, n = n, url = FALSE) : Image resource not available for name. Ensure provided name is a valid taxonomic name or try a species/genus resolution name.\nWe got an error saying there are no available silhouettes for this species (note to self, we should draw this and upload it asap!). So let’s check another one that looks like our black cherry trees. How about Flowering Dogwood, Cornus florida. It’s not the same species obviously but the silhouette could represent either tree. Not ideal but for this example I suppose it’s ok.\n\nbct <- pick_phylopic(name='Cornus florida')\n\nWarning in get_uuid(name = name, n = n, url = FALSE): Only 1 items are\navailable.\n\n\nThis is the only or final image. Returning this uuid data.\n\n\n\n\n\n[1] \"8b16a223-4e27-4ce5-83a4-904b86287d49\"\n\n\nIt shows a warning saying we only have one silhouette for this species. Sometimes, you get a species with more than one silhouettes and you can see them all by clicking 1 on the console when prompted.\nNow back to our plot. Let’s add a silhouette. To know where to place the silhouette, think of the arguments x and y as coordinates on your graph and the silhouette as if it was a point you want to place there. So here I wanted it on the lower left part of the plot, which correxponds with x=20 and y = 10. The center of the silhouette will be placed on that point. The ysize is in relation to the y-axis scale.\n\nourplot +\n  add_phylopic(img = bct,\n               x=20, # based on x axis coordinates\n               y=10, # based on y axis coordinates \n               ysize = 20) -> ourplot \nourplot\n\n\n\n\nIF you want to add more than one silhouette, then just use the ‘add_phylopic()’ function again. I re-used the same silhouette, but you could use another one here.\n\nourplot +\n  add_phylopic(img = bct,\n               x=20, # based on x axis coordinates\n               y=10, # based on y axis coordinates \n               ysize = 20)+ # based on y axis coordinates \n  add_phylopic(img=bct, \n             x=10, \n             y=70, \n             ysize = 30)\n\n\n\n\nIf you wanted the points to be little trees instead of points, then you can do so like this. I personally don’t like plots like this but I am showing you it’s possible:\n\nggplot(trees,\n       aes(Diameter, Volume)) +\n    geom_point() +\n    geom_smooth(method='lm', formula = y~x) +\n    theme_classic()+\n    theme(axis.title = element_text(face = 'bold', size = 16),\n          axis.text = element_text(size = 14)) -> plot2\n\nfor(i in 1:nrow(trees)){\n    plot2 <-  plot2 + # These two names must match \n    add_phylopic(img = bct, \n                 x = trees$Diameter[i],\n                 y = trees$Volume[i], \n                 ysize = 5)\n}\n\nplot2\n\n\n\n\nNow let’s not forget to add the attribution of the silhouette to the plot! You can also add the attribution in the caption or in the acknowledgment section of a publication.\n\nuuid_bct <- get_uuid(name = 'Cornus florida')\nget_attribution(uuid_bct)\n\n$contributor\n[1] \"Gabriela Palomo-Munoz\"\n\n$contributor_uuid\n[1] \"f57cf3c4-210c-4bcf-a759-9fcbc0cd8ba1\"\n\n$created\n[1] \"2022-08-13\"\n\n$contact\n[1] \"gabriella.palomo@gmail.com\"\n\n$image_uuid\n[1] \"8b16a223-4e27-4ce5-83a4-904b86287d49\"\n\n$license\n[1] \"https://creativecommons.org/licenses/by/4.0/\""
-  },
-  {
-    "objectID": "blog/rphylopic_ggplot2/index.html#final-graph",
-    "href": "blog/rphylopic_ggplot2/index.html#final-graph",
-    "title": "Placing silhouettes inside plots (ggplot2) using rphylopic",
-    "section": "Final graph!",
-    "text": "Final graph!\n\natt <- get_attribution(uuid_bct)$contributor \n\nourplot +\n  labs(caption = paste0('Silhouette available in phylopic.org, designed by ', att))\n\n\n\n\nAnd don’t forget to cite rphylopic too:\n\ncitation(\"rphylopic\")\n\n\nTo cite rphylopic in publications, use the following citation:\n\n  Gearty, W., Jones, L.A., Chamberlain, S. 2023. rphylopic: an R\n  package for accessing and plotting PhyloPic silhouettes.\n\nA BibTeX entry for LaTeX users is\n\n  @Article{,\n    title = {rphylopic: an R package for accessing and plotting PhyloPic silhouettes},\n    author = {William Gearty and Lewis A. Jones and Scott Chamberlain},\n    year = {2023},\n    journal = {TBD},\n  }\n\n\nAnd that’s it, that’s all I have for now. I will do another blog post with an example in base R and a map.\nGabby\n\n\n\n\n\n\nNote\n\n\n\nif you want to save the silhouette in a specific directory then use the function ‘save_phylopic(img = bct, path =’./bct.png’, bg = ‘transparent’)’.\nThe bg argument is so that the silhouette is saved using a transparent bakcground and not a white one which would appear on your plot as a white square every time you wanted to insert the saved silhouette into a graph."
-  },
-  {
-    "objectID": "blog/rphylopic_ggplot2/index.html#lets-put-a-silhouette-on-a-ggplot-graph",
-    "href": "blog/rphylopic_ggplot2/index.html#lets-put-a-silhouette-on-a-ggplot-graph",
-    "title": "Placing silhouettes inside plots (ggplot2) using rphylopic",
-    "section": "Let’s put a silhouette on a ggplot graph",
-    "text": "Let’s put a silhouette on a ggplot graph\nFirst we will start by installing ‘rphylopic’:\n\n# Stable version from CRAN\ninstall.packages('rphylopic')\n\n# Development version from github\n# install.packages('devtools')\ndevtools::install_github('palaeoverse-community/rphylopic')\n\nThen we load the following packages and dataset that we will use:\n\nlibrary(ggplot2)\nlibrary(rphylopic)\nlibrary(dplyr)\n# We will use the tree dataset \ndata(\"trees\")\n\nThe trees dataset provides measurements of diameter, height, and volume of timber in 31 felled black cherry trees. The diameter is labled as girth in the dataset so let’s start by renaming it to diameter.\n\ntrees <- trees %>% \n  rename(Diameter = Girth) # new name = old name\n\n# Let's check that it worked \nnames(trees)\n\n[1] \"Diameter\" \"Height\"   \"Volume\"  \n\n\nNow let’s fit a linear regression between Diameter and Volume. This is just a silly example just to have a graph on which we can plot a silhouette.\n\nggplot(trees,aes(Diameter, Volume)) +\n  geom_point() +\n  geom_smooth(method='lm', formula = y~x) +\n  theme_classic()+\n  theme(axis.title = element_text(face = 'bold', size = 16),\n        axis.text = element_text(size = 14)) -> ourplot\nourplot \n\n\n\n\n\nNow let’s put a silhouette on that plot!\nLet’s start by checking if we have silhouettes for the species we want. In this case a black cherry tree which is Prunus serotina\n\nbct <- pick_phylopic(name = 'Prunus serotina')\n\nError in get_uuid(name = name, n = n, url = FALSE) : Image resource not available for name. Ensure provided name is a valid taxonomic name or try a species/genus resolution name.\nWe got an error saying there are no available silhouettes for this species (note to self, we should draw this and upload it asap!). So let’s check another one that looks like our black cherry trees. How about Flowering Dogwood, Cornus florida. It’s not the same species obviously but the silhouette could represent either tree. Not ideal but for this example I suppose it’s ok.\n\nbct <- pick_phylopic(name='Cornus florida')\n\nWarning in get_uuid(name = name, n = n, url = FALSE): Only 1 items are\navailable.\n\n\nThis is the only or final image. Returning this uuid data.\n\n\n\n\n\n[1] \"8b16a223-4e27-4ce5-83a4-904b86287d49\"\n\n\nIt shows a warning saying we only have one silhouette for this species. Sometimes, you get a species with more than one silhouettes and you can see them all by clicking 1 on the console when prompted. See my tweet here for an example on how to do this.\nNow back to our plot. Let’s add a silhouette. To know where to place the silhouette, think of the arguments x and y as coordinates on your graph and the silhouette as if it was a point you want to place there. So here I wanted it on the lower left part of the plot, which correxponds with x=20 and y = 10. The center of the silhouette will be placed on that point. The ysize is in relation to the y-axis scale.\n\nourplot +\n  add_phylopic(img = bct,\n               x=20, # based on x axis coordinates\n               y=10, # based on y axis coordinates \n               ysize = 20) -> ourplot \nourplot\n\n\n\n\nIf you want to add more than one silhouette, then just use the ‘add_phylopic()’ function again. I re-used the same silhouette, but you could use another one here.\n\nourplot +\n  add_phylopic(img = bct,\n               x=20, # based on x axis coordinates\n               y=10, # based on y axis coordinates \n               ysize = 20)+ # based on y axis coordinates \n  add_phylopic(img=bct, \n             x=10, \n             y=70, \n             ysize = 30)\n\n\n\n\nIf you wanted the points to be little trees instead of points, then you can do so like this. I personally don’t like plots like this but I am showing you it’s possible:\n\nggplot(trees,\n       aes(Diameter, Volume)) +\n    geom_point() +\n    geom_smooth(method='lm', formula = y~x) +\n    theme_classic()+\n    theme(axis.title = element_text(face = 'bold', size = 16),\n          axis.text = element_text(size = 14)) -> plot2\n\nfor(i in 1:nrow(trees)){\n    plot2 <-  plot2 + # These two names must match \n    add_phylopic(img = bct, \n                 x = trees$Diameter[i],\n                 y = trees$Volume[i], \n                 ysize = 5)\n}\n\nplot2\n\n\n\n\nNow let’s not forget to add the attribution of the silhouette to the plot! You can also add the attribution in the caption or in the acknowledgment section of a publication.\n\nuuid_bct <- get_uuid(name = 'Cornus florida')\nget_attribution(uuid_bct)\n\n$contributor\n[1] \"Gabriela Palomo-Munoz\"\n\n$contributor_uuid\n[1] \"f57cf3c4-210c-4bcf-a759-9fcbc0cd8ba1\"\n\n$created\n[1] \"2022-08-13\"\n\n$contact\n[1] \"gabriella.palomo@gmail.com\"\n\n$image_uuid\n[1] \"8b16a223-4e27-4ce5-83a4-904b86287d49\"\n\n$license\n[1] \"https://creativecommons.org/licenses/by/4.0/\""
-  },
-  {
-    "objectID": "blog/rphylopic_ggplot2/index.html#rphylopic-and-ggplot2",
-    "href": "blog/rphylopic_ggplot2/index.html#rphylopic-and-ggplot2",
-    "title": "Placing silhouettes inside plots (ggplot2) using rphylopic",
-    "section": "rphylopic and ggplot2",
-    "text": "rphylopic and ggplot2\nFirst we will start by installing ‘rphylopic’:\n\n# Stable version from CRAN\ninstall.packages('rphylopic')\n\n# Development version from github\n# install.packages('devtools')\ndevtools::install_github('palaeoverse-community/rphylopic')\n\nThen we load the following packages and dataset that we will use:\n\nlibrary(ggplot2)\nlibrary(rphylopic)\nlibrary(dplyr)\n# We will use the tree dataset \ndata(\"trees\")\n\n\nLet’s start with a simple plot\nThe trees dataset provides measurements of diameter, height, and volume of timber in 31 felled black cherry trees. The diameter is labled as girth in the dataset so let’s start by renaming it to diameter.\n\ntrees <- trees %>% \n  rename(Diameter = Girth) # new name = old name\n\n# Let's check that it worked \nnames(trees)\n\n[1] \"Diameter\" \"Height\"   \"Volume\"  \n\n\nNow let’s fit a linear regression between Diameter and Volume. This is just a silly example just to have a graph on which we can plot a silhouette.\n\nggplot(trees,aes(Diameter, Volume)) +\n  geom_point() +\n  geom_smooth(method='lm', formula = y~x) +\n  theme_classic()+\n  theme(axis.title = element_text(face = 'bold', size = 16),\n        axis.text = element_text(size = 14)) -> ourplot\nourplot \n\n\n\n\n\n\nNow let’s put a silhouette on that plot!\nLet’s start by checking if we have silhouettes for the species we want. In this case a black cherry tree which is Prunus serotina\n\nbct <- pick_phylopic(name = 'Prunus serotina')\n\nError in get_uuid(name = name, n = n, url = FALSE) : Image resource not available for name. Ensure provided name is a valid taxonomic name or try a species/genus resolution name.\nWe got an error saying there are no available silhouettes for this species (note to self, we should draw this and upload it asap!). So let’s check another one that looks like our black cherry trees. How about Flowering Dogwood, Cornus florida. It’s not the same species obviously but the silhouette could represent either tree. Not ideal but for this example I suppose it’s ok.\n\nbct <- pick_phylopic(name='Cornus florida')\n\nWarning in get_uuid(name = name, n = n, url = FALSE): Only 1 items are\navailable.\n\n\nThis is the only or final image. Returning this uuid data.\n\n\n\n\n\n[1] \"8b16a223-4e27-4ce5-83a4-904b86287d49\"\n\n\nIt shows a warning saying we only have one silhouette for this species. Sometimes, you get a species with more than one silhouette but you can see them all by typing 1 on the console when prompted. See my tweet here for an example on how to do this.\nNow back to our plot. Let’s add a silhouette. To know where to place it, think of the arguments x and y as coordinates on your graph, and the silhouette as a point you want to place in the plot. So here, I wanted it on the lower left part of the plot, which corresponds with x=20 and y = 10. The center of the silhouette will be placed on that point. The ysize argument controls how tall the silhouette will be, and is in relation to the y-axis scale.\n\nourplot +\n  add_phylopic(img = bct, # silhouette \n               x=20, # based on x axis coordinates\n               y=10, # based on y axis coordinates \n               ysize = 20) -> ourplot \nourplot\n\n\n\n\n\n\nLet’s put the silhouette next to a legend\nNow because we want the silhouette outside the plot, we must set the coordinates to negative. In this case, the legend is at the bottom so we set the y-axis coordinates to -20.\n\nggplot(trees,aes(Diameter, Volume)) +\n  geom_point() +\n  geom_smooth(method='lm', formula = y~x, aes(color = 'lm')) +\n  scale_color_manual(name = 'Legend', values = 'blue')+\n  theme_classic()+\n  theme(axis.title = element_text(face = 'bold', size = 16),\n        axis.text = element_text(size = 14),\n        legend.position = 'bottom',\n      # The backgroun of the legend set to transparent because it \n      # overlaps the silhouette\n        legend.background = element_rect(fill=\"transparent\"))+\n  add_phylopic(img = bct, # silhouette \n               x=13, # based on x axis coordinates\n      # The y must be set to negative so it's outside the plot\n               y=-19, # based on y axis coordinates \n               ysize = 8) -> ourplot_legend \nourplot_legend\n\n\n\n\n\n\nMore than one silhouette on the plot\nIf you want to add more than one silhouette, then just use the ‘add_phylopic()’ function again. I re-used the same silhouette, but you could use another one here.\n\nourplot +\n  add_phylopic(img = bct, # First silhouette \n               x=20, # based on x axis coordinates\n               y=10, # based on y axis coordinates \n               ysize = 20)+ # based on y axis coordinates \n  add_phylopic(img=bct, # Second silhouette \n               x=10, \n               y=70, \n               ysize = 30)\n\n\n\n\n\n\nPoints as silhouettes\nIf you wanted the points to be little trees instead of points, then you can do so like this. I personally don’t like plots like this but I am showing you it’s possible:\n\nggplot(trees,\n       aes(Diameter, Volume)) +\n    geom_point() +\n    geom_smooth(method='lm', formula = y~x) +\n    theme_classic()+\n    theme(axis.title = element_text(face = 'bold', size = 16),\n          axis.text = element_text(size = 14)) -> plot2\n\nfor(i in 1:nrow(trees)){\n    plot2 <-  plot2 + # These two names must match \n    add_phylopic(img = bct, \n                 x = trees$Diameter[i],\n                 y = trees$Volume[i], \n                 ysize = 5)\n}\n\nplot2\n\n\n\n\n\n\nLet’s not forget the attribution\nNow let’s not forget to add the attribution of the silhouette to the plot! You can also add the attribution in the caption or in the acknowledgment section of a publication.\n\nuuid_bct <- get_uuid(name = 'Cornus florida')\nget_attribution(uuid_bct)\n\n$contributor\n[1] \"Gabriela Palomo-Munoz\"\n\n$contributor_uuid\n[1] \"f57cf3c4-210c-4bcf-a759-9fcbc0cd8ba1\"\n\n$created\n[1] \"2022-08-13\"\n\n$contact\n[1] \"gabriella.palomo@gmail.com\"\n\n$image_uuid\n[1] \"8b16a223-4e27-4ce5-83a4-904b86287d49\"\n\n$license\n[1] \"https://creativecommons.org/licenses/by/4.0/\""
-  },
-  {
-    "objectID": "silhouettes.html#audiomoth---armygreen",
-    "href": "silhouettes.html#audiomoth---armygreen",
-    "title": "Silhouettes",
-    "section": "Audiomoth - Armygreen",
-    "text": "Audiomoth - Armygreen"
-  },
-  {
-    "objectID": "silhouettes.html#audiomoth---black",
-    "href": "silhouettes.html#audiomoth---black",
-    "title": "Silhouettes",
-    "section": "Audiomoth - Black",
-    "text": "Audiomoth - Black"
-  },
-  {
-    "objectID": "silhouettes.html#audiomoth---green",
-    "href": "silhouettes.html#audiomoth---green",
-    "title": "Silhouettes",
-    "section": "Audiomoth - Green",
-    "text": "Audiomoth - Green"
   },
   {
     "objectID": "blog/rphylopic_baser/index.html",
@@ -252,39 +35,18 @@
     "text": "Customizing the base plot\nNow that we have the basic plot, let’s customize it a little bit.\n\n## Now the basic scatter plot \nplot(dbh ~ Height, data = trees,\n     xlab = 'Height', \n     ylab = 'DBH',\n     font.lab = 14, # x and y labels Using font 14 which is \n     font.axis = 14,\n     ylim=c(0,20),\n     pch = 20)\ntitle(main = \"Graph in base r\",\n     adj = 0,\n     font.main = 15, # main title font 14 which is in bold\n     cex.main = 2) # font size of main title)\ntitle(sub = \"Source: trees\",\n      font.sub = 14,\n      cex.sub = 0.75,\n      adj = 1,)\n## I want shaded confidence intervals so for that we will use \n## the function polygon()\npolygon(c(nd$nd, rev(nd$nd)),\n        c(nd$lwr,rev(nd$upr)),\n        col=adjustcolor('dodgerblue', alpha=0.1),\n        border=NA)\n## Now let's add the fitted line from the lm model\nabline(m, col = \"#00688B\",  lwd = 2)"
   },
   {
-    "objectID": "blog/rphylopic_baser/index.html#now-lets-put-a-silhouette-to-this-base-plot",
-    "href": "blog/rphylopic_baser/index.html#now-lets-put-a-silhouette-to-this-base-plot",
-    "title": "Placing silhouettes in base r plots using rphylopic",
-    "section": "Now let’s put a silhouette to this base plot",
-    "text": "Now let’s put a silhouette to this base plot\nTo add a silhouette to a base plot you can do it three ways using the add_phylopic_base() function:\n\nby calling the uuid directly: add_phylopic_base(uuid=uuid). Remember that you can always check the uuid for any silhouette by first running the function get_uuid(name = ‘genus species’).\nby calling the species name: add_phylopic_base(name=‘genus species’), or\nby loading a saved image in your working directory: add_phylopic_base(img=img)\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you are using RStudio, then you can visualize the silhouettes for any species -or whatever taxonomic category- in the viewer. This is especially useful for species that have multiple silhouettes.\npick_phylopic(name = ‘Canis lupus’)\nAnd type 1 in the console to change to the following silhouettes.\nOnce you picked a specific silhouette, then you can do the following which will save the uuid to ‘sil’. sil <- pick_phylopic(name = ‘Canis lupus’, n=1)\n\n\n\n\n## First we load the rphylopic package \n# install.packages('rphylopic')\nlibrary(rphylopic)\n\n## Then we make the plot \n## Now the basic scatter plot \nplot(dbh ~ Height, data = trees,\n     xlab = 'Height', \n     ylab = 'DBH',\n     font.lab = 14, # x and y labels Using font 14 which I think is Century Gothic. \n     font.axis = 14,\n     ylim=c(0,20),\n     pch = 20)\ntitle(main = \"Graph in base r\",\n     adj = 0,\n     font.main = 15, # main title font family 15 is 14 in bold\n     cex.main = 2) # font size of main title)\ntitle(sub = \"Source: trees\",\n      font.sub = 14,\n      cex.sub = 0.75,\n      adj = 1,)\n## I want shaded confidence intervals so for that we will use \n## the function polygon()\npolygon(c(nd$nd, rev(nd$nd)),\n        c(nd$lwr,rev(nd$upr)),\n        col=adjustcolor('dodgerblue', alpha=0.1),\n        border=NA)\n## Now let's add the fitted line from the lm model\nabline(m, col = \"#00688B\",  lwd = 2)\n\n## Now we add the silhouette! \nadd_phylopic_base(name = 'Cornus florida', \n                  x = 85, \n                  y = 5,  \n                  ysize = 7) # This is in the same scale as your y-axis"
-  },
-  {
-    "objectID": "blog/rphylopic_baser/index.html#dont-forget-about-the-attribution",
-    "href": "blog/rphylopic_baser/index.html#dont-forget-about-the-attribution",
-    "title": "Placing silhouettes in base r plots using rphylopic",
-    "section": "Don’t forget about the attribution!",
-    "text": "Don’t forget about the attribution!\n\nuuid <- get_uuid(name = \"Cornus florida\")\n# Get attribution data for uuid\nat <- get_attribution(uuid = uuid)\nat\n\n$contributor\n[1] \"Gabriela Palomo-Munoz\"\n\n$contributor_uuid\n[1] \"f57cf3c4-210c-4bcf-a759-9fcbc0cd8ba1\"\n\n$created\n[1] \"2022-08-13\"\n\n$contact\n[1] \"gabriella.palomo@gmail.com\"\n\n$image_uuid\n[1] \"8b16a223-4e27-4ce5-83a4-904b86287d49\"\n\n$license\n[1] \"https://creativecommons.org/licenses/by/4.0/\""
-  },
-  {
-    "objectID": "blog/rphylopic_baser/index.html#final-plot",
-    "href": "blog/rphylopic_baser/index.html#final-plot",
-    "title": "Placing silhouettes in base r plots using rphylopic",
-    "section": "Final plot",
-    "text": "Final plot\n\n## First we load the rphylopic package \n# install.packages('rphylopic')\nlibrary(rphylopic)\n\n## Then we make the plot \n## Now the basic scatter plot \nplot(dbh ~ Height, data = trees,\n     xlab = 'Height', \n     ylab = 'DBH',\n     font.lab = 14, # x and y labels Using font 14 which is \n     font.axis = 14,\n     ylim=c(0,20),\n     pch = 20)\ntitle(main = \"Graph in base r\",\n     adj = 0,\n     font.main = 15, # main title font 14 which is in bold\n     cex.main = 2) # font size of main title)\ntitle(sub = paste0(\"Source: trees\", \"; silhouette by:\" , at$contributor), # at is the attribution of the silhouette \n      font.sub = 14,\n      cex.sub = 0.75,\n      adj = 1,)\n## I want shaded confidence intervals so for that we will use \n## the function polygon()\npolygon(c(nd$nd, rev(nd$nd)),\n        c(nd$lwr,rev(nd$upr)),\n        col=adjustcolor('dodgerblue', alpha=0.1),\n        border=NA)\n## Now let's add the fitted line from the lm model\nabline(m, col = \"#00688B\",  lwd = 2)\n\n## Now we add the silhouette! \nadd_phylopic_base(name = 'Cornus florida', \n                  x = 85, \n                  y = 5,  \n                  ysize = 7) # This is in the same scale as your y-axis"
-  },
-  {
-    "objectID": "blog/rphylopic_baser/index.html#dont-forget-to-cite-it-in-your-manuscript-or-work",
-    "href": "blog/rphylopic_baser/index.html#dont-forget-to-cite-it-in-your-manuscript-or-work",
-    "title": "Placing silhouettes in base r plots using rphylopic",
-    "section": "Don’t forget to cite it in your manuscript or work:",
-    "text": "Don’t forget to cite it in your manuscript or work:\n\ncitation('rphylopic')\n\n\nTo cite rphylopic in publications, use the following citation:\n\n  Gearty, W., Jones, L.A., Chamberlain, S. 2023. rphylopic: an R\n  package for accessing and plotting PhyloPic silhouettes.\n\nA BibTeX entry for LaTeX users is\n\n  @Article{,\n    title = {rphylopic: an R package for accessing and plotting PhyloPic silhouettes},\n    author = {William Gearty and Lewis A. Jones and Scott Chamberlain},\n    year = {2023},\n    journal = {TBD},\n  }\n\n\nAnd that’s it, that’s all I have for you. If you have any questions don’t hesitate to contact me.\nGabby"
-  },
-  {
     "objectID": "blog/rphylopic_baser/index.html#now-lets-add-a-silhouette-to-this-plot",
     "href": "blog/rphylopic_baser/index.html#now-lets-add-a-silhouette-to-this-plot",
     "title": "Placing silhouettes in base r plots using rphylopic",
     "section": "Now let’s add a silhouette to this plot",
     "text": "Now let’s add a silhouette to this plot\nTo add a silhouette to a base plot you can do it three ways using the add_phylopic_base() function:\n\nby calling the uuid directly: add_phylopic_base(uuid=uuid). Remember that you can always check the uuid for any silhouette by first running the function get_uuid(name = ‘genus species’).\nby calling the species name: add_phylopic_base(name=‘genus species’), or\nby loading a saved image in your working directory: add_phylopic_base(img=img)\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you are using RStudio, then you can visualize the silhouettes for any species -or whatever taxonomic category- in the viewer. This is especially useful for species that have multiple silhouettes.\npick_phylopic(name = ‘Canis lupus’)\nAnd type 1 in the console to change to the following silhouettes.\nOnce you picked a specific silhouette, then you can do the following which will save the uuid to ‘sil’.\nsil <- pick_phylopic(name = ‘Canis lupus’, n=1)\n\n\n\n\n## First we load the rphylopic package \n# install.packages('rphylopic')\nlibrary(rphylopic)\n\n## Then we make the plot \n## Now the basic scatter plot \nplot(dbh ~ Height, data = trees,\n     xlab = 'Height', \n     ylab = 'DBH',\n     font.lab = 14, # x and y labels Using font 14 which I think is Century Gothic. \n     font.axis = 14,\n     ylim=c(0,20),\n     pch = 20)\ntitle(main = \"Graph in base r\",\n     adj = 0,\n     font.main = 15, # main title font family 15 is 14 in bold\n     cex.main = 2) # font size of main title)\ntitle(sub = \"Source: trees\",\n      font.sub = 14,\n      cex.sub = 0.75,\n      adj = 1,)\n## I want shaded confidence intervals so for that we will use \n## the function polygon()\npolygon(c(nd$nd, rev(nd$nd)),\n        c(nd$lwr,rev(nd$upr)),\n        col=adjustcolor('dodgerblue', alpha=0.1),\n        border=NA)\n## Now let's add the fitted line from the lm model\nabline(m, col = \"#00688B\",  lwd = 2)\n\n## Now we add the silhouette! \nadd_phylopic_base(name = 'Cornus florida', \n                  x = 85, \n                  y = 5,  \n                  ysize = 7) # This is in the same scale as your y-axis\n\n\n\n\nThe key thing to keep in mind is that what guides the position and size of the silhouette inside the plot is the scale you are using in that plot. In this case, the size I chose for the silhouette ysize=7 is in relation to the y-axis scale, which in this case is 7 units in y-axis. The position corresponds with the x- and y-axis coordinates. See how the center of the silhouette is at x=85 and y=5."
+  },
+  {
+    "objectID": "blog/rphylopic_baser/index.html#what-if-you-want-the-silhouette-outside-the-plot",
+    "href": "blog/rphylopic_baser/index.html#what-if-you-want-the-silhouette-outside-the-plot",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "What if you want the silhouette outside the plot",
+    "text": "What if you want the silhouette outside the plot\nJust try negative values for x and y. That will help you position it outside the plot area, for example next to the legend. For example, try the plot above but using x=85 and y = -5"
   },
   {
     "objectID": "blog/rphylopic_baser/index.html#dont-forget-the-attribution",
@@ -294,6 +56,13 @@
     "text": "Don’t forget the attribution!\n\nuuid <- get_uuid(name = \"Cornus florida\")\n# Get attribution data for uuid\nat <- get_attribution(uuid = uuid)\nat\n\n$contributor\n[1] \"Gabriela Palomo-Munoz\"\n\n$contributor_uuid\n[1] \"f57cf3c4-210c-4bcf-a759-9fcbc0cd8ba1\"\n\n$created\n[1] \"2022-08-13\"\n\n$contact\n[1] \"gabriella.palomo@gmail.com\"\n\n$image_uuid\n[1] \"8b16a223-4e27-4ce5-83a4-904b86287d49\"\n\n$license\n[1] \"https://creativecommons.org/licenses/by/4.0/\""
   },
   {
+    "objectID": "blog/rphylopic_baser/index.html#final-plot",
+    "href": "blog/rphylopic_baser/index.html#final-plot",
+    "title": "Placing silhouettes in base r plots using rphylopic",
+    "section": "Final plot",
+    "text": "Final plot\n\n## First we load the rphylopic package \n# install.packages('rphylopic')\nlibrary(rphylopic)\n\n## Then we make the plot \n## Now the basic scatter plot \nplot(dbh ~ Height, data = trees,\n     xlab = 'Height', \n     ylab = 'DBH',\n     font.lab = 14, # x and y labels Using font 14 which is \n     font.axis = 14,\n     ylim=c(0,20),\n     pch = 20)\ntitle(main = \"Graph in base r\",\n     adj = 0,\n     font.main = 15, # main title font 14 which is in bold\n     cex.main = 2) # font size of main title)\ntitle(sub = paste0(\"Source: trees\", \"; silhouette by:\" , at$contributor), # at is the attribution of the silhouette \n      font.sub = 14,\n      cex.sub = 0.75,\n      adj = 1,)\n## I want shaded confidence intervals so for that we will use \n## the function polygon()\npolygon(c(nd$nd, rev(nd$nd)),\n        c(nd$lwr,rev(nd$upr)),\n        col=adjustcolor('dodgerblue', alpha=0.1),\n        border=NA)\n## Now let's add the fitted line from the lm model\nabline(m, col = \"#00688B\",  lwd = 2)\n\n## Now we add the silhouette! \nadd_phylopic_base(name = 'Cornus florida', \n                  x = 85, \n                  y = 5,  \n                  ysize = 7) # This is in the same scale as your y-axis"
+  },
+  {
     "objectID": "blog/rphylopic_baser/index.html#cite-rphylopic-in-your-manuscript-or-work",
     "href": "blog/rphylopic_baser/index.html#cite-rphylopic-in-your-manuscript-or-work",
     "title": "Placing silhouettes in base r plots using rphylopic",
@@ -301,10 +70,199 @@
     "text": "Cite rphylopic in your manuscript or work:\n\ncitation('rphylopic')\n\n\nTo cite rphylopic in publications, use the following citation:\n\n  Gearty, W., Jones, L.A., Chamberlain, S. 2023. rphylopic: an R\n  package for accessing and plotting PhyloPic silhouettes.\n\nA BibTeX entry for LaTeX users is\n\n  @Article{,\n    title = {rphylopic: an R package for accessing and plotting PhyloPic silhouettes},\n    author = {William Gearty and Lewis A. Jones and Scott Chamberlain},\n    year = {2023},\n    journal = {TBD},\n  }\n\n\nAnd that’s it, that’s all I have for you. If you have any questions don’t hesitate to contact me.\nGabby"
   },
   {
-    "objectID": "blog/rphylopic_baser/index.html#what-if-you-want-the-silhouette-outside-the-plot",
-    "href": "blog/rphylopic_baser/index.html#what-if-you-want-the-silhouette-outside-the-plot",
-    "title": "Placing silhouettes in base r plots using rphylopic",
-    "section": "What if you want the silhouette outside the plot",
-    "text": "What if you want the silhouette outside the plot\nJust try negative values for x and y. That will help you position it outside the plot area, for example next to the legend. For example, try the plot above but using x=85 and y = -5"
+    "objectID": "blog/rphylopic_ggplot2/index.html",
+    "href": "blog/rphylopic_ggplot2/index.html",
+    "title": "Placing silhouettes inside plots (ggplot2) using rphylopic",
+    "section": "",
+    "text": "‘rphylopic’ is one of my most used r packages. It basically allows users to look for silhouettes that are freely available in phylopic.org and place them on any graph created in either base R or ggplot2. You can also use these silhouettes on maps or other plots, but here I will show you how to use rphylopic with ggplot2.\nThe documentation for phylopic is available here. This package is not new, it was created by Scott Chamberlain in 2018. Fun fact, I designed the original cheatsheet for this package back in 2019. Now it’s maintained by William Gearty and Lewis A Jones from the Paleoverse team."
+  },
+  {
+    "objectID": "blog/rphylopic_ggplot2/index.html#what-is-phylopic",
+    "href": "blog/rphylopic_ggplot2/index.html#what-is-phylopic",
+    "title": "Placing silhouettes inside plots (ggplot2) using rphylopic",
+    "section": "What is phylopic?",
+    "text": "What is phylopic?\nPhylopic is this amazing website created by Mike Keesey where digital artists (like me!) upload their silhouettes representing a taxonomic category. Usually, they represent a species, but sometimes you also have silhouettes for a family or a genus. If you find yourself using a lot of silhouettes for your work, I highly encourage you to donate to his patreon. I have done so in the past. Oh and be sure to follow Mike and phylopic on twitter or mastodon too."
+  },
+  {
+    "objectID": "blog/rphylopic_ggplot2/index.html#rphylopic-and-ggplot2",
+    "href": "blog/rphylopic_ggplot2/index.html#rphylopic-and-ggplot2",
+    "title": "Placing silhouettes inside plots (ggplot2) using rphylopic",
+    "section": "rphylopic and ggplot2",
+    "text": "rphylopic and ggplot2\nFirst we will start by installing ‘rphylopic’:\n\n# Stable version from CRAN\ninstall.packages('rphylopic')\n\n# Development version from github\n# install.packages('devtools')\ndevtools::install_github('palaeoverse-community/rphylopic')\n\nThen we load the following packages and dataset that we will use:\n\nlibrary(ggplot2)\nlibrary(rphylopic)\nlibrary(dplyr)\n# We will use the tree dataset \ndata(\"trees\")\n\n\nLet’s start with a simple plot\nThe trees dataset provides measurements of diameter, height, and volume of timber in 31 felled black cherry trees. The diameter is labled as girth in the dataset so let’s start by renaming it to diameter.\n\ntrees <- trees %>% \n  rename(Diameter = Girth) # new name = old name\n\n# Let's check that it worked \nnames(trees)\n\n[1] \"Diameter\" \"Height\"   \"Volume\"  \n\n\nNow let’s fit a linear regression between Diameter and Volume. This is just a silly example just to have a graph on which we can plot a silhouette.\n\nggplot(trees,aes(Diameter, Volume)) +\n  geom_point() +\n  geom_smooth(method='lm', formula = y~x) +\n  theme_classic()+\n  theme(axis.title = element_text(face = 'bold', size = 16),\n        axis.text = element_text(size = 14)) -> ourplot\nourplot \n\n\n\n\n\n\nNow let’s put a silhouette on that plot!\nLet’s start by checking if we have silhouettes for the species we want. In this case a black cherry tree which is Prunus serotina\n\nbct <- pick_phylopic(name = 'Prunus serotina')\n\nError in get_uuid(name = name, n = n, url = FALSE) : Image resource not available for name. Ensure provided name is a valid taxonomic name or try a species/genus resolution name.\nWe got an error saying there are no available silhouettes for this species (note to self, we should draw this and upload it asap!). So let’s check another one that looks like our black cherry trees. How about Flowering Dogwood, Cornus florida. It’s not the same species obviously but the silhouette could represent either tree. Not ideal but for this example I suppose it’s ok.\n\nbct <- pick_phylopic(name='Cornus florida')\n\nWarning in get_uuid(name = name, n = n, url = FALSE): Only 1 items are\navailable.\n\n\nThis is the only or final image. Returning this uuid data.\n\n\n\n\n\n[1] \"8b16a223-4e27-4ce5-83a4-904b86287d49\"\n\n\nIt shows a warning saying we only have one silhouette for this species. Sometimes, you get a species with more than one silhouette but you can see them all by typing 1 on the console when prompted. See my tweet here for an example on how to do this.\nNow back to our plot. Let’s add a silhouette. To know where to place it, think of the arguments x and y as coordinates on your graph, and the silhouette as a point you want to place in the plot. So here, I wanted it on the lower left part of the plot, which corresponds with x=20 and y = 10. The center of the silhouette will be placed on that point. The ysize argument controls how tall the silhouette will be, and is in relation to the y-axis scale.\n\nourplot +\n  add_phylopic(img = bct, # silhouette \n               x=20, # based on x axis coordinates\n               y=10, # based on y axis coordinates \n               ysize = 20) -> ourplot \nourplot\n\n\n\n\n\n\nLet’s put the silhouette next to a legend\nNow because we want the silhouette outside the plot, we must set the coordinates to negative. In this case, the legend is at the bottom so we set the y-axis coordinates to -20.\n\nggplot(trees,aes(Diameter, Volume)) +\n  geom_point() +\n  geom_smooth(method='lm', formula = y~x, aes(color = 'lm')) +\n  scale_color_manual(name = 'Legend', values = 'blue')+\n  theme_classic()+\n  theme(axis.title = element_text(face = 'bold', size = 16),\n        axis.text = element_text(size = 14),\n        legend.position = 'bottom',\n      # The backgroun of the legend set to transparent because it \n      # overlaps the silhouette\n        legend.background = element_rect(fill=\"transparent\"))+\n  add_phylopic(img = bct, # silhouette \n               x=13, # based on x axis coordinates\n      # The y must be set to negative so it's outside the plot\n               y=-19, # based on y axis coordinates \n               ysize = 8) -> ourplot_legend \nourplot_legend\n\n\n\n\n\n\nMore than one silhouette on the plot\nIf you want to add more than one silhouette, then just use the ‘add_phylopic()’ function again. I re-used the same silhouette, but you could use another one here.\n\nourplot +\n  add_phylopic(img = bct, # First silhouette \n               x=20, # based on x axis coordinates\n               y=10, # based on y axis coordinates \n               ysize = 20)+ # based on y axis coordinates \n  add_phylopic(img=bct, # Second silhouette \n               x=10, \n               y=70, \n               ysize = 30)\n\n\n\n\n\n\nPoints as silhouettes\nIf you wanted the points to be little trees instead of points, then you can do so like this. I personally don’t like plots like this but I am showing you it’s possible:\n\nggplot(trees,\n       aes(Diameter, Volume)) +\n    geom_point() +\n    geom_smooth(method='lm', formula = y~x) +\n    theme_classic()+\n    theme(axis.title = element_text(face = 'bold', size = 16),\n          axis.text = element_text(size = 14)) -> plot2\n\nfor(i in 1:nrow(trees)){\n    plot2 <-  plot2 + # These two names must match \n    add_phylopic(img = bct, \n                 x = trees$Diameter[i],\n                 y = trees$Volume[i], \n                 ysize = 5)\n}\n\nplot2\n\n\n\n\n\n\nLet’s not forget the attribution\nNow let’s not forget to add the attribution of the silhouette to the plot! You can also add the attribution in the caption or in the acknowledgment section of a publication.\n\nuuid_bct <- get_uuid(name = 'Cornus florida')\nget_attribution(uuid_bct)\n\n$contributor\n[1] \"Gabriela Palomo-Munoz\"\n\n$contributor_uuid\n[1] \"f57cf3c4-210c-4bcf-a759-9fcbc0cd8ba1\"\n\n$created\n[1] \"2022-08-13\"\n\n$contact\n[1] \"gabriella.palomo@gmail.com\"\n\n$image_uuid\n[1] \"8b16a223-4e27-4ce5-83a4-904b86287d49\"\n\n$license\n[1] \"https://creativecommons.org/licenses/by/4.0/\""
+  },
+  {
+    "objectID": "blog/rphylopic_ggplot2/index.html#final-graph",
+    "href": "blog/rphylopic_ggplot2/index.html#final-graph",
+    "title": "Placing silhouettes inside plots (ggplot2) using rphylopic",
+    "section": "Final graph!",
+    "text": "Final graph!\n\natt <- get_attribution(uuid_bct)$contributor \n\nourplot +\n  labs(caption = paste0('Silhouette available in phylopic.org, designed by ', att))\n\n\n\n\nAnd don’t forget to cite rphylopic too:\n\ncitation(\"rphylopic\")\n\n\nTo cite rphylopic in publications, use the following citation:\n\n  Gearty, W., Jones, L.A., Chamberlain, S. 2023. rphylopic: an R\n  package for accessing and plotting PhyloPic silhouettes.\n\nA BibTeX entry for LaTeX users is\n\n  @Article{,\n    title = {rphylopic: an R package for accessing and plotting PhyloPic silhouettes},\n    author = {William Gearty and Lewis A. Jones and Scott Chamberlain},\n    year = {2023},\n    journal = {TBD},\n  }\n\n\nAnd that’s it, that’s all I have for now. I will do another blog post with an example in base R and a map.\nGabby\n\n\n\n\n\n\nNote\n\n\n\nif you want to save the silhouette in a specific directory then use the function ‘save_phylopic(img = bct, path =’./bct.png’, bg = ‘transparent’)’.\nThe bg argument is so that the silhouette is saved using a transparent bakcground and not a white one which would appear on your plot as a white square every time you wanted to insert the saved silhouette into a graph."
+  },
+  {
+    "objectID": "blog/scientific-diagrams/index.html",
+    "href": "blog/scientific-diagrams/index.html",
+    "title": "Scientific Diagrams",
+    "section": "",
+    "text": "The following diagrams are not organized in any particular order. At some point, when I have several linked, I’ll organize them by categories.\n\nSoares et al. 2022\n\nIslands are becoming taxonomically and functionally more similar after losing unique bird species and gaining common widespread birds.\n\n\n\n\n\n\nPilowsky et al. 2022\n\nModeling the mechanisms that govern the structure and dynamics of biodiversity.\n\n\n\n\n\n\nRiva & Nielsen 2020\n\nSix key steps for functional landscape analyses of habitat change\n\n\n\n\n\n\nBroadley et al. 2019\n\nSpace use is one factor affecting detections on CTs. Here, two aspects of space use are considered: home-range size and movement rate.\n\n\n\n\n\n\nNaves-Alegre et al. 2022\n\nResults of the spatial and spatio-temporal co-occurrence analyses between pairs of species, both qualitative co-occurrence and quantitative GLMs (spatial co-occurrence) and GLMMs (spatio-temporal co-occurrence) that relate the abundances of the species.\n\n\n\n\n\n\nRodrigues et al. 2022\n\nSynthesis of the observed impacts of land-use transition on mean annual evapotranspiration (ET) and average land surface temperature (LST) in the Cerrado.\n\n\n\n\n\n\nPalmer et al. 2022\n\nDynamic landscapes of fear: understanding spatiotemporal risk.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGrames, Schwartz, Elphick. 2022.\n\nConceptual flowchart of a systematic process to develop conceptual models of alternative hypotheses in which (a) the scope of the research question is formally defined, (b) a systematic review is conducted, (c) researchers extract authors’ hypotheses as implied causal relationships that are (d) merged into a graphical model that can be (e) analysed to identify trends in scientific thinking.\n\n\n\n\n\n\nMagle & Fidino 2018.\n\nTransition probabilities between the three possible states a habitat fragment could transition between from 1 year to the next.\n\n\n\n\n\n\nSuraci et al. 2022\n\nBeyond spatial overlap: harnessing new technologies to resolve the complexities of predator–prey interactions.\n\n\n\n\n\n\n\n\n\n\n\nGamez & Harris 2022\n\nConceptual diagram of a vertical forest ecosystem.\n\n\n\n\n\n\nSiren et al. 2022.\n\nForecasting species distributions: Correlation does not equal causation.\n\n\n\n\n\n\nFord & Goheen. 2015.\n\nConceptual Framework for Evaluating Alternative Hypotheses for a Three-Level Trophic Cascade Involving a Large Carnivore, its Herbivorous Prey, and Plants.\n\n\n\n\n\nBack to top"
+  },
+  {
+    "objectID": "blog/welcome/index.html",
+    "href": "blog/welcome/index.html",
+    "title": "Welcome To My Digital Notebook",
+    "section": "",
+    "text": "Welcome to my blog! I decided to name it My Digital Notebook because I am used to take notes on notebooks whenever I’m reading a book or learning a new topic. For example, the notebook here is my Spatial Analysis in R notebook where I keep all my notes regarding this topic, for example, from reading a book chapter or watching a YouTube video, etc. That included code. This is not efficient for two reasons, first because I am constantly moving and need to keep as few things as I can, and second because code is not analogue! So I decided to create a blog to keep all my scripts perfectly organized so I can reference them in the future and have my code ready for whenever I need it instead of rummaging through my folders in external hard drives.\n\n\n\n\n\n\nMy Spatial Ecology Notebook\n\n\n\n\n\n\n\nMy GEE Notebbok\n\n\n\n\n\nI also think that some of these scripts may be useful to others to learn or improve their code. I would also love to write posts with others so I can have the opportunity to learn from others too. I think this could be a good space to have that.\nThanks for reading!\nG"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Gabriela Palomo",
+    "section": "",
+    "text": "My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nPlacing silhouettes in base r plots using rphylopic\n\n\n\n\n\n\n\n\n\n\n\n\nApr 9, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nPlacing silhouettes inside plots (ggplot2) using rphylopic\n\n\n\n\n\n\n\n\n\n\n\n\nMar 29, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nMake your email easy to find\n\n\n\n\n\n\n\n\n\n\n\n\nMar 23, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nScientific Diagrams\n\n\n\n\n\n\n\n\n\n\n\n\nOct 15, 2022\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2022\n\n\nGabby Palomo\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "cv_in_pictures.html",
+    "href": "cv_in_pictures.html",
+    "title": "CV in pictures",
+    "section": "",
+    "text": "My CV in pictures\n\n\n\nHere is a link to my CV but I include here photographs of everything I included as a way to represent my professional experience in pictures. Some of these were taken with a cellphone so the quality may not be ideal. The point, however, is to show some of the work I’ve done previously as well as the places where I’ve worked.\n\n\nDirector of the Botanical Garden at del Valle University\n\n2013-2017\n\n\nGuatemala, City\n\nThis Botanical Garden is housed inside del Valle University in Guatemala and it has one of the largest live orchid and bromeliad collections in the country. The collection has more than 150 different orchid species and more than 60 bromeliad species from Guatemala.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCurator of the Vertebrate Collection at Del Valle University\n\n2011-2017\n\n\nGuatemala City\n\nFor six years, I was the curator of the vertebrate collection at del Valle University in Guatemala City. Guatemala only has two Zoological Collections. I worked here as an undergrad so when the University offered me this job I jumped at the opportunity.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Gabriela Palomo",
+    "section": "",
+    "text": "Welcome to my website! My name is Gabriela Palomo and I am a carnivore ecologist from Guatemala (Central America) doing a post doc in the US at the University of Maryland with Dr Travis Gallo. I use this website to keep my blog called My Digital Notebook, description of my projects, my CV, and information on how to contact me.\n\n\nUniversity of Nebraska Lincoln, School of Natural Resources Lincoln, NE\nPh.D. in Natural Resources | August 2017 - January 2022\nUniversidad del Valle de Guatemala, Facultad de Educacion Guatemala City, Guatemala\nM.A. in Higher Education | August 2015 - June 2017\nUniversidad de San Carlos de Guatemala, Facultad de Medicina Veterinaria Guatemala City, Guatemala\nM.Sc. in Wildlife Management | August 2008 - June 2010\nUniversidad del Valle de Guatemala, Facultad de Educacion Guatemala City, Guatemala\nB.Sc in Biology | January 2001 - June 2007"
+  },
+  {
+    "objectID": "old_404.html",
+    "href": "old_404.html",
+    "title": "Page Not Found",
+    "section": "",
+    "text": "The page you requested cannot be found (perhaps it was moved or renamed).\nYou may want to try searching to find the page’s new location."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Gabriela Palomo",
+    "section": "",
+    "text": "Projects\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "silhouettes.html",
+    "href": "silhouettes.html",
+    "title": "Silhouettes",
+    "section": "",
+    "text": "Many of you know I draw silhouettes for phylopic. However, I realized that researchers require other silhouettes for presentations, papers, posters, for example of a camera trap. Here, I will put a series of silhouettes/clip arts freely available (but protected under a CC license, see below) for anyone to use. They are mostly relevant to my work as an ecologist, but feel free to email me and make other requests!"
+  },
+  {
+    "objectID": "silhouettes.html#aru---automated-recording-units---call-logger---acoustics-devices",
+    "href": "silhouettes.html#aru---automated-recording-units---call-logger---acoustics-devices",
+    "title": "Silhouettes",
+    "section": "ARU - Automated Recording Units - Call Logger - Acoustics Devices",
+    "text": "ARU - Automated Recording Units - Call Logger - Acoustics Devices"
+  },
+  {
+    "objectID": "silhouettes.html#audiomoth---armygreen",
+    "href": "silhouettes.html#audiomoth---armygreen",
+    "title": "Silhouettes",
+    "section": "Audiomoth - Armygreen",
+    "text": "Audiomoth - Armygreen"
+  },
+  {
+    "objectID": "silhouettes.html#audiomoth---black",
+    "href": "silhouettes.html#audiomoth---black",
+    "title": "Silhouettes",
+    "section": "Audiomoth - Black",
+    "text": "Audiomoth - Black"
+  },
+  {
+    "objectID": "silhouettes.html#audiomoth---green",
+    "href": "silhouettes.html#audiomoth---green",
+    "title": "Silhouettes",
+    "section": "Audiomoth - Green",
+    "text": "Audiomoth - Green"
+  },
+  {
+    "objectID": "silhouettes.html#binoculars",
+    "href": "silhouettes.html#binoculars",
+    "title": "Silhouettes",
+    "section": "Binoculars",
+    "text": "Binoculars"
+  },
+  {
+    "objectID": "silhouettes.html#camera-trap",
+    "href": "silhouettes.html#camera-trap",
+    "title": "Silhouettes",
+    "section": "Camera Trap",
+    "text": "Camera Trap"
+  },
+  {
+    "objectID": "silhouettes.html#drone",
+    "href": "silhouettes.html#drone",
+    "title": "Silhouettes",
+    "section": "Drone",
+    "text": "Drone"
+  },
+  {
+    "objectID": "silhouettes.html#drone-low-saturation-of-color",
+    "href": "silhouettes.html#drone-low-saturation-of-color",
+    "title": "Silhouettes",
+    "section": "Drone (low saturation of color)",
+    "text": "Drone (low saturation of color)"
+  },
+  {
+    "objectID": "silhouettes.html#gps-unit",
+    "href": "silhouettes.html#gps-unit",
+    "title": "Silhouettes",
+    "section": "GPS unit",
+    "text": "GPS unit"
+  },
+  {
+    "objectID": "silhouettes.html#havahart",
+    "href": "silhouettes.html#havahart",
+    "title": "Silhouettes",
+    "section": "Havahart",
+    "text": "Havahart"
+  },
+  {
+    "objectID": "silhouettes.html#owl-box-nest",
+    "href": "silhouettes.html#owl-box-nest",
+    "title": "Silhouettes",
+    "section": "Owl Box Nest",
+    "text": "Owl Box Nest"
+  },
+  {
+    "objectID": "silhouettes.html#chemical-bottle",
+    "href": "silhouettes.html#chemical-bottle",
+    "title": "Silhouettes",
+    "section": "Chemical bottle",
+    "text": "Chemical bottle"
+  },
+  {
+    "objectID": "silhouettes.html#radio-collar",
+    "href": "silhouettes.html#radio-collar",
+    "title": "Silhouettes",
+    "section": "Radio Collar",
+    "text": "Radio Collar"
+  },
+  {
+    "objectID": "silhouettes.html#satellite-landsat",
+    "href": "silhouettes.html#satellite-landsat",
+    "title": "Silhouettes",
+    "section": "Satellite, Landsat",
+    "text": "Satellite, Landsat"
+  },
+  {
+    "objectID": "silhouettes.html#scope",
+    "href": "silhouettes.html#scope",
+    "title": "Silhouettes",
+    "section": "Scope",
+    "text": "Scope"
+  },
+  {
+    "objectID": "silhouettes.html#buy-me-a-coffee",
+    "href": "silhouettes.html#buy-me-a-coffee",
+    "title": "Silhouettes",
+    "section": "Buy Me a Coffee",
+    "text": "Buy Me a Coffee\nAll my silhouettes are free but if you’d like to say thank you via a ‘buy me a coffee’ donation, I will be very thankful. Just click the button below and follow the steps:"
   }
 ]

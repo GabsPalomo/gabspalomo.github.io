@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -82,6 +82,15 @@ div.csl-indent {
 
 
 <link rel="stylesheet" href="../../css/styles.css">
+<meta property="og:title" content="Gabriela Palomo - Scientific Diagrams">
+<meta property="og:description" content="The following diagrams are not organized in any particular order. At some point, when I have several linked, I’ll organize them by categories.">
+<meta property="og:image" content="image.jpg">
+<meta property="og:site-name" content="Gabriela Palomo">
+<meta name="twitter:title" content="Gabriela Palomo - Scientific Diagrams">
+<meta name="twitter:description" content="The following diagrams are not organized in any particular order. At some point, when I have several linked, I’ll organize them by categories.">
+<meta name="twitter:image" content="image.jpg">
+<meta name="twitter:creator" content="@gabbspalomo">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -101,19 +110,24 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">Home</a>
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">My Digital Notebook</a>
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">My Digital Notebook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../silhouettes.html">Silhouettes</a>
+    <a class="nav-link" href="../../silhouettes.html">
+ <span class="menu-text">Silhouettes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html">Projects</a>
+    <a class="nav-link" href="../../projects.html">
+ <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv_in_pictures.html">CV in pictures</a>
+    <a class="nav-link" href="../../cv_in_pictures.html">
+ <span class="menu-text">CV in pictures</span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -145,6 +159,7 @@ div.csl-indent {
         <p class="date">October 15, 2022</p>
       </div>
     </div>
+    
       
     </div>
     
@@ -306,13 +321,8 @@ div.csl-indent {
 <p><a href="#top" style="color:steelblue;">Back to top</a></p>
 </section>
 <section id="references" class="level1">
-
-
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<h1>References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-broadley_density-dependent_2019" class="csl-entry" role="doc-biblioentry">
 Broadley, Kate, A. Cole Burton, Tal Avgar, and Stan Boutin. 2019. <span>“Density-Dependent Space Use Affects Interpretation of Camera Trap Detection Rates.”</span> <em>Ecology and Evolution</em> 9 (24): 14031–41. <a href="https://doi.org/10.1002/ece3.5840">https://doi.org/10.1002/ece3.5840</a>.
 </div>
@@ -352,7 +362,12 @@ Soares, Filipa C., Jorge M. Palmeirim, Ana S. L. Rodrigues, Pedro Cardoso, and R
 <div id="ref-suraci_beyond_2022" class="csl-entry" role="doc-biblioentry">
 Suraci, Justin P., Justine A. Smith, Simon Chamaillé-Jammes, Kaitlyn M. Gaynor, Menna Jones, Barney Luttbeg, Euan G. Ritchie, Michael J. Sheriff, and Andrew Sih. 2022. <span>“Beyond Spatial Overlap: Harnessing New Technologies to Resolve the Complexities of Predator–Prey Interactions.”</span> <em>Oikos</em> 2022 (8): e09004. <a href="https://doi.org/10.1111/oik.09004">https://doi.org/10.1111/oik.09004</a>.
 </div>
-</div></section></div></main> <!-- /main -->
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -394,7 +409,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -430,26 +462,46 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
+</script>
+<script src="https://giscus.app/client.js" data-repo="gabspalomo/gabspalomo.github.io" data-repo-id="R_kgDOH9PFzQ" data-category="General" data-category-id="DIC_kwDOH9PFzc4CVYVC" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
