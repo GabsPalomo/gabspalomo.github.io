@@ -14,7 +14,6 @@ website:
     right:
       - text: "Home"
         href: index.qmd
-        comments: false
       - text: "My Digital Notebook"
         href: blog.qmd
       - text: "Silhouettes"
@@ -30,7 +29,14 @@ website:
             href: projects/project.qmd
       - text: "CV in pictures"
         href: cv_in_pictures.qmd
-        
+  cookie-consent:
+    type: express
+    style: simple
+    palette: light
+  google-analytics:
+    tracking-id: "G-CKLD1G1PM7"
+    anonymize-ip: true
+
 sidebar:
   - title: "Projects"
     style: "docked"
@@ -46,9 +52,7 @@ format:
     css: css/styles.css
     toc: true
 
-comments:
-  giscus:
-    repo: gabspalomo/gabspalomo.github.io
-    
-
+# comments:
+#   giscus:
+#     repo: gabspalomo/gabspalomo.github.io
 

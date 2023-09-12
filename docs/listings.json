@@ -2,11 +2,11 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/blog/rphylopic_baser/index.html",
-      "/blog/rphylopic_ggplot2/index.html",
-      "/blog/make_email_easy_to_find/index.html",
-      "/blog/scientific-diagrams/index.html",
-      "/blog/welcome/index.html"
+      "/blog/posts/rphylopic_baser/index.html",
+      "/blog/posts/rphylopic_ggplot2/index.html",
+      "/blog/posts/make_email_easy_to_find/index.html",
+      "/blog/posts/scientific-diagrams/index.html",
+      "/blog/posts/welcome/index.html"
     ]
   },
   {
