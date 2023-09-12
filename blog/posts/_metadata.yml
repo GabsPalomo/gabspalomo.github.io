@@ -1,4 +1,8 @@
 # options specified here will apply to all posts in this folder
+comments:
+  giscus:
+    repo: gabspalomo/gabspalomo.github.io
+    category: Blog
 
 # freeze computational output
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
@@ -7,6 +11,4 @@ freeze: true
 # Enable banner style title blocks
 title-block-banner: true
 
-comments:
-  giscus:
-    repo: gabspalomo/gabspalomo.github.io
+
