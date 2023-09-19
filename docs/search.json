@@ -7,6 +7,48 @@
     "text": "My name is Gabriela Palomo, I am a carnivore ecologist. I started this website to mainly talk about my projects and house my blog called My digital notebook. The idea behind my blog was to have a place that I can use as a digital notebook with notes on how I am learning and improving how to code in R. I like the idea of having a centralized website with an organized repository of all my scripts instead of having them scattered across multiple laptops and external hard drives. However, I think that others may find my code and explanations (i.e., blog posts) useful so I hope this blog can help others learn as well. I plan to cover from the most basic tasks/models to the more complex ones.\nThe easiest way to contact me is on Twitter, where I’m very active, or you can send me an email to gpalomo (at) umd.edu"
   },
   {
+    "objectID": "blog/posts/attributions_rphylopic/index.html",
+    "href": "blog/posts/attributions_rphylopic/index.html",
+    "title": "Include attributions of phylopic silhouettes in the caption of a plot",
+    "section": "",
+    "text": "I explained a little of what phylopic and the rphylopic package are here. I wanted to continue this series with explaining how to use this versatile package but this time creating a workflow to include the attribution of several silhouettes in the caption of a figure created using ggplot2."
+  },
+  {
+    "objectID": "blog/posts/attributions_rphylopic/index.html#the-problem",
+    "href": "blog/posts/attributions_rphylopic/index.html#the-problem",
+    "title": "Include attributions of phylopic silhouettes in the caption of a plot",
+    "section": "The problem",
+    "text": "The problem\nThe rphylopic package has a function to retrieve the attribution information from a silhouette: get_attribution(uuid=uuid). However, if you have several silhouettes you might want to automate the code to retrieve all the attributions in one step instead of for each silhouette. I came up with this workflow, which I hope will be useful to some:"
+  },
+  {
+    "objectID": "blog/posts/attributions_rphylopic/index.html#base-plot-using-ggplot2",
+    "href": "blog/posts/attributions_rphylopic/index.html#base-plot-using-ggplot2",
+    "title": "Include attributions of phylopic silhouettes in the caption of a plot",
+    "section": "Base plot using ggplot2",
+    "text": "Base plot using ggplot2\nLet’s start by creating a simple plot to use as an example.\n\n# packages\nlibrary(rphylopic)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(dplyr)\n\n## Basic plot \npenguins %>% \n  filter(species %in% c('Adelie', 'Gentoo')) %>% \n  ggplot(aes(x=body_mass_g, y=bill_length_mm, color=species))+\n  geom_point(alpha=0.6)+\n  geom_smooth(method = \"lm\", se = FALSE) +\n  scale_color_manual(values = c(\"#6495ED\", \"#FFA54F\"))+\n  xlab('Body mass (g)')+\n  ylab('Bill length (mm)')+\n  theme_classic()+\n  theme(legend.position = 'top',\n        legend.title = element_blank(),\n        legend.text = element_text(size=14),\n        axis.text = element_text(size=14),\n        axis.title = element_text(size=16)) -> plot1\n\nplot1"
+  },
+  {
+    "objectID": "blog/posts/attributions_rphylopic/index.html#now-we-add-the-silhouettes-to-the-plot",
+    "href": "blog/posts/attributions_rphylopic/index.html#now-we-add-the-silhouettes-to-the-plot",
+    "title": "Include attributions of phylopic silhouettes in the caption of a plot",
+    "section": "Now we add the silhouettes to the plot",
+    "text": "Now we add the silhouettes to the plot\nNow that we have the basic plot let’s work on finding out which silhouettes we want to use. Sometimes a species may have more than one silhouette so we have to identify which specific silhouette we want and retrieve that specific uuid.\nThe species\n\n## Let's get the uuid numbers for our species of interest \ngentoo <- c('Pygoscelis papua')\nadelie <- c('Pygoscelis adeliae')\n\n# For example, the gentoo penguin has two silhouettes, let's select the\n# second one. Notice that you have to make the selection in the console.\n# The silhouettes appear in the plots panel.\n\n#pick_phylopic(gentoo) # 2 silhouettes \n#pick_phylopic(adelie) # 1 silhouette \n\n\n# Now let's get the uuid for each species, notice that we have to \n# indicate the number of available silhouettes using n and \n# the one we choose using square brackets\ngp <- get_uuid('Pygoscelis papua', n=2)[2]\nap <- get_uuid('Pygoscelis adeliae')\n\n## Let's put the silhouettes that we will use in the environment\ngent <- get_phylopic(gp)\nadel <- get_phylopic(ap)\n\n## Now we add the silhouettes to our basic plot \nplot1+\n  add_phylopic(img = gent, x=3000, y=42, ysize=3)+\n  add_phylopic(img = adel, x=6200, y=55, ysize = 3)->plot1\n\nplot1"
+  },
+  {
+    "objectID": "blog/posts/attributions_rphylopic/index.html#now-we-add-the-attribution-in-the-caption-of-the-plot",
+    "href": "blog/posts/attributions_rphylopic/index.html#now-we-add-the-attribution-in-the-caption-of-the-plot",
+    "title": "Include attributions of phylopic silhouettes in the caption of a plot",
+    "section": "Now we add the attribution in the caption of the plot",
+    "text": "Now we add the attribution in the caption of the plot\nNow that we have the basic plot, we want to add the attribution programmatically so we don’t have to retrieve the information of each silhouette one by one. We want to be able to add the attribution easily.\n\n## Let's create a list with the species we had already defined earlier\nspp <- list(gentoo = gentoo, \n            adelie = adelie)\n\n## Now let's put the uuid of all our species in a list \nuuid_list <- list(gentoo = gp, \n                  adelie = ap) \n\n## We create an empty list where we will put the attributions of each species \natt_cont <- vector('list', length = length(spp))\nnames(att_cont) <- names(uuid_list)\n\n# Now the contributor. You might select to include more fields, but I only used contributor. Check other fields available using the $\nfor (i in 1:length(spp)){\n  att_cont[[i]] <- get_attribution(uuid = uuid_list[[i]])\n  att_cont[[i]] <- paste0(spp[[i]], ', ', att_cont[[i]]$contributor)\n}\n\n#Now let's collapse species and contributors into one single string\nsp_att <- paste(unlist(att_cont), collapse='; ')\n\n# Notice that we are using \\n to indicate a break in line\nplot1+\n  ## Notice that I am including the theme for the caption here!! \n  theme(plot.caption=element_text(face='italic', \n                                  size = 12, \n                                  vjust = -3), \n        plot.margin = margin(0, 0.5, 1, 0.5, 'cm'))+ \n  labs(caption = paste0('Attribution: ', sp_att, '\\n Silhouettes obtained from phylopic.org by Mike Keessey.')) ->plot_caption\n\nplot_caption\n\n\n\n\n\n\n\n\n\n\nLong captions\n\n\n\nUsing the package cowplot you can also add a caption with the info we saved in the sp_att object.\n\nlibrary(cowplot)\n## Let's add a subtitle using cowplot \nggdraw(add_sub(plot1,\n               size=12, \n               fontface = 'italic',\n               color='gray20',\n               x = 1, hjust = 1, # right aligned \n               paste0('Attribution: ', sp_att, '\\n Silhouettes obtained from phylopic.org by Mike Keessey.')))"
+  },
+  {
+    "objectID": "blog/posts/attributions_rphylopic/index.html#cite-rphylopic-in-your-manuscript-or-work",
+    "href": "blog/posts/attributions_rphylopic/index.html#cite-rphylopic-in-your-manuscript-or-work",
+    "title": "Include attributions of phylopic silhouettes in the caption of a plot",
+    "section": "Cite rphylopic in your manuscript or work:",
+    "text": "Cite rphylopic in your manuscript or work:\n\ncitation('rphylopic')\n\n\nTo cite rphylopic in publications, use the following citation:\n\n  Gearty, W. and Jones, L.A., 2023. rphylopic: An R package for\n  fetching, transforming, and visualising PhyloPic silhouettes.\n  bioRxiv. doi: 10.1101/2023.06.22.546191.\n\nA BibTeX entry for LaTeX users is\n\n  @Article{,\n    title = {rphylopic: An R package for fetching, transforming, and visualising PhyloPic silhouettes},\n    author = {William Gearty and Lewis A. Jones},\n    year = {2023},\n    journal = {bioRxiv},\n    doi = {10.1101/2023.06.22.546191},\n  }\n\n\nAnd that’s it, that’s all I have for you. If you have any questions don’t hesitate to contact me.\nGabby"
+  },
+  {
     "objectID": "blog/posts/make_email_easy_to_find/index.html",
     "href": "blog/posts/make_email_easy_to_find/index.html",
     "title": "Make your email easy to find",
@@ -116,7 +158,7 @@
     "href": "blog.html",
     "title": "Gabriela Palomo",
     "section": "",
-    "text": "My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nPlacing silhouettes in base r plots using rphylopic\n\n\n\n\n\n\n\n\n\n\n\n\nApr 9, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nPlacing silhouettes inside plots (ggplot2) using rphylopic\n\n\n\n\n\n\n\n\n\n\n\n\nMar 29, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nMake your email easy to find\n\n\n\n\n\n\n\n\n\n\n\n\nMar 23, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nScientific Diagrams\n\n\n\n\n\n\n\n\n\n\n\n\nOct 15, 2022\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2022\n\n\nGabby Palomo\n\n\n\n\n\n\nNo matching items"
+    "text": "My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nInclude attributions of phylopic silhouettes in the caption of a plot\n\n\n\n\n\n\n\n\n\n\n\n\nSep 18, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nPlacing silhouettes in base r plots using rphylopic\n\n\n\n\n\n\n\n\n\n\n\n\nApr 9, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nPlacing silhouettes inside plots (ggplot2) using rphylopic\n\n\n\n\n\n\n\n\n\n\n\n\nMar 29, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nMake your email easy to find\n\n\n\n\n\n\n\n\n\n\n\n\nMar 23, 2023\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nScientific Diagrams\n\n\n\n\n\n\n\n\n\n\n\n\nOct 15, 2022\n\n\nGabriela Palomo-Munoz\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Digital Notebook\n\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2022\n\n\nGabby Palomo\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "cv_in_pictures.html",

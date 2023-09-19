@@ -1,0 +1,159 @@
+---
+title: "Include attributions of phylopic silhouettes in the caption of a plot"
+image: plot_caption.png
+author: "Gabriela Palomo-Munoz"
+date: "2023-09-18"
+categories: [ggplot2, rphylopic, silhouettes]
+# draft: true
+---
+
+## The rphylopic package
+
+I explained a little of what phylopic and the rphylopic package are [here](https://gabspalomo.github.io/blog/rphylopic_ggplot2/). I wanted to continue this series with explaining how to use this versatile package but this time creating a workflow to include the attribution of several silhouettes in the caption of a figure created using ggplot2.
+
+## The problem
+
+The [rphylopic](https://cran.r-project.org/web/packages/rphylopic/vignettes/a-getting-started.html) package has a function to retrieve the attribution information from a silhouette: `get_attribution(uuid=uuid)`. However, if you have several silhouettes you might want to automate the code to retrieve all the attributions in one step instead of for each silhouette. I came up with this workflow, which I hope will be useful to some:
+
+## Base plot using ggplot2 
+
+Let's start by creating a simple plot to use as an example. 
+
+```{r, warning=FALSE, message=FALSE}
+# packages
+library(rphylopic)
+library(ggplot2)
+library(palmerpenguins)
+library(dplyr)
+
+## Basic plot 
+penguins %>% 
+  filter(species %in% c('Adelie', 'Gentoo')) %>% 
+  ggplot(aes(x=body_mass_g, y=bill_length_mm, color=species))+
+  geom_point(alpha=0.6)+
+  geom_smooth(method = "lm", se = FALSE) +
+  scale_color_manual(values = c("#6495ED", "#FFA54F"))+
+  xlab('Body mass (g)')+
+  ylab('Bill length (mm)')+
+  theme_classic()+
+  theme(legend.position = 'top',
+        legend.title = element_blank(),
+        legend.text = element_text(size=14),
+        axis.text = element_text(size=14),
+        axis.title = element_text(size=16)) -> plot1
+
+plot1
+
+```
+
+
+## Now we add the silhouettes to the plot 
+
+Now that we have the basic plot let's work on finding out which silhouettes we want to use. Sometimes a species may have more than one silhouette so we have to identify which specific silhouette we want and retrieve that specific uuid.
+
+The species 
+
+```{r}
+## Let's get the uuid numbers for our species of interest 
+gentoo <- c('Pygoscelis papua')
+adelie <- c('Pygoscelis adeliae')
+
+# For example, the gentoo penguin has two silhouettes, let's select the
+# second one. Notice that you have to make the selection in the console.
+# The silhouettes appear in the plots panel.
+
+#pick_phylopic(gentoo) # 2 silhouettes 
+#pick_phylopic(adelie) # 1 silhouette 
+```
+
+```{r, warning=FALSE, message=FALSE}
+# Now let's get the uuid for each species, notice that we have to 
+# indicate the number of available silhouettes using n and 
+# the one we choose using square brackets
+gp <- get_uuid('Pygoscelis papua', n=2)[2]
+ap <- get_uuid('Pygoscelis adeliae')
+
+## Let's put the silhouettes that we will use in the environment
+gent <- get_phylopic(gp)
+adel <- get_phylopic(ap)
+
+## Now we add the silhouettes to our basic plot 
+plot1+
+  add_phylopic(img = gent, x=3000, y=42, ysize=3)+
+  add_phylopic(img = adel, x=6200, y=55, ysize = 3)->plot1
+
+plot1
+```
+
+
+## Now we add the attribution in the caption of the plot 
+
+Now that we have the basic plot, we want to add the attribution programmatically so we don't have to retrieve the information of each silhouette one by one. We want to be able to add the attribution easily. 
+
+```{r, warning=FALSE, message=FALSE}
+## Let's create a list with the species we had already defined earlier
+spp <- list(gentoo = gentoo, 
+            adelie = adelie)
+
+## Now let's put the uuid of all our species in a list 
+uuid_list <- list(gentoo = gp, 
+                  adelie = ap) 
+
+## We create an empty list where we will put the attributions of each species 
+att_cont <- vector('list', length = length(spp))
+names(att_cont) <- names(uuid_list)
+
+# Now the contributor. You might select to include more fields, but I only used contributor. Check other fields available using the $
+for (i in 1:length(spp)){
+  att_cont[[i]] <- get_attribution(uuid = uuid_list[[i]])
+  att_cont[[i]] <- paste0(spp[[i]], ', ', att_cont[[i]]$contributor)
+}
+
+#Now let's collapse species and contributors into one single string
+sp_att <- paste(unlist(att_cont), collapse='; ')
+
+# Notice that we are using \n to indicate a break in line
+plot1+
+  ## Notice that I am including the theme for the caption here!! 
+  theme(plot.caption=element_text(face='italic', 
+                                  size = 12, 
+                                  vjust = -3), 
+        plot.margin = margin(0, 0.5, 1, 0.5, 'cm'))+ 
+  labs(caption = paste0('Attribution: ', sp_att, '\n Silhouettes obtained from phylopic.org by Mike Keessey.')) ->plot_caption
+
+plot_caption
+
+```
+
+```{r, eval=FALSE, include=FALSE}
+ggsave(filename='plot_caption.png', plot = plot_caption, dpi = 300)
+```
+
+
+::: {.callout-tip}
+## Long captions 
+
+Using the package `cowplot` you can also add a caption with the info we saved in the sp_att object.   
+
+```{r,warning=FALSE, message=FALSE}
+library(cowplot)
+## Let's add a subtitle using cowplot 
+ggdraw(add_sub(plot1,
+               size=12, 
+               fontface = 'italic',
+               color='gray20',
+               x = 1, hjust = 1, # right aligned 
+               paste0('Attribution: ', sp_att, '\n Silhouettes obtained from phylopic.org by Mike Keessey.')))
+```
+
+:::
+
+## Cite rphylopic in your manuscript or work:
+
+```{r}
+citation('rphylopic')
+```
+
+And that's it, that's all I have for you. If you have any questions don't hesitate to [contact me](https://gabspalomo.github.io/).
+
+[Gabby]{style="color:deepskyblue4;font-size:40px;"} 
