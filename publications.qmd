@@ -1,0 +1,19 @@
+---
+title: "My publications"
+listing:
+  contents: publications
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+linestretch: 2
+title-block-banner: false
+bibliography: docs/publications.bib
+reference-section-title: none
+link-citations: true
+nocite: '@*'
+csl: docs/chicago-author-date.csl
+linkcolor: blue
+---
+

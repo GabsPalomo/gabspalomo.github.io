@@ -27,6 +27,8 @@ website:
           - text: "Project 2"
             #icon: "chat-right-te
             href: projects/project.qmd
+      - text: "Publications"
+        href: publications.qmd
       - text: "CV in pictures"
         href: cv_in_pictures.qmd
   cookie-consent:
