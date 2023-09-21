@@ -1,5 +1,5 @@
 ---
-title: "My publications"
+title: "Peer-reviewed publications"
 listing:
   contents: publications
   type: default
@@ -9,11 +9,11 @@ listing:
 page-layout: full
 linestretch: 2
 title-block-banner: false
-bibliography: docs/publications.bib
+bibliography: publications/publications.bib
 reference-section-title: none
 link-citations: true
 nocite: '@*'
-csl: docs/chicago-author-date.csl
+csl: publications/chicago-author-date.csl
 linkcolor: blue
 ---
 
