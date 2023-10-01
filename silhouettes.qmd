@@ -18,6 +18,12 @@ Many of you know I draw silhouettes for [phylopic](https://beta.phylopic.org/). 
 
 > All silhouettes are protected under a Creative Commons Attribution-NonCommercial 3.0 Unported license which means that you can use them freely for any scientific purpose EXCEPT in commercial publications or websites. If you want to use them for commercial purposes then please [contact me](mailto:gabriella.palomo@gmail.com). I only ask that if you are going to use them, please credit me. For example: *Silhouette created by Gabriela Palomo-Munoz.* This can be in the acknowledgment section of a paper, or under the image in a presentation. 
 
+## Antenna (GPS)
+
+<a href="./silhouettes/Antenna_GPalomo.png" download="GPS_Antenna_GPalomo">
+  <img src="./silhouettes/Antenna_GPalomo.png" alt="GPalomo_GPS_Antenna" width="400">
+</a>
+
 ## ARU - Automated Recording Units - Call Logger - Acoustics Devices
 
 <a href="./silhouettes/ARU.png" download="ARU_GPalomo">
@@ -48,10 +54,22 @@ Many of you know I draw silhouettes for [phylopic](https://beta.phylopic.org/). 
   <img src="./silhouettes/Binoculars_.png" alt="GPalomo_binoculars" width="400">
 </a>
 
+## Butterfly Net
+
+<a href="./silhouettes/Net_GPalomo.png" download="butterfly_net_GPalomo">
+  <img src="./silhouettes/Net_GPalomo.png" alt="GPalomo_butterfly_net" width="400">
+</a>
+
 ## Camera Trap
 
 <a href="./silhouettes/CameraTrap.png" download="cameratrap_GPalomo">
   <img src="./silhouettes/CameraTrap.png" alt="GPalomo_cameratrap" width="400">
+</a>
+
+## Chemical bottle
+
+<a href="./silhouettes/Chemical_Gallon.png" download="chemical_gallon_GPalomo">
+  <img src="./silhouettes/Chemical_Gallon.png" alt="GPalomo_chemical_gallon_bottle" width="400">
 </a>
 
 ## Drone
@@ -79,6 +97,12 @@ Many of you know I draw silhouettes for [phylopic](https://beta.phylopic.org/). 
   <img src="./silhouettes/Havahart.png" alt="GPalomo_havahart" width="400">
 </a>
 
+## Laptop
+
+<a href="./silhouettes/Laptop_GPalomo.png" download="havahart_GPalomo">
+  <img src="./silhouettes/Laptop_GPalomo.png" alt="GPalomo_havahart" width="400">
+</a>
+
 
 ## Owl Box Nest
 
@@ -86,17 +110,16 @@ Many of you know I draw silhouettes for [phylopic](https://beta.phylopic.org/). 
   <img src="./silhouettes/Owl_boxnest.png" alt="GPalomo_owl_boxnest" width="400">
 </a>
 
-
-## Chemical bottle
-
-<a href="./silhouettes/Chemical_Gallon.png" download="chemical_gallon_GPalomo">
-  <img src="./silhouettes/Chemical_Gallon.png" alt="GPalomo_chemical_gallon_bottle" width="400">
-</a>
-
 ## Radio Collar
 
 <a href="./silhouettes/collar.png" download="collar_GPalomo">
   <img src="./silhouettes/collar.png" alt="GPalomo_telemmetry_collar" width="400">
+</a>
+
+## Receiver (GPS)
+
+<a href="./silhouettes/Receiver_GPalomo.png" download="GPS_receiver_GPalomo">
+  <img src="./silhouettes/Receiver_GPalomo.png" alt="GPalomo_GPS_receiver" width="400">
 </a>
 
 ## Satellite, Landsat
@@ -110,6 +133,12 @@ Many of you know I draw silhouettes for [phylopic](https://beta.phylopic.org/). 
 
 <a href="./silhouettes/Scope.png" download="scope_GPalomo">
   <img src="./silhouettes/Scope.png" alt="GPalomo_scope" width="400">
+</a>
+
+## Vaginal Implant Transmitter (VIT)
+
+<a href="./silhouettes/vaginal_implant_transmitter_GPalomo.png" download="VIT_GPalomo">
+  <img src="./silhouettes/vaginal_implant_transmitter_GPalomo.png" alt="GPalomo_Vaginal_Implant_Transmitter" width="400">
 </a>
 
 

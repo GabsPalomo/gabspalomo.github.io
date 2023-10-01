@@ -182,13 +182,6 @@
     "text": "The page you requested cannot be found (perhaps it was moved or renamed).\nYou may want to try searching to find the page’s new location."
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Gabriela Palomo",
-    "section": "",
-    "text": "Projects\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "Peer-reviewed publications",
@@ -201,6 +194,13 @@
     "title": "Silhouettes",
     "section": "",
     "text": "Many of you know I draw silhouettes for phylopic. However, I realized that researchers require other silhouettes for presentations, papers, posters, for example of a camera trap. Here, I will put a series of silhouettes/clip arts freely available (but protected under a CC license, see below) for anyone to use. They are mostly relevant to my work as an ecologist, but feel free to email me and make other requests!"
+  },
+  {
+    "objectID": "silhouettes.html#antenna-gps",
+    "href": "silhouettes.html#antenna-gps",
+    "title": "Silhouettes",
+    "section": "Antenna (GPS)",
+    "text": "Antenna (GPS)"
   },
   {
     "objectID": "silhouettes.html#aru---automated-recording-units---call-logger---acoustics-devices",
@@ -238,11 +238,25 @@
     "text": "Binoculars"
   },
   {
+    "objectID": "silhouettes.html#butterfly-net",
+    "href": "silhouettes.html#butterfly-net",
+    "title": "Silhouettes",
+    "section": "Butterfly Net",
+    "text": "Butterfly Net"
+  },
+  {
     "objectID": "silhouettes.html#camera-trap",
     "href": "silhouettes.html#camera-trap",
     "title": "Silhouettes",
     "section": "Camera Trap",
     "text": "Camera Trap"
+  },
+  {
+    "objectID": "silhouettes.html#chemical-bottle",
+    "href": "silhouettes.html#chemical-bottle",
+    "title": "Silhouettes",
+    "section": "Chemical bottle",
+    "text": "Chemical bottle"
   },
   {
     "objectID": "silhouettes.html#drone",
@@ -273,6 +287,13 @@
     "text": "Havahart"
   },
   {
+    "objectID": "silhouettes.html#laptop",
+    "href": "silhouettes.html#laptop",
+    "title": "Silhouettes",
+    "section": "Laptop",
+    "text": "Laptop"
+  },
+  {
     "objectID": "silhouettes.html#owl-box-nest",
     "href": "silhouettes.html#owl-box-nest",
     "title": "Silhouettes",
@@ -280,18 +301,18 @@
     "text": "Owl Box Nest"
   },
   {
-    "objectID": "silhouettes.html#chemical-bottle",
-    "href": "silhouettes.html#chemical-bottle",
-    "title": "Silhouettes",
-    "section": "Chemical bottle",
-    "text": "Chemical bottle"
-  },
-  {
     "objectID": "silhouettes.html#radio-collar",
     "href": "silhouettes.html#radio-collar",
     "title": "Silhouettes",
     "section": "Radio Collar",
     "text": "Radio Collar"
+  },
+  {
+    "objectID": "silhouettes.html#receiver-gps",
+    "href": "silhouettes.html#receiver-gps",
+    "title": "Silhouettes",
+    "section": "Receiver (GPS)",
+    "text": "Receiver (GPS)"
   },
   {
     "objectID": "silhouettes.html#satellite-landsat",
@@ -306,6 +327,13 @@
     "title": "Silhouettes",
     "section": "Scope",
     "text": "Scope"
+  },
+  {
+    "objectID": "silhouettes.html#vaginal-implant-transmitter-vit",
+    "href": "silhouettes.html#vaginal-implant-transmitter-vit",
+    "title": "Silhouettes",
+    "section": "Vaginal Implant Transmitter (VIT)",
+    "text": "Vaginal Implant Transmitter (VIT)"
   },
   {
     "objectID": "silhouettes.html#buy-me-a-coffee",
