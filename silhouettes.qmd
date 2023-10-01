@@ -1,8 +1,8 @@
 ---
-title: "Silhouettes"
+title: "Clip arts"
 listing:
-  contents: silhouettes
-  sort: "date desc"
+  contents: clip arts
+  # sort: "date desc"
   type: default
   categories: false
   sort-ui: false
@@ -12,11 +12,11 @@ page-layout: full
 title-block-banner: true
 ---
 
-<p><h1>Silhouettes</h1></p>
+<p><h1>Clip arts</h1></p>
 
-Many of you know I draw silhouettes for [phylopic](https://beta.phylopic.org/). However, I realized that researchers require other silhouettes for presentations, papers, posters, for example of a camera trap. Here, I will put a series of silhouettes/clip arts freely available (but protected under a CC license, see below) for anyone to use. They are mostly relevant to my work as an ecologist, but feel free to [email me](mailto:gabriella.palomo@gmail.com) and make other requests! 
+Many of you know I draw silhouettes for [phylopic](https://beta.phylopic.org/). However, I realized that researchers require other types of clip arts for presentations, papers, posters, for example of a camera trap. Here, I will put a series of clip arts freely available (but protected under a CC license, see below) for anyone to use. They are mostly relevant to my work as an ecologist, but feel free to [email me](mailto:gabriella.palomo@gmail.com) and make other requests! 
 
-> All silhouettes are protected under a Creative Commons Attribution-NonCommercial 3.0 Unported license which means that you can use them freely for any scientific purpose EXCEPT in commercial publications or websites. If you want to use them for commercial purposes then please [contact me](mailto:gabriella.palomo@gmail.com). I only ask that if you are going to use them, please credit me. For example: *Silhouette created by Gabriela Palomo-Munoz.* This can be in the acknowledgment section of a paper, or under the image in a presentation. 
+> All clip arts are protected under a Creative Commons Attribution-NonCommercial 3.0 Unported license which means that you can use them freely for any scientific purpose EXCEPT in commercial publications or websites. If you want to use them for commercial purposes then please [contact me](mailto:gabriella.palomo@gmail.com). I only ask that if you are going to use them, please credit me. For example: *Silhouette created by Gabriela Palomo-Munoz.* This can be in the acknowledgment section of a paper, or under the image in a presentation. 
 
 ## Antenna (GPS)
 
@@ -144,7 +144,7 @@ Many of you know I draw silhouettes for [phylopic](https://beta.phylopic.org/). 
 
 ## Buy Me a Coffee
 
-All my silhouettes are free but if you'd like to say thank you via a 'buy me a coffee' donation, I will be very thankful. Just click the button below and follow the steps: 
+All my silhouettes and clip arts are free but if you'd like to say thank you via a 'buy me a coffee' donation, I will greatly appreciate it. Just click the button below and follow the steps: 
 
 <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="gabbypalomo" data-color="#5F7FFF" data-emoji=""  data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script> 
 

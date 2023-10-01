@@ -16,7 +16,7 @@ website:
         href: index.qmd
       - text: "My Digital Notebook"
         href: blog.qmd
-      - text: "Silhouettes"
+      - text: "Clip Arts"
         href: silhouettes.qmd
       - text: "Projects"
         href: projects.qmd
