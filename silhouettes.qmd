@@ -137,8 +137,8 @@ Many of you know I draw silhouettes for [phylopic](https://beta.phylopic.org/). 
 
 ## Vaginal Implant Transmitter (VIT)
 
-<a href="./silhouettes/vaginal_implant_transmitter_GPalomo.png" download="VIT_GPalomo">
-  <img src="./silhouettes/vaginal_implant_transmitter_GPalomo.png" alt="GPalomo_Vaginal_Implant_Transmitter" width="400">
+<a href="./silhouettes/vaginal-implant-transmitter_GPalomo.png" download="VIT_GPalomo">
+  <img src="./silhouettes/vaginal-implant-transmitter_GPalomo.png" alt="GPalomo_Vaginal_Implant_Transmitter" width="400">
 </a>
 
 
