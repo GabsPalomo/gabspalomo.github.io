@@ -16,7 +16,7 @@ website:
         href: index.qmd
       - text: "My Digital Notebook"
         href: blog.qmd
-      - text: "Clip Arts"
+      - text: "ClipArts"
         href: silhouettes.qmd
       - text: "Projects"
         href: projects.qmd
@@ -29,8 +29,10 @@ website:
             href: projects/project.qmd
       - text: "Publications"
         href: publications.qmd
-      - text: "CV in pictures"
-        href: cv_in_pictures.qmd
+      - text: "CV"
+        href: cv.qmd
+      - text: ""
+        href: presentations.qmd 
   cookie-consent:
     type: express
     style: simple
