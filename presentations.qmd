@@ -1,17 +1,21 @@
 ---
-title: "Presentations"
 listing:
+  type: default
   contents: presentations
   sort: "date desc"
-  type: default
-  categories: false
+  categories: true 
   sort-ui: false
   filter-ui: false
-  fields: [title, subtitle, author, description, date, image] 
+description: blah blah
 page-layout: full
-title-block-banner: true
+title-block-banner: false
+fields: [title, date, categories, description, image] 
+date-format: medium
+comments: false
+toc: true
 ---
 
 # Presentations/Workshops
 
-<br>
+I'm including here a list of my presentations or workshops (English or Spanish). All material is protected under [Creative Commons](https://creativecommons.org/licenses/by-sa/4.0/). 
+

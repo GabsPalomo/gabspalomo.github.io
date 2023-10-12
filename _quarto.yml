@@ -26,12 +26,12 @@ website:
             href: projects/project1.qmd
           - text: "Project 2"
             #icon: "chat-right-te
-            href: projects/project.qmd
+            href: projects/project2.qmd
       - text: "Publications"
         href: publications.qmd
       - text: "CV"
         href: cv.qmd
-      - text: ""
+      - text: "Presentations"
         href: presentations.qmd 
   cookie-consent:
     type: express
