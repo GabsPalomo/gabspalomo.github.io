@@ -16,7 +16,9 @@
   },
   {
     "listing": "/presentations.html",
-    "items": []
+    "items": [
+      "/presentations/intro_ggplot2/index.html"
+    ]
   },
   {
     "listing": "/projects.html",
