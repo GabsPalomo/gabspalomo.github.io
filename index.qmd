@@ -11,7 +11,7 @@ about:
       text: Github
       href: https://github.com/gabspalomo
     - icon: envelope-check
-      text: email 
+      text: University email 
       href: mailto:gpalomo@umd.edu
 ---
 
@@ -23,6 +23,9 @@ about:
 
 ::: column-page
 Welcome to my website! My name is Gabriela Palomo and I am a carnivore ecologist from Guatemala (Central America) doing a post doc in the US at the University of Maryland with [Dr Travis Gallo](https://urbanxnaturelab.com/). I use this website to keep my blog called [My Digital Notebook](blog.html), description of my projects, my [CV](/docs/gabriela_palomo_cv.pdf), and information on how to contact me.
+
+**If you would like me to review a paper please email me here:**
+[gabriella.palomo@gmail.com](mailto:gabriella.palomo@gmail.com)   
 
 ## Education
 
