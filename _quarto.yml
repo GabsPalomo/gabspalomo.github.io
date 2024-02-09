@@ -14,7 +14,7 @@ website:
     right:
       - text: "Home"
         href: index.qmd
-      - text: "My Digital Notebook"
+      - text: "Blog"
         href: blog.qmd
       - text: "ClipArts"
         href: silhouettes.qmd
