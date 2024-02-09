@@ -7,6 +7,12 @@ about:
     - icon: twitter
       text: Twitter
       href: https://twitter.com/gabbspalomo
+    - icon: masstodon
+      text: Fosstodon
+      href: https://fosstodon.org/@gabbspalomo
+    - icon: ????  
+      text: ???? Bluesky
+      url:  https://bsky.app/profile/gabspalomo.bsky.social
     - icon: code-square
       text: Github
       href: https://github.com/gabspalomo

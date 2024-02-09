@@ -21,12 +21,12 @@ website:
       - text: "Projects"
         href: projects.qmd
         menu:
-          - text: "Project 1"
+          - text: "Portfolio - Data Visualization"
             #icon: "bug"
-            href: projects/project1.qmd
-          - text: "Project 2"
+            href: projects/portfolio.qmd
+          # - text: "Project 2"
             #icon: "chat-right-te
-            href: projects/project2.qmd
+            # href: projects/project2.qmd
       - text: "Publications"
         href: publications.qmd
       - text: "CV"
