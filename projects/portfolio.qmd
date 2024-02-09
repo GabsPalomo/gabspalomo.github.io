@@ -1,0 +1,20 @@
+---
+title: "Portfolio - Data Visualization"
+listing:
+  contents: publications
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: false
+toc: false
+page-layout: full
+linestretch: 2
+title-block-banner: false
+# bibliography: publications/publications.bib
+# reference-section-title: none
+# link-citations: true
+# nocite: '@*'
+# csl: publications/chicago-author-date.csl
+linkcolor: blue
+---
+

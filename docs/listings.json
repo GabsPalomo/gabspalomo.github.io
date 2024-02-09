@@ -21,8 +21,14 @@
     ]
   },
   {
-    "listing": "/projects.html",
+    "listing": "/projects/portfolio.html",
     "items": []
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/portfolio.html"
+    ]
   },
   {
     "listing": "/publications.html",
