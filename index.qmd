@@ -10,8 +10,7 @@ about:
     - icon: masstodon
       text: Fosstodon
       href: https://fosstodon.org/@gabbspalomo
-    - icon: ????  
-      text: ???? Bluesky
+    - text: ???? Bluesky
       url:  https://bsky.app/profile/gabspalomo.bsky.social
     - icon: code-square
       text: Github
