@@ -24,9 +24,6 @@ website:
           - text: "Portfolio - Data Visualization"
             #icon: "bug"
             file: projects/portfolio.qmd
-          # - text: "Project 2"
-            #icon: "chat-right-te
-            # href: projects/project2.qmd
       - text: "Publications"
         href: publications.qmd
       - text: "CV"
@@ -40,15 +37,16 @@ website:
   google-analytics:
     tracking-id: "G-CKLD1G1PM7"
     anonymize-ip: true
+  page-footer: '© Copyright 2024 Gabriela Palomo-Munoz. All text and images licensed CC-BY-NC 4.0.'
 
-sidebar:
-  - title: "Projects"
-    style: "docked"
-    background: light
-    contents:
-      - projects.qmd
-      - project-01.qmd
-      - project-02.qmd
+# sidebar:
+#   - title: "Projects"
+#     style: "docked"
+#     background: light
+#     contents:
+#       - projects.qmd
+#       - project-01.qmd
+#       - project-02.qmd
 
 format:
   html:
