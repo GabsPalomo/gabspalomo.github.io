@@ -19,11 +19,11 @@ website:
       - text: "ClipArts"
         href: silhouettes.qmd
       - text: "Projects"
-        href: projects.qmd
+        # href: projects.qmd
         menu:
           - text: "Portfolio - Data Visualization"
             #icon: "bug"
-            href: projects/portfolio.qmd
+            file: projects/portfolio.qmd
           # - text: "Project 2"
             #icon: "chat-right-te
             # href: projects/project2.qmd
