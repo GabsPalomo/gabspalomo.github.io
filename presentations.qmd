@@ -6,7 +6,7 @@ listing:
   categories: true 
   sort-ui: false
   filter-ui: false
-description: blah blah
+# description: 
 page-layout: full
 title-block-banner: false
 fields: [title, date, categories, description, image] 
@@ -17,5 +17,5 @@ toc: true
 
 # Presentations/Workshops
 
-I'm including here a list of my presentations or workshops (English or Spanish). All material is protected under [Creative Commons](https://creativecommons.org/licenses/by-sa/4.0/). 
+I'm including here a list of my presentations or workshops (English or Spanish). All material is protected under [Creative Commons CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). 
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,14 +19,16 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -40,8 +42,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -68,7 +69,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -77,8 +84,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CKLD1G1PM7"></script>
@@ -102,6 +111,8 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
@@ -110,11 +121,11 @@ cookieconsent.run({
 
 <link rel="stylesheet" href="../../../css/styles.css">
 <meta property="og:title" content="Gabriela Palomo - Scientific Diagrams">
-<meta property="og:description" content="The following diagrams are not organized in any particular order. At some point, when I have several linked, I’ll organize them by categories.">
+<meta property="og:description" content="">
 <meta property="og:image" content="image.jpg">
-<meta property="og:site-name" content="Gabriela Palomo">
+<meta property="og:site_name" content="Gabriela Palomo">
 <meta name="twitter:title" content="Gabriela Palomo - Scientific Diagrams">
-<meta name="twitter:description" content="The following diagrams are not organized in any particular order. At some point, when I have several linked, I’ll organize them by categories.">
+<meta name="twitter:description" content="">
 <meta name="twitter:image" content="image.jpg">
 <meta name="twitter:creator" content="@gabbspalomo">
 <meta name="twitter:card" content="summary_large_image">
@@ -123,30 +134,31 @@ cookieconsent.run({
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Gabriela Palomo</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../blog.html">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../../blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../silhouettes.html">
- <span class="menu-text">ClipArts</span></a>
+    <a class="nav-link" href="../../../silhouettes.html"> 
+<span class="menu-text">ClipArts</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -160,20 +172,21 @@ cookieconsent.run({
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../../publications.html">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../../publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../cv.html">
- <span class="menu-text">CV</span></a>
+    <a class="nav-link" href="../../../cv.html"> 
+<span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../presentations.html">
- <span class="menu-text">Presentations</span></a>
+    <a class="nav-link" href="../../../presentations.html"> 
+<span class="menu-text">Presentations</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -225,6 +238,7 @@ cookieconsent.run({
 
 
 
+
 <section id="scientific-diagrams" class="level2">
 <h2 class="anchored" data-anchor-id="scientific-diagrams">Scientific Diagrams</h2>
 <p>The following diagrams are not organized in any particular order. At some point, when I have several linked, I’ll organize them by categories.</p>
@@ -232,176 +246,112 @@ cookieconsent.run({
 <li><strong>Soares et al.&nbsp;2022</strong></li>
 </ol>
 <p>Islands are becoming taxonomically and functionally more similar after losing unique bird species and gaining common widespread birds.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://fesummaries.files.wordpress.com/2022/10/fecoutinhosoaresimage.jpg?w=1481"><img src="https://fesummaries.files.wordpress.com/2022/10/fecoutinhosoaresimage.jpg?w=1481" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://fesummaries.files.wordpress.com/2022/10/fecoutinhosoaresimage.jpg?w=1481"><img src="https://fesummaries.files.wordpress.com/2022/10/fecoutinhosoaresimage.jpg?w=1481" class="img-fluid"></a></p>
 <ol start="2" type="1">
 <li><strong>Pilowsky et al.&nbsp;2022</strong></li>
 </ol>
 <p>Modeling the mechanisms that govern the structure and dynamics of biodiversity.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://www.science.org/cms/10.1126/sciadv.abj2271/asset/174b581f-483e-41e2-af5a-b401043fa611/assets/images/large/sciadv.abj2271-f1.jpg"><img src="https://www.science.org/cms/10.1126/sciadv.abj2271/asset/174b581f-483e-41e2-af5a-b401043fa611/assets/images/large/sciadv.abj2271-f1.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://www.science.org/cms/10.1126/sciadv.abj2271/asset/174b581f-483e-41e2-af5a-b401043fa611/assets/images/large/sciadv.abj2271-f1.jpg"><img src="https://www.science.org/cms/10.1126/sciadv.abj2271/asset/174b581f-483e-41e2-af5a-b401043fa611/assets/images/large/sciadv.abj2271-f1.jpg" class="img-fluid"></a></p>
 <ol start="3" type="1">
 <li><strong>Riva &amp; Nielsen 2020</strong></li>
 </ol>
 <p>Six key steps for functional landscape analyses of habitat change</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs10980-020-01048-y/MediaObjects/10980_2020_1048_Fig1_HTML.png?as=webp"><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs10980-020-01048-y/MediaObjects/10980_2020_1048_Fig1_HTML.png?as=webp" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs10980-020-01048-y/MediaObjects/10980_2020_1048_Fig1_HTML.png?as=webp"><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs10980-020-01048-y/MediaObjects/10980_2020_1048_Fig1_HTML.png?as=webp" class="img-fluid"></a></p>
 <ol start="4" type="1">
 <li><strong>Broadley et al.&nbsp;2019</strong></li>
 </ol>
 <p>Space use is one factor affecting detections on CTs. Here, two aspects of space use are considered: home-range size and movement rate.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://onlinelibrary.wiley.com/cms/asset/6037e2fa-7cc2-4ceb-8e7d-6cafe6925d42/ece35840-fig-0001-m.png"><img src="https://onlinelibrary.wiley.com/cms/asset/6037e2fa-7cc2-4ceb-8e7d-6cafe6925d42/ece35840-fig-0001-m.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://onlinelibrary.wiley.com/cms/asset/6037e2fa-7cc2-4ceb-8e7d-6cafe6925d42/ece35840-fig-0001-m.png"><img src="https://onlinelibrary.wiley.com/cms/asset/6037e2fa-7cc2-4ceb-8e7d-6cafe6925d42/ece35840-fig-0001-m.png" class="img-fluid"></a></p>
 <ol start="5" type="1">
 <li><strong>Naves-Alegre et al.&nbsp;2022</strong></li>
 </ol>
 <p>Results of the spatial and spatio-temporal co-occurrence analyses between pairs of species, both qualitative co-occurrence and quantitative GLMs (spatial co-occurrence) and GLMMs (spatio-temporal co-occurrence) that relate the abundances of the species.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://zslpublications.onlinelibrary.wiley.com/cms/asset/42363a0c-8425-462e-b946-4e26ccaa929b/jzo13016-fig-0002-m.jpg"><img src="https://zslpublications.onlinelibrary.wiley.com/cms/asset/42363a0c-8425-462e-b946-4e26ccaa929b/jzo13016-fig-0002-m.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://zslpublications.onlinelibrary.wiley.com/cms/asset/42363a0c-8425-462e-b946-4e26ccaa929b/jzo13016-fig-0002-m.jpg"><img src="https://zslpublications.onlinelibrary.wiley.com/cms/asset/42363a0c-8425-462e-b946-4e26ccaa929b/jzo13016-fig-0002-m.jpg" class="img-fluid"></a></p>
 <ol start="6" type="1">
 <li><strong>Rodrigues et al.&nbsp;2022</strong></li>
 </ol>
 <p>Synthesis of the observed impacts of land-use transition on mean annual evapotranspiration (ET) and average land surface temperature (LST) in the Cerrado.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://onlinelibrary.wiley.com/cms/asset/fed6febd-795c-48c8-9105-ee9cab518811/gcb16386-fig-0009-m.png"><img src="https://onlinelibrary.wiley.com/cms/asset/fed6febd-795c-48c8-9105-ee9cab518811/gcb16386-fig-0009-m.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://onlinelibrary.wiley.com/cms/asset/fed6febd-795c-48c8-9105-ee9cab518811/gcb16386-fig-0009-m.png"><img src="https://onlinelibrary.wiley.com/cms/asset/fed6febd-795c-48c8-9105-ee9cab518811/gcb16386-fig-0009-m.png" class="img-fluid"></a></p>
 <ol start="7" type="1">
 <li><strong>Palmer et al.&nbsp;2022</strong></li>
 </ol>
 <p>Dynamic landscapes of fear: understanding spatiotemporal risk.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://ars.els-cdn.com/content/image/1-s2.0-S0169534722001409-gr1.jpg"><img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169534722001409-gr1.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://ars.els-cdn.com/content/image/1-s2.0-S0169534722001409-gr2.jpg"><img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169534722001409-gr2.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://ars.els-cdn.com/content/image/1-s2.0-S0169534722001409-gr3.jpg"><img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169534722001409-gr3.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://ars.els-cdn.com/content/image/1-s2.0-S0169534722001409-gr1.jpg"><img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169534722001409-gr1.jpg" class="img-fluid"></a></p>
+<p><a href="https://ars.els-cdn.com/content/image/1-s2.0-S0169534722001409-gr2.jpg"><img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169534722001409-gr2.jpg" class="img-fluid"></a></p>
+<p><a href="https://ars.els-cdn.com/content/image/1-s2.0-S0169534722001409-gr3.jpg"><img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169534722001409-gr3.jpg" class="img-fluid"></a></p>
 <ol start="8" type="1">
 <li><strong>Grames, Schwartz, Elphick. 2022.</strong></li>
 </ol>
 <p>Conceptual flowchart of a systematic process to develop conceptual models of alternative hypotheses in which (a) the scope of the research question is formally defined, (b) a systematic review is conducted, (c) researchers extract authors’ hypotheses as implied causal relationships that are (d) merged into a graphical model that can be (e) analysed to identify trends in scientific thinking.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://besjournals.onlinelibrary.wiley.com/cms/asset/91d10417-db46-4d70-9dc5-e9a95adbbc07/mee313940-fig-0001-m.png"><img src="https://besjournals.onlinelibrary.wiley.com/cms/asset/91d10417-db46-4d70-9dc5-e9a95adbbc07/mee313940-fig-0001-m.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://besjournals.onlinelibrary.wiley.com/cms/asset/91d10417-db46-4d70-9dc5-e9a95adbbc07/mee313940-fig-0001-m.png"><img src="https://besjournals.onlinelibrary.wiley.com/cms/asset/91d10417-db46-4d70-9dc5-e9a95adbbc07/mee313940-fig-0001-m.png" class="img-fluid"></a></p>
 <ol start="9" type="1">
 <li><strong>Magle &amp; Fidino 2018.</strong></li>
 </ol>
 <p>Transition probabilities between the three possible states a habitat fragment could transition between from 1 year to the next.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10531-018-1621-z/MediaObjects/10531_2018_1621_Fig1_HTML.png?as=webp"><img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10531-018-1621-z/MediaObjects/10531_2018_1621_Fig1_HTML.png?as=webp" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10531-018-1621-z/MediaObjects/10531_2018_1621_Fig1_HTML.png?as=webp"><img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10531-018-1621-z/MediaObjects/10531_2018_1621_Fig1_HTML.png?as=webp" class="img-fluid"></a></p>
 <ol start="10" type="1">
 <li><strong>Suraci et al.&nbsp;2022</strong></li>
 </ol>
 <p>Beyond spatial overlap: harnessing new technologies to resolve the complexities of predator–prey interactions.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://onlinelibrary.wiley.com/cms/asset/47975cfe-a942-4b75-8ff4-1dadff0ab58d/oik13362-fig-0002-m.png"><img src="https://onlinelibrary.wiley.com/cms/asset/47975cfe-a942-4b75-8ff4-1dadff0ab58d/oik13362-fig-0002-m.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://onlinelibrary.wiley.com/cms/asset/3b1998c2-6f7f-47ad-a0b1-aa1b5c9071bc/oik13362-fig-0003-m.png"><img src="https://onlinelibrary.wiley.com/cms/asset/3b1998c2-6f7f-47ad-a0b1-aa1b5c9071bc/oik13362-fig-0003-m.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://onlinelibrary.wiley.com/cms/asset/47975cfe-a942-4b75-8ff4-1dadff0ab58d/oik13362-fig-0002-m.png"><img src="https://onlinelibrary.wiley.com/cms/asset/47975cfe-a942-4b75-8ff4-1dadff0ab58d/oik13362-fig-0002-m.png" class="img-fluid"></a></p>
+<p><a href="https://onlinelibrary.wiley.com/cms/asset/3b1998c2-6f7f-47ad-a0b1-aa1b5c9071bc/oik13362-fig-0003-m.png"><img src="https://onlinelibrary.wiley.com/cms/asset/3b1998c2-6f7f-47ad-a0b1-aa1b5c9071bc/oik13362-fig-0003-m.png" class="img-fluid"></a></p>
 <ol start="11" type="1">
 <li><strong>Gamez &amp; Harris 2022</strong></li>
 </ol>
 <p>Conceptual diagram of a vertical forest ecosystem.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://www.cell.com/cms/attachment/3031e70c-11c0-437a-99a9-bca63609a279/gr2.jpg"><img src="https://www.cell.com/cms/attachment/3031e70c-11c0-437a-99a9-bca63609a279/gr2.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://www.cell.com/cms/attachment/3031e70c-11c0-437a-99a9-bca63609a279/gr2.jpg"><img src="https://www.cell.com/cms/attachment/3031e70c-11c0-437a-99a9-bca63609a279/gr2.jpg" class="img-fluid"></a></p>
 <ol start="12" type="1">
 <li><strong>Siren et al.&nbsp;2022.</strong></li>
 </ol>
 <p>Forecasting species distributions: Correlation does not equal causation.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://onlinelibrary.wiley.com/cms/asset/9149494c-a504-490c-a881-9704b868e81b/ddi13480-fig-0003-m.png"><img src="https://onlinelibrary.wiley.com/cms/asset/9149494c-a504-490c-a881-9704b868e81b/ddi13480-fig-0003-m.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://onlinelibrary.wiley.com/cms/asset/9149494c-a504-490c-a881-9704b868e81b/ddi13480-fig-0003-m.png"><img src="https://onlinelibrary.wiley.com/cms/asset/9149494c-a504-490c-a881-9704b868e81b/ddi13480-fig-0003-m.png" class="img-fluid"></a></p>
 <ol start="13" type="1">
 <li><strong>Ford &amp; Goheen. 2015.</strong></li>
 </ol>
 <p>Conceptual Framework for Evaluating Alternative Hypotheses for a Three-Level Trophic Cascade Involving a Large Carnivore, its Herbivorous Prey, and Plants.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://ars.els-cdn.com/content/image/1-s2.0-S0169534715002487-gr2.jpg"><img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169534715002487-gr2.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://ars.els-cdn.com/content/image/1-s2.0-S0169534715002487-gr2.jpg"><img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169534715002487-gr2.jpg" class="img-fluid"></a></p>
 <p><a href="#top" style="color:steelblue;">Back to top</a></p>
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-broadley_density-dependent_2019" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-broadley_density-dependent_2019" class="csl-entry" role="listitem">
 Broadley, Kate, A. Cole Burton, Tal Avgar, and Stan Boutin. 2019. <span>“Density-Dependent Space Use Affects Interpretation of Camera Trap Detection Rates.”</span> <em>Ecology and Evolution</em> 9 (24): 14031–41. <a href="https://doi.org/10.1002/ece3.5840">https://doi.org/10.1002/ece3.5840</a>.
 </div>
-<div id="ref-ford_trophic_2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-ford_trophic_2015" class="csl-entry" role="listitem">
 Ford, Adam T., and Jacob R. Goheen. 2015. <span>“Trophic <span>Cascades</span> by <span>Large</span> <span>Carnivores</span>: <span>A</span> <span>Case</span> for <span>Strong</span> <span>Inference</span> and <span>Mechanism</span>.”</span> <em>Trends in Ecology &amp; Evolution</em> 30 (12): 725–35. <a href="https://doi.org/10.1016/j.tree.2015.09.012">https://doi.org/10.1016/j.tree.2015.09.012</a>.
 </div>
-<div id="ref-gamez_conceptualizing_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-gamez_conceptualizing_2022" class="csl-entry" role="listitem">
 Gámez, Siria, and Nyeema C. Harris. 2022. <span>“Conceptualizing the <span>3D</span> Niche and Vertical Space Use.”</span> <em>Trends in Ecology &amp; Evolution</em> 37 (11): 953–62. <a href="https://doi.org/10.1016/j.tree.2022.06.012">https://doi.org/10.1016/j.tree.2022.06.012</a>.
 </div>
-<div id="ref-grames_systematic_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-grames_systematic_2022" class="csl-entry" role="listitem">
 Grames, Eliza M., Danielle Schwartz, and Chris S. Elphick. 2022. <span>“A Systematic Method for Hypothesis Synthesis and Conceptual Model Development.”</span> <em>Methods in Ecology and Evolution</em> 13 (9): 2078–87. <a href="https://doi.org/10.1111/2041-210X.13940">https://doi.org/10.1111/2041-210X.13940</a>.
 </div>
-<div id="ref-magle_long-term_2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-magle_long-term_2018" class="csl-entry" role="listitem">
 Magle, Seth B., and Mason Fidino. 2018. <span>“Long-Term Declines of a Highly Interactive Urban Species.”</span> <em>Biodiversity and Conservation</em> 27 (14): 3693–3706. <a href="https://doi.org/10.1007/s10531-018-1621-z">https://doi.org/10.1007/s10531-018-1621-z</a>.
 </div>
-<div id="ref-naves-alegre_scavenger_nodate" class="csl-entry" role="doc-biblioentry">
+<div id="ref-naves-alegre_scavenger_nodate" class="csl-entry" role="listitem">
 Naves-Alegre, L., Z. Morales-Reyes, J. A. Sánchez-Zapata, and E. Sebastián-González. n.d. <span>“Scavenger Assemblages Are Structured by Complex Competition and Facilitation Processes Among Vultures.”</span> <em>Journal of Zoology</em> n/a (n/a). Accessed October 16, 2022. <a href="https://doi.org/10.1111/jzo.13016">https://doi.org/10.1111/jzo.13016</a>.
 </div>
-<div id="ref-palmer_dynamic_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-palmer_dynamic_2022" class="csl-entry" role="listitem">
 Palmer, Meredith S., Kaitlyn M. Gaynor, Justine A. Becker, Joel O. Abraham, Matthew A. Mumma, and Robert M. Pringle. 2022. <span>“Dynamic Landscapes of Fear: Understanding Spatiotemporal Risk.”</span> <em>Trends in Ecology &amp; Evolution</em> 37 (10): 911–25. <a href="https://doi.org/10.1016/j.tree.2022.06.007">https://doi.org/10.1016/j.tree.2022.06.007</a>.
 </div>
-<div id="ref-pilowsky_process-explicit_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-pilowsky_process-explicit_2022" class="csl-entry" role="listitem">
 Pilowsky, Julia A., Robert K. Colwell, Carsten Rahbek, and Damien A. Fordham. 2022. <span>“Process-Explicit Models Reveal the Structure and Dynamics of Biodiversity Patterns.”</span> <em>Science Advances</em> 8 (31): eabj2271. <a href="https://doi.org/10.1126/sciadv.abj2271">https://doi.org/10.1126/sciadv.abj2271</a>.
 </div>
-<div id="ref-riva_six_2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-riva_six_2020" class="csl-entry" role="listitem">
 Riva, Federico, and Scott E. Nielsen. 2020. <span>“Six Key Steps for Functional Landscape Analyses of Habitat Change.”</span> <em>Landscape Ecology</em> 35 (7): 1495–1504. <a href="https://doi.org/10.1007/s10980-020-01048-y">https://doi.org/10.1007/s10980-020-01048-y</a>.
 </div>
-<div id="ref-rodrigues_cerrado_nodate" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rodrigues_cerrado_nodate" class="csl-entry" role="listitem">
 Rodrigues, Ariane A., Marcia N. Macedo, Divino V. Silvério, Leandro Maracahipes, Michael T. Coe, Paulo M. Brando, Julia Z. Shimbo, Raoni Rajão, Britaldo Soares-Filho, and Mercedes M. C. Bustamante. n.d. <span>“Cerrado Deforestation Threatens Regional Climate and Water Availability for Agriculture and Ecosystems.”</span> <em>Global Change Biology</em> n/a (n/a). Accessed October 16, 2022. <a href="https://doi.org/10.1111/gcb.16386">https://doi.org/10.1111/gcb.16386</a>.
 </div>
-<div id="ref-siren_forecasting_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-siren_forecasting_2022" class="csl-entry" role="listitem">
 Sirén, Alexej P. K., Chris S. Sutherland, Ambarish V. Karmalkar, Matthew J. Duveneck, and Toni Lyn Morelli. 2022. <span>“Forecasting Species Distributions: <span>Correlation</span> Does Not Equal Causation.”</span> <em>Diversity and Distributions</em> 28 (4): 756–69. <a href="https://doi.org/10.1111/ddi.13480">https://doi.org/10.1111/ddi.13480</a>.
 </div>
-<div id="ref-soares_bird_nodate" class="csl-entry" role="doc-biblioentry">
+<div id="ref-soares_bird_nodate" class="csl-entry" role="listitem">
 Soares, Filipa C., Jorge M. Palmeirim, Ana S. L. Rodrigues, Pedro Cardoso, and Ricardo F. de Lima. n.d. <span>“Bird Extinctions and Introductions Are Causing Taxonomic and Functional Homogenization in Oceanic Islands.”</span> <em>Functional Ecology</em> n/a (n/a). Accessed October 15, 2022. <a href="https://doi.org/10.1111/1365-2435.14196">https://doi.org/10.1111/1365-2435.14196</a>.
 </div>
-<div id="ref-suraci_beyond_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-suraci_beyond_2022" class="csl-entry" role="listitem">
 Suraci, Justin P., Justine A. Smith, Simon Chamaillé-Jammes, Kaitlyn M. Gaynor, Menna Jones, Barney Luttbeg, Euan G. Ritchie, Michael J. Sheriff, and Andrew Sih. 2022. <span>“Beyond Spatial Overlap: Harnessing New Technologies to Resolve the Complexities of Predator–Prey Interactions.”</span> <em>Oikos</em> 2022 (8): e09004. <a href="https://doi.org/10.1111/oik.09004">https://doi.org/10.1111/oik.09004</a>.
 </div>
 </div>
@@ -437,9 +387,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -475,10 +439,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -488,8 +451,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -504,6 +476,238 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -545,12 +749,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://giscus.app/client.js" data-repo="gabspalomo/gabspalomo.github.io" data-repo-id="R_kgDOH9PFzQ" data-category="Blog" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">� Copyright 2024 Gabriela Palomo-Munoz. All text and images licensed CC-BY-NC 4.0.<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<ol start="3" type="A">
+<li>Copyright 2024 Gabriela Palomo-Munoz. All text and images licensed CC-BY-NC 4.0.</li>
+</ol>
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
+
 
 
 

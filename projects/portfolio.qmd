@@ -1,12 +1,7 @@
 ---
 # title: "Portfolio - Data Visualization"
-listing:
-  contents: publications
-  type: default
-  categories: false
-  sort-ui: false
-  filter-ui: false
-toc: false
+lightbox: true
+toc: true
 page-layout: full
 linestretch: 2
 title-block-banner: false
@@ -18,6 +13,13 @@ title-block-banner: false
 linkcolor: blue
 ---
 
-# TEST 
+# Tidy Tuesday contributions  
 
-## TEST TEST
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));grid-gap: 2em;"}
+
+![Groundhog day: dumbell plot](/images/tidytuesday/2024-01-30.jpg){group="my-gallery"}
+
+![UNESCO heritage sites: waffle plot](/images/tidytuesday/2024-02-06.jpg){group="my-gallery"}
+
+:::
