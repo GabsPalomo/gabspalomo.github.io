@@ -1,7 +1,6 @@
 ---
 title: "Clip arts"
 listing:
-  contents: clip arts
   # sort: "date desc"
   type: default
   categories: false

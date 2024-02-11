@@ -1,7 +1,6 @@
 ---
 title: "Peer-reviewed publications"
 listing:
-  contents: publications
   type: default
   categories: false
   sort-ui: false

@@ -1,0 +1,91 @@
+[
+  {
+    "listing": "/publications.html",
+    "items": [
+      "/about.html",
+      "/cv.html",
+      "/silhouettes.html",
+      "/index.html",
+      "/blog/posts/attributions_rphylopic/index.html",
+      "/presentations/intro_ggplot2/index.html",
+      "/slides/intro_ggplot2/intro_ggplot2.html",
+      "/blog/posts/make_email_easy_to_find/index.html",
+      "/blog.html",
+      "/old_404.html",
+      "/blog/posts/rphylopic_baser/index.html",
+      "/blog/posts/rphylopic_ggplot2/index.html",
+      "/presentations.html",
+      "/blog/posts/scientific-diagrams/index.html",
+      "/projects/portfolio.html",
+      "/blog/posts/welcome/index.html",
+      "/projects.html"
+    ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/blog/posts/attributions_rphylopic/index.html",
+      "/blog/posts/rphylopic_baser/index.html",
+      "/blog/posts/rphylopic_ggplot2/index.html",
+      "/blog/posts/make_email_easy_to_find/index.html",
+      "/blog/posts/scientific-diagrams/index.html",
+      "/blog/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/cv.html",
+    "items": [
+      "/about.html",
+      "/blog.html",
+      "/index.html",
+      "/old_404.html",
+      "/presentations.html",
+      "/projects/portfolio.html",
+      "/projects.html",
+      "/publications.html",
+      "/silhouettes.html",
+      "/slides/intro_ggplot2/intro_ggplot2.html",
+      "/presentations/intro_ggplot2/index.html",
+      "/blog/posts/attributions_rphylopic/index.html",
+      "/blog/posts/rphylopic_baser/index.html",
+      "/blog/posts/rphylopic_ggplot2/index.html",
+      "/blog/posts/make_email_easy_to_find/index.html",
+      "/blog/posts/scientific-diagrams/index.html",
+      "/blog/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/presentations.html",
+    "items": [
+      "/presentations/intro_ggplot2/index.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/portfolio.html"
+    ]
+  },
+  {
+    "listing": "/silhouettes.html",
+    "items": [
+      "/about.html",
+      "/cv.html",
+      "/index.html",
+      "/blog/posts/attributions_rphylopic/index.html",
+      "/presentations/intro_ggplot2/index.html",
+      "/slides/intro_ggplot2/intro_ggplot2.html",
+      "/blog/posts/make_email_easy_to_find/index.html",
+      "/blog.html",
+      "/old_404.html",
+      "/publications.html",
+      "/blog/posts/rphylopic_baser/index.html",
+      "/blog/posts/rphylopic_ggplot2/index.html",
+      "/presentations.html",
+      "/blog/posts/scientific-diagrams/index.html",
+      "/projects/portfolio.html",
+      "/blog/posts/welcome/index.html",
+      "/projects.html"
+    ]
+  }
+]
