@@ -338,8 +338,8 @@ cookieconsent.run({
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>bct <span class="ot">&lt;-</span> <span class="fu">pick_phylopic</span>(<span class="at">name=</span><span class="st">'Cornus florida'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning in get_uuid(name = name, n = n, url = FALSE): Only 1 item(s) are
-available.</code></pre>
+<pre><code>Warning in get_uuid(name = name, n = n, filter = filter, url = FALSE): Only 1
+item(s) are available.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>This is the only image. Returning this uuid data.</code></pre>
@@ -478,7 +478,10 @@ $image_uuid
 [1] "8b16a223-4e27-4ce5-83a4-904b86287d49"
 
 $license
-[1] "https://creativecommons.org/licenses/by/4.0/"</code></pre>
+[1] "https://creativecommons.org/licenses/by/4.0/"
+
+$license_abbr
+[1] "CC BY 4.0"</code></pre>
 </div>
 </div>
 </section>
@@ -505,9 +508,10 @@ $license
 <pre><code>
 To cite rphylopic in publications, use the following citation:
 
-  Gearty, W. and Jones, L.A., 2023. rphylopic: An R package for
-  fetching, transforming, and visualising PhyloPic silhouettes.
-  bioRxiv. doi: 10.1101/2023.06.22.546191.
+  Gearty, W. and Jones, L.A. 2023. rphylopic: An R package for
+  fetching, transforming, and visualising PhyloPic silhouettes. Methods
+  in Ecology and Evolution, 14(11), 2700-2708. doi:
+  10.1111/2041-210X.14221.
 
 A BibTeX entry for LaTeX users is
 
@@ -515,8 +519,11 @@ A BibTeX entry for LaTeX users is
     title = {rphylopic: An R package for fetching, transforming, and visualising PhyloPic silhouettes},
     author = {William Gearty and Lewis A. Jones},
     year = {2023},
-    journal = {bioRxiv},
-    doi = {10.1101/2023.06.22.546191},
+    volume = {14},
+    number = {11},
+    pages = {2700-2708},
+    journal = {Methods in Ecology and Evolution},
+    doi = {10.1111/2041-210X.14221},
   }</code></pre>
 </div>
 </div>

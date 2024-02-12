@@ -1,7 +1,6 @@
 ---
 title: ""
 listing:
-  contents: projects
   sort: "date desc"
   type: default
   categories: false

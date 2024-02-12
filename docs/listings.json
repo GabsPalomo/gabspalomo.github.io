@@ -63,7 +63,23 @@
   {
     "listing": "/projects.html",
     "items": [
-      "/projects/portfolio.html"
+      "/about.html",
+      "/blog.html",
+      "/cv.html",
+      "/index.html",
+      "/old_404.html",
+      "/presentations.html",
+      "/projects/portfolio.html",
+      "/publications.html",
+      "/silhouettes.html",
+      "/slides/intro_ggplot2/intro_ggplot2.html",
+      "/presentations/intro_ggplot2/index.html",
+      "/blog/posts/attributions_rphylopic/index.html",
+      "/blog/posts/rphylopic_baser/index.html",
+      "/blog/posts/rphylopic_ggplot2/index.html",
+      "/blog/posts/make_email_easy_to_find/index.html",
+      "/blog/posts/scientific-diagrams/index.html",
+      "/blog/posts/welcome/index.html"
     ]
   },
   {

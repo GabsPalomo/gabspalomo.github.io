@@ -18,7 +18,7 @@ linkcolor: blue
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));grid-gap: 2em;"}
 
-![Groundhog day: dumbell plot](./images/tidytuesday/2024-01-30.jpg){group="my-gallery"}
+![Groundhog day: dumbell plot](/images/tidytuesday/2024-01-30.jpg){group="my-gallery"}
 
 ![UNESCO heritage sites: waffle plot](/images/tidytuesday/2024-02-06.jpg){group="my-gallery"}
 
