@@ -1,12 +1,5 @@
 ---
 title: "Clip arts"
-listing:
-  # contents: silhouettes
-  type: default
-  categories: false
-  sort-ui: false
-  filter-ui: false
-  fields: [title, subtitle, author, description, date] 
 page-layout: full
 title-block-banner: true
 ---
