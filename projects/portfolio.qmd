@@ -1,7 +1,7 @@
 ---
 # title: "Portfolio - Data Visualization"
 lightbox: true
-toc: true
+toc: false
 page-layout: full
 linestretch: 2
 title-block-banner: false
@@ -16,7 +16,7 @@ linkcolor: blue
 # Tidy Tuesday contributions  
 
 
-::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));grid-gap: 2em;"}
+::: {layout="[1,1,1]"}
 
 ![Groundhog day: dumbell plot](/images/tidytuesday/2024-01-30.jpg){group="my-gallery" height=3in}
 
