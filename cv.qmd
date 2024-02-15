@@ -1,13 +1,5 @@
 ---
 title: "CV in pictures"
-listing:
-  # contents: cv_in_pictures
-  sort: "date desc"
-  type: default
-  categories: false
-  sort-ui: false
-  filter-ui: false
-  fields: [title, subtitle, author, description, date] 
 page-layout: full
 title-block-banner: true
 format: 
