@@ -22,4 +22,6 @@ linkcolor: blue
 
 ![UNESCO heritage sites: waffle plot](/images/tidytuesday/2024-02-06.jpg){group="my-gallery"}
 
+![Valentine's Day: horizontal bar and line with text plots](/images/tidytuesday/2024-02-13.jpg){groups="my-gallery"}
+
 :::
