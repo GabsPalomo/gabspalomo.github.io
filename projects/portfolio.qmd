@@ -15,13 +15,21 @@ linkcolor: blue
 
 # Tidy Tuesday contributions  
 
+These are my contributions to [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) which is a weekly social data project. I share my contributions on [Fosstodon](https://fosstodon.org/@gabbspalomo), [X or Twitter](https://twitter.com/gabbspalomo), and [Bluesky](https://bsky.app/profile/gabspalomo.bsky.social). Feedback is always welcome! And if you find my code useful, please either fork my repo or let me know. 
 
 ::: {layout="[1,1,1]"}
 
-![Groundhog day: dumbell plot](/images/tidytuesday/2024-01-30.jpg){group="my-gallery" height=3in}
+![2024-01-30: Groundhog day](/images/tidytuesday/2024-01-30.jpg){group="my-gallery" height=3in}
 
-![UNESCO heritage sites: waffle plot](/images/tidytuesday/2024-02-06.jpg){group="my-gallery" height=3in}
+![2024-02-06: UNESCO heritage sites](/images/tidytuesday/2024-02-06.jpg){group="my-gallery" height=3in}
 
-![Valentine's Day: horizontal bar and line with text plots](/images/tidytuesday/2024-02-13.jpg){group="my-gallery" height=3in}
+![2024-02-13: Valentine's Day](/images/tidytuesday/2024-02-13.jpg){group="my-gallery" height=3in}
+
+:::
+
+::: {layout="[1,1,1]"}
+
+![2024-03-05: Trashwheeler](/images/tidytuesday/2024_03_05_trashwheeler.jpg){group="my-gallery" height=3in}
+
 
 :::
