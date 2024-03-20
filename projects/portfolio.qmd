@@ -29,6 +29,8 @@ These are my contributions to [#TidyTuesday](https://github.com/rfordatascience/
 
 ::: {layout="[1,1,1]"}
 
+![2024-02-20: ISC Grants](/images/tidytuesday/2024_02_20_bubble_plot.jpg){group="my-gallery" height=3in}
+
 ![2024-03-05: Trashwheeler](/images/tidytuesday/2024_03_05_trashwheeler.jpg){group="my-gallery" height=3in}
 
 
