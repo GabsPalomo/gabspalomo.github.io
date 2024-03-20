@@ -7,7 +7,7 @@ author:
     url: https://gabspalomo.github.io
 format: 
   revealjs: 
-    # embed-resources: true
+    embed-resources: true
     # chalkboard: true
     standalone: true
     incremental: true
@@ -19,9 +19,9 @@ format:
     # height: 720
     code-copy: true
     theme: [default, my_custom.scss]
-    footer: "Guest lecture for Data Management and Analyses for Environmental Science - October 2023"
+    footer: "Guest lecture for Data Management and Analyses for Environmental Science - March 2024"
 title-slide-attributes: 
-  data-background-image: images/ggplot2.png
+  data-background-image: ./images/ggplot2.png
   data-background-position: 50% 10%
   data-background-size: 10%
   data-background-opacity: "0.5"
@@ -178,26 +178,24 @@ penguins %>%
 #| eval: false 
 #| code-line-numbers: "1-3|4|5|6|7|8" 
 
-ggplot(data = data,
-       mapping = aes(x = x, 
-                     y = y)) +
-  geom_function( ) +
-  coordinate_function( ) +
-  facet_function( ) +
-  scale_function( ) +
-  theme_function( )
+ggplot(data = data, mapping = aes(x = x, y = y)) +
+  geom_*( ) +
+  coord_*( ) +
+  facet_*( ) +
+  scale_*( ) +
+  theme_*( )
 ```
 </div>
 
 :::
 
-## Mapping components :: ggplot() {.center}
+## ggplot() {.center}
 
 :::: {.columns}
 
 ::: {.column width="60%"}
 
-:::{.fragment .fade-in}
+::: {.fragment .fade-in}
 
 ```{r}
 #| echo: true
@@ -216,23 +214,24 @@ ggplot(data = penguins,
 
 :::{.fragment .fade-in}
 
-- `ggplot()` : initilizes the plot and creates the graphing space.
+- `ggplot()`: graphing space.
+
 - `data` 
-  - data frame with the columns to plot. 
+  - data frame or tibble in **long** format. 
   - reference object for all subsequent arguments and functions. 
-  - **long** format.
 - `aes()` 
-  - defines the axes. 
-  - x=x, y=y, depends on plots, some only need x=x. 
-  - uses column names. 
+  - defines the axes and uses column names. 
+  - x=x, y=y, some only need x=x. 
   - x, y included here will be used to build the entire plot. 
-  
+    
+
 :::
+
 :::
 
 ::::
 
-## Mapping components :: geoms 
+## geom_* :: different types of plots
 
 :::: {.columns}
 ::: {.column width="65%"}
@@ -243,33 +242,28 @@ ggplot(data = penguins,
 #| code-line-numbers: "2-9"
 
 ggplot(data = data) +
-  geom_function(aes(x = x, 
-                    y = y, 
-                    color=v, # points, lines, error bars
-                    shape=w, # see pch numbers 
-                    fill=z), # bars, columns, boxplots, violins
-                alpha=0.3, # transparency 
-                position = position_dodge() # bar plots are not stacked
-                ) 
+  geom_*(aes(x = x, 
+             y = y, 
+             color = color, # points, lines, error bars
+             shape = shape, # see pch numbers 
+             fill = fill), # bars, columns, boxplots, violins
+         alpha=0.3, # transparency 
+         shape = pch, # change the point shape; this is a number or vector of numbers
+         position = position_dodge() # bar plots are not stacked
+  ) 
 ```
 
-**PCH codes**
-
 :::  {layout="[[1], [-1]]"}
-
-![](./images/pch-codes.png){width=300 fig-align='center'}
+![](./images/pch-codes.png){width=200 fig-align='center'}
 :::
 
 :::
 
-::: {.column width="35%"}
-- `geom_function()` different types of plots.  
-  - x,y, but some only need x. 
-  - uses column names. 
-  - x, y included here used only for this specific geom. 
-  - Other aesthetic arguments: `color`, `fill`, `shape` (pch) take column names.
-  - Static arguments outside the `aes()` are `color`, `fill`, `shape` and only take one value. 
-  - Other arguments outside `aes()` are `alpha` (transparency, 0-1), `position`, `size`, or `linewidth`. 
+::: {.column width="35%"}  
+- x,y, but some only need x. 
+- x, y included here used only for this specific geom. 
+- Other aesthetic arguments: `color`, `fill`, `shape` (pch) take column names.
+- Static arguments outside the `aes()`: `color`, `fill`, `shape`, `alpha` (transparency, 0-1), `position`, `size`, or `linewidth`. 
 
 :::
 
@@ -405,41 +399,136 @@ plot_grid(p1, p2, p3, p4, p5, p6, p7, p8, p9)
 
 ```
 
-## coord_function() :: optional {.center}
+# Pause to code some plots 
+
+## scale_*() 
+
+::: {.nonincremental}
+
+- Lets you change the visual values of a group aesthetic: colors, fills, shapes (scale_manual). 
+- Discrete and continuous scales. 
+- Predetermined color palettes: ggthemes::scale_color_colorblind()
+- Use `xlab('x-axis title')` or `ylab('y-axis title')` or `ggtitle('title)`
+- `labs(title, subtitle, caption, alt)`
+- Change x- or y- limits by using `x_lims(c(0,1))`
+- Find more info [here](https://ggplot2.tidyverse.org/reference/index.html#scales)
+
+:::
+
+## scale_*() 
 
 :::: {.columns}
-::: {.column width="65%"}
+::: {.column width="50%"}
 
 ```{r}
 #| echo: true
-#| eval: false 
-#| code-line-numbers: "2-9"
+#| eval: true 
+#| code-line-numbers: "5"
+#| fig-height: 6
 
-ggplot(data = data) +
-  geom_function(aes(x = x, 
-                    y = y))+
-  coord_function()
+ggplot(penguins) +
+  geom_point(aes(x = body_mass_g, 
+                 y = flipper_length_mm, 
+                 color=island), size=3)+
+  ggthemes::scale_color_colorblind()
 
 ```
 
 :::
 
-::: {.column width="35%"}
+::: {.column width="50%"}
   
-  - `coord_flip()` will flip the x and y axis. 
-  - `coord_cartesian` will set limits on the coordinate system, e.g., zoom the plot.
-  - `coord_trans` will apply different transformations to x or y variables.  
+```{r}
+#| echo: true
+#| eval: true 
+#| code-line-numbers: "5"
+#| fig-height: 6
+
+ggplot(penguins) +
+  geom_point(aes(x = body_mass_g, 
+                 y = flipper_length_mm, 
+                 shape=island), size = 3.5)+
+  scale_shape_discrete() #up to 6 discernible shapes
+
+```
 
 :::
 
 ::::
 
+## scale_*() 
 
-## facet_function() :: optional 
 ::: {.nonincremental}
+
+`scale_*()` functions can modify:
+
+- **Position** via `scale_x_*()` or `scale_y_*()`
+- **Colors** via `scale_color_*()` and `scale_fill_*()`
+- **Transparency** via `scale_alpha_*()`
+- **Sizes** via `scale_size_*()`
+- **Shapes** via `scale_shape_*()`
+
+  - `*` can take the following forms:
+    - **axes:** continuous, discrete, reverse, log10, sqrt, date, time. 
+    - **Colors & fill:** continuous, discrete, manual, gradient, hue, brewer.
+    - **Transparency:**  continuous, discrete, manual, ordinal, identity, date.
+    - **Sizes:**  continuous, discrete, manual, ordinal, identity, area, date.
+    - **Shapes and line types:**  continuous, discrete, manual, ordinal, identity.
+  
+:::
+
+
+## Color palettes 
+
+- Available packages with predefined palettes: 
+
+  - [colorblindr](https://github.com/clauswilke/colorblindr)
+  - [viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
+  - [ggthemes](https://jrnold.github.io/ggthemes/reference/index.html)
+  - [LaCroixPalette](https://github.com/johannesbjork/LaCroixColoR)
+  - [ColorBrewer](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html)
+  - [WesAnderson](https://github.com/karthik/wesanderson)
+  - [MoMa](https://github.com/BlakeRMills/MoMAColors)
+  
+- This is a comprehensive list of [color palettes in r](https://github.com/EmilHvitfeldt/r-color-palettes) curated by Emil Hvitfeldt. 
+
+
+## Color palette types: 
+
+:::: {.columns}
+::: {.column width="50%" .nonincremental}
+
+- Generally, there are 3 types of palettes: 
+
+  - **Sequential:** data that goes from low to high. 
+  - **Diverging:** put equal emphasis on mid-range values and extremes. 
+  - **Qualitative:** best for categorical data. Visual differences are given by hues. 
+
+:::
+
+:::{.column width=50% .nonincremental}
+```{r}
+#| echo: false 
+#| fig.height: 12
+
+library(RColorBrewer)
+par(mar=c(3,4,2,2))
+display.brewer.all()
+```
+:::
+
+::::
+
+
+
+## facet_*()
+
+::: {.nonincremental}
+
 - We have two options `facet_wrap()` and `facet_grid()`.
 - Facets divide a plot into subplots based on a variable in the dataset. 
 - Allows for comparison across groups. 
+
 :::
 
 :::: {.columns}
@@ -481,119 +570,14 @@ ggplot(penguins) +
 
 ::::
 
-## facet_function() :: optional 
+## facet_*() 
 ::: {.nonincremental .center}
 ![](./images/facets.png)
 :::
 
-## scale_function() :: optional 
-
-::: {.nonincremental}
-- Lets you change the visual values of a group aesthetic: colors, fills, shapes (scale_manual). 
-- Discrete and continuous scales. 
-- Predetermined color palettes: ggthemes::scale_color_colorblind()
-:::
-
-:::: {.columns}
-::: {.column width="50%"}
-
-```{r}
-#| echo: true
-#| eval: true 
-#| code-line-numbers: "5"
-#| fig-height: 6
-
-ggplot(penguins) +
-  geom_point(aes(x = body_mass_g, 
-                 y = flipper_length_mm, 
-                 color=island), size=3)+
-  ggthemes::scale_color_colorblind()
-
-```
-
-:::
-
-::: {.column width="50%"}
-  
-```{r}
-#| echo: true
-#| eval: true 
-#| code-line-numbers: "5"
-#| fig-height: 6
-
-ggplot(penguins) +
-  geom_point(aes(x = body_mass_g, 
-                 y = flipper_length_mm, 
-                 shape=island), size = 3.5)+
-  scale_shape_discrete() #up to 6 discernible shapes
-
-```
-
-:::
-
-::::
-
-## scale_function() :: optional 
-
-::: {.nonincremental}
-
-`scale_*()` functions can modify:
-
-- **Position** via `scale_x_*()` or `scale_y_*()`
-- **Colors** via `scale_color_*()` and `scale_fill_*()`
-- **Transparency** via `scale_alpha_*()`
-- **Sizes** via `scale_size_*()`
-- **Shapes** via `scale_shape_*()`
-
-  - `*` can take the following forms:
-    - **axes:** continuous, discrete, reverse, log10, sqrt, date, time. 
-    - **Colors & fill:** continuous, discrete, manual, gradient, hue, brewer.
-    - **Transparency:**  continuous, discrete, manual, ordinal, identity, date.
-    - **Sizes:**  continuous, discrete, manual, ordinal, identity, area, date.
-    - **Shapes and linetypes:**  continuous, discrete, manual, ordinal, identity.
-  
-:::
 
 
-## Color palettes 
-
-:::: {.columns}
-::: {.column width="50%" .nonincremental}
-
-- Available packages with predefined palettes: 
-
-  - [colorblindr](https://github.com/clauswilke/colorblindr)
-  - [viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
-  - [ggthemes](https://jrnold.github.io/ggthemes/reference/index.html)
-  - [LaCroixPalette](https://github.com/johannesbjork/LaCroixColoR)
-  - [ColorBrewer](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html)
-  - [WesAnderson](https://github.com/karthik/wesanderson)
-  - [MoMa](https://github.com/BlakeRMills/MoMAColors)
-  
-- This is a comprehensive list of [color palettes in r](https://github.com/EmilHvitfeldt/r-color-palettes) curated by Emil Hvitfeldt. 
-
-- Generally, there are 3 types of palettes: 
-
-  - **Sequential:** data that goes from low to high. 
-  - **Diverging:** put equal emphasis on mid-range values and extremes. 
-  - **Qualitative:** best for categorical data. Visual differences are given by hues. 
-
-:::
-
-:::{.column width=50% .nonincremental}
-```{r}
-#| echo: false 
-#| fig.height: 12
-
-library(RColorBrewer)
-par(mar=c(3,4,2,2))
-display.brewer.all()
-```
-:::
-
-::::
-
-## theme_function() :: optional 
+## theme_*(): pre-established themes. 
 
 :::: {.columns}
 
@@ -609,7 +593,7 @@ ggplot(penguins) +
   geom_point(aes(x = body_mass_g, 
                  y = flipper_length_mm, 
                  color=island))+
-  theme_linedraw()
+  theme_classic()
 
 ```
 
@@ -638,7 +622,69 @@ ggplot(penguins) +
 
 ::::
 
-# Let's create some plots 
+
+## theme_*(): modifying elements in the theme. 
+
+:::: {.columns}
+
+::: {.column width="60%" .incremental}
+
+```{r}
+#| echo: true
+#| eval: true 
+#| code-line-numbers: "5"
+#| fig-height: 8
+#| fig-show: hide
+
+ggplot(penguins) +
+  geom_point(aes(x = body_mass_g, 
+                 y = flipper_length_mm, 
+                 color=island))+
+  theme(plot.background = element_rect(colour = 'green', fill = 'gray80'), 
+        panel.background = element_rect(colour = 'orange', size = 3, fill = 'pink'),
+        panel.grid.major = element_line(color = 'blue', size = 2), 
+        legend.position = 'bottom', 
+        axis.title = element_text(size = 20))
+
+```
+
+:::
+
+::: {.column width="40%"}
+
+```{r}
+#| echo: false
+#| eval: true 
+#| code-line-numbers: "5"
+#| fig-height: 10
+
+ggplot(penguins) +
+  geom_point(aes(x = body_mass_g, 
+                 y = flipper_length_mm, 
+                 color=island))+
+  theme(plot.background = element_rect(colour = 'green', fill = 'gray80', linetype = 'longdash', size = 4), 
+        panel.background = element_rect(colour = 'orange', size = 3, fill = 'pink'),
+        panel.grid.major = element_line(color = 'blue', size = 2), 
+        legend.position = 'bottom', 
+        axis.title = element_text(size = 30))
+
+```
+
+:::
+
+::::
+
+
+## theme_*(): modifying elements in the theme. 
+
+- This is my favorite theme [cheatsheet](https://github.com/claragranell/ggplot2/blob/main/ggplot_theme_system_cheatsheet.pdf)
+
+- [Theme cheatsheet 2](https://henrywang.nl/ggplot2-theme-elements-demonstration/)
+
+- [Theme cheatsheet 3](https://isabella-b.com/blog/ggplot2-theme-elements-reference/)
+
+
+# Let's improve our initial plots 
 
 
 ## Auxiliary packages {.center}

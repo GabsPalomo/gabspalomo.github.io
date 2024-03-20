@@ -39,21 +39,21 @@
     "href": "slides/intro_ggplot2/intro_ggplot2.html#mapping-components",
     "title": "Introduction to ggplot2",
     "section": "Mapping components",
-    "text": "Mapping components\n\n\n6 main building blocks, each with their own arguments.\n\n\n\n\n\n\n\n\nggplot(data = data,\n       mapping = aes(x = x, \n                     y = y)) +\n  geom_function( ) +\n  coordinate_function( ) +\n  facet_function( ) +\n  scale_function( ) +\n  theme_function( )"
+    "text": "Mapping components\n\n\n6 main building blocks, each with their own arguments.\n\n\n\n\n\n\n\n\nggplot(data = data, mapping = aes(x = x, y = y)) +\n  geom_*( ) +\n  coord_*( ) +\n  facet_*( ) +\n  scale_*( ) +\n  theme_*( )"
   },
   {
-    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#mapping-components-ggplot",
-    "href": "slides/intro_ggplot2/intro_ggplot2.html#mapping-components-ggplot",
+    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#ggplot",
+    "href": "slides/intro_ggplot2/intro_ggplot2.html#ggplot",
     "title": "Introduction to ggplot2",
-    "section": "Mapping components :: ggplot()",
-    "text": "Mapping components :: ggplot()\n\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = body_mass_g, \n                     y = flipper_length_mm)) \n\n\n\n\n\n\n\n\n\n\n\n\nggplot() : initilizes the plot and creates the graphing space.\ndata\n\ndata frame with the columns to plot.\nreference object for all subsequent arguments and functions.\nlong format.\n\naes()\n\ndefines the axes.\nx=x, y=y, depends on plots, some only need x=x.\nuses column names.\nx, y included here will be used to build the entire plot."
+    "section": "ggplot()",
+    "text": "ggplot()\n\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = body_mass_g, \n                     y = flipper_length_mm)) \n\n\n\n\n\n\n\n\n\n\n\n\nggplot(): graphing space.\ndata\n\ndata frame or tibble in long format.\nreference object for all subsequent arguments and functions.\n\naes()\n\ndefines the axes and uses column names.\nx=x, y=y, some only need x=x.\nx, y included here will be used to build the entire plot."
   },
   {
-    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#mapping-components-geoms",
-    "href": "slides/intro_ggplot2/intro_ggplot2.html#mapping-components-geoms",
+    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#geom_-different-types-of-plots",
+    "href": "slides/intro_ggplot2/intro_ggplot2.html#geom_-different-types-of-plots",
     "title": "Introduction to ggplot2",
-    "section": "Mapping components :: geoms",
-    "text": "Mapping components :: geoms\n\n\n\nggplot(data = data) +\n  geom_function(aes(x = x, \n                    y = y, \n                    color=v, # points, lines, error bars\n                    shape=w, # see pch numbers \n                    fill=z), # bars, columns, boxplots, violins\n                alpha=0.3, # transparency \n                position = position_dodge() # bar plots are not stacked\n                ) \n\nPCH codes\n\n\n\n\n\n\n\n\n\n\n\n\n\ngeom_function() different types of plots.\n\nx,y, but some only need x.\nuses column names.\nx, y included here used only for this specific geom.\nOther aesthetic arguments: color, fill, shape (pch) take column names.\nStatic arguments outside the aes() are color, fill, shape and only take one value.\nOther arguments outside aes() are alpha (transparency, 0-1), position, size, or linewidth."
+    "section": "geom_* :: different types of plots",
+    "text": "geom_* :: different types of plots\n\n\n\nggplot(data = data) +\n  geom_*(aes(x = x, \n             y = y, \n             color = color, # points, lines, error bars\n             shape = shape, # see pch numbers \n             fill = fill), # bars, columns, boxplots, violins\n         alpha=0.3, # transparency \n         shape = pch, # change the point shape; this is a number or vector of numbers\n         position = position_dodge() # bar plots are not stacked\n  ) \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx,y, but some only need x.\nx, y included here used only for this specific geom.\nOther aesthetic arguments: color, fill, shape (pch) take column names.\nStatic arguments outside the aes(): color, fill, shape, alpha (transparency, 0-1), position, size, or linewidth."
   },
   {
     "objectID": "slides/intro_ggplot2/intro_ggplot2.html#different-types-of-geoms",
@@ -63,53 +63,74 @@
     "text": "Different types of geoms"
   },
   {
-    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#coord_function-optional",
-    "href": "slides/intro_ggplot2/intro_ggplot2.html#coord_function-optional",
+    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#scale_",
+    "href": "slides/intro_ggplot2/intro_ggplot2.html#scale_",
     "title": "Introduction to ggplot2",
-    "section": "coord_function() :: optional",
-    "text": "coord_function() :: optional\n\n\n\nggplot(data = data) +\n  geom_function(aes(x = x, \n                    y = y))+\n  coord_function()\n\n\n\ncoord_flip() will flip the x and y axis.\ncoord_cartesian will set limits on the coordinate system, e.g., zoom the plot.\ncoord_trans will apply different transformations to x or y variables."
+    "section": "scale_*()",
+    "text": "scale_*()\n\n\nLets you change the visual values of a group aesthetic: colors, fills, shapes (scale_manual).\nDiscrete and continuous scales.\nPredetermined color palettes: ggthemes::scale_color_colorblind()\nUse xlab('x-axis title') or ylab('y-axis title') or ggtitle('title)\nlabs(title, subtitle, caption, alt)\nChange x- or y- limits by using x_lims(c(0,1))\nFind more info here"
   },
   {
-    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#facet_function-optional",
-    "href": "slides/intro_ggplot2/intro_ggplot2.html#facet_function-optional",
+    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#scale_-1",
+    "href": "slides/intro_ggplot2/intro_ggplot2.html#scale_-1",
     "title": "Introduction to ggplot2",
-    "section": "facet_function() :: optional",
-    "text": "facet_function() :: optional\n\n\nWe have two options facet_wrap() and facet_grid().\nFacets divide a plot into subplots based on a variable in the dataset.\nAllows for comparison across groups.\n\n\n\n\n\nggplot(penguins) +\n  geom_point(aes(x = body_mass_g, \n                 y = flipper_length_mm, \n                 color=island))+\n  facet_wrap(~island)\n\n\n\n\n\n\n\n\n\n\nggplot(penguins) +\n  geom_point(aes(x = body_mass_g, \n                 y = flipper_length_mm, \n                 color=island))+\n  facet_grid(species~island)"
+    "section": "scale_*()",
+    "text": "scale_*()\n\n\n\nggplot(penguins) +\n  geom_point(aes(x = body_mass_g, \n                 y = flipper_length_mm, \n                 color=island), size=3)+\n  ggthemes::scale_color_colorblind()\n\n\n\n\n\n\n\n\n\n\nggplot(penguins) +\n  geom_point(aes(x = body_mass_g, \n                 y = flipper_length_mm, \n                 shape=island), size = 3.5)+\n  scale_shape_discrete() #up to 6 discernible shapes"
   },
   {
-    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#facet_function-optional-1",
-    "href": "slides/intro_ggplot2/intro_ggplot2.html#facet_function-optional-1",
+    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#scale_-2",
+    "href": "slides/intro_ggplot2/intro_ggplot2.html#scale_-2",
     "title": "Introduction to ggplot2",
-    "section": "facet_function() :: optional",
-    "text": "facet_function() :: optional"
-  },
-  {
-    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#scale_function-optional",
-    "href": "slides/intro_ggplot2/intro_ggplot2.html#scale_function-optional",
-    "title": "Introduction to ggplot2",
-    "section": "scale_function() :: optional",
-    "text": "scale_function() :: optional\n\n\nLets you change the visual values of a group aesthetic: colors, fills, shapes (scale_manual).\nDiscrete and continuous scales.\nPredetermined color palettes: ggthemes::scale_color_colorblind()\n\n\n\n\n\nggplot(penguins) +\n  geom_point(aes(x = body_mass_g, \n                 y = flipper_length_mm, \n                 color=island), size=3)+\n  ggthemes::scale_color_colorblind()\n\n\n\n\n\n\n\n\n\n\nggplot(penguins) +\n  geom_point(aes(x = body_mass_g, \n                 y = flipper_length_mm, \n                 shape=island), size = 3.5)+\n  scale_shape_discrete() #up to 6 discernible shapes"
-  },
-  {
-    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#scale_function-optional-1",
-    "href": "slides/intro_ggplot2/intro_ggplot2.html#scale_function-optional-1",
-    "title": "Introduction to ggplot2",
-    "section": "scale_function() :: optional",
-    "text": "scale_function() :: optional\n\nscale_*() functions can modify:\n\nPosition via scale_x_*() or scale_y_*()\nColors via scale_color_*() and scale_fill_*()\nTransparency via scale_alpha_*()\nSizes via scale_size_*()\nShapes via scale_shape_*()\n\n* can take the following forms:\n\naxes: continuous, discrete, reverse, log10, sqrt, date, time.\nColors & fill: continuous, discrete, manual, gradient, hue, brewer.\nTransparency: continuous, discrete, manual, ordinal, identity, date.\nSizes: continuous, discrete, manual, ordinal, identity, area, date.\nShapes and linetypes: continuous, discrete, manual, ordinal, identity."
+    "section": "scale_*()",
+    "text": "scale_*()\n\nscale_*() functions can modify:\n\nPosition via scale_x_*() or scale_y_*()\nColors via scale_color_*() and scale_fill_*()\nTransparency via scale_alpha_*()\nSizes via scale_size_*()\nShapes via scale_shape_*()\n\n* can take the following forms:\n\naxes: continuous, discrete, reverse, log10, sqrt, date, time.\nColors & fill: continuous, discrete, manual, gradient, hue, brewer.\nTransparency: continuous, discrete, manual, ordinal, identity, date.\nSizes: continuous, discrete, manual, ordinal, identity, area, date.\nShapes and line types: continuous, discrete, manual, ordinal, identity."
   },
   {
     "objectID": "slides/intro_ggplot2/intro_ggplot2.html#color-palettes",
     "href": "slides/intro_ggplot2/intro_ggplot2.html#color-palettes",
     "title": "Introduction to ggplot2",
     "section": "Color palettes",
-    "text": "Color palettes\n\n\n\nAvailable packages with predefined palettes:\n\ncolorblindr\nviridis\nggthemes\nLaCroixPalette\nColorBrewer\nWesAnderson\nMoMa\n\nThis is a comprehensive list of color palettes in r curated by Emil Hvitfeldt.\nGenerally, there are 3 types of palettes:\n\nSequential: data that goes from low to high.\nDiverging: put equal emphasis on mid-range values and extremes.\nQualitative: best for categorical data. Visual differences are given by hues."
+    "text": "Color palettes\n\nAvailable packages with predefined palettes:\n\ncolorblindr\nviridis\nggthemes\nLaCroixPalette\nColorBrewer\nWesAnderson\nMoMa\n\nThis is a comprehensive list of color palettes in r curated by Emil Hvitfeldt."
   },
   {
-    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#theme_function-optional",
-    "href": "slides/intro_ggplot2/intro_ggplot2.html#theme_function-optional",
+    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#color-palette-types",
+    "href": "slides/intro_ggplot2/intro_ggplot2.html#color-palette-types",
     "title": "Introduction to ggplot2",
-    "section": "theme_function() :: optional",
-    "text": "theme_function() :: optional\n\n\n\nggplot(penguins) +\n  geom_point(aes(x = body_mass_g, \n                 y = flipper_length_mm, \n                 color=island))+\n  theme_linedraw()\n\n\n\n\n\n\n\n\n\n\nModifies the overall visual defaults of a plot.\n\ntitles\nlabels\nfonts\nbackground\ngridlines\nlegends\n\ntheme() and theme_().\n\ntheme_ will have predefined themes.\ntheme will help you customize and personalize the overall look of your plot.\nYou can start with a predefined theme and then customize it with theme_.\n\ntheme() will include element_ functions to modify different areas.\nPredefined ggplot2 themes: theme_classic(), theme_gray(), theme_bw(), theme_linedraw(), theme_light(), theme_dark(), theme_minimal(), theme_void()"
+    "section": "Color palette types:",
+    "text": "Color palette types:\n\n\n\nGenerally, there are 3 types of palettes:\n\nSequential: data that goes from low to high.\nDiverging: put equal emphasis on mid-range values and extremes.\nQualitative: best for categorical data. Visual differences are given by hues."
+  },
+  {
+    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#facet_",
+    "href": "slides/intro_ggplot2/intro_ggplot2.html#facet_",
+    "title": "Introduction to ggplot2",
+    "section": "facet_*()",
+    "text": "facet_*()\n\n\nWe have two options facet_wrap() and facet_grid().\nFacets divide a plot into subplots based on a variable in the dataset.\nAllows for comparison across groups.\n\n\n\n\n\nggplot(penguins) +\n  geom_point(aes(x = body_mass_g, \n                 y = flipper_length_mm, \n                 color=island))+\n  facet_wrap(~island)\n\n\n\n\n\n\n\n\n\n\nggplot(penguins) +\n  geom_point(aes(x = body_mass_g, \n                 y = flipper_length_mm, \n                 color=island))+\n  facet_grid(species~island)"
+  },
+  {
+    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#facet_-1",
+    "href": "slides/intro_ggplot2/intro_ggplot2.html#facet_-1",
+    "title": "Introduction to ggplot2",
+    "section": "facet_*()",
+    "text": "facet_*()"
+  },
+  {
+    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#theme_-pre-established-themes.",
+    "href": "slides/intro_ggplot2/intro_ggplot2.html#theme_-pre-established-themes.",
+    "title": "Introduction to ggplot2",
+    "section": "theme_*(): pre-established themes.",
+    "text": "theme_*(): pre-established themes.\n\n\n\nggplot(penguins) +\n  geom_point(aes(x = body_mass_g, \n                 y = flipper_length_mm, \n                 color=island))+\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\nModifies the overall visual defaults of a plot.\n\ntitles\nlabels\nfonts\nbackground\ngridlines\nlegends\n\ntheme() and theme_().\n\ntheme_ will have predefined themes.\ntheme will help you customize and personalize the overall look of your plot.\nYou can start with a predefined theme and then customize it with theme_.\n\ntheme() will include element_ functions to modify different areas.\nPredefined ggplot2 themes: theme_classic(), theme_gray(), theme_bw(), theme_linedraw(), theme_light(), theme_dark(), theme_minimal(), theme_void()"
+  },
+  {
+    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#theme_-modifying-elements-in-the-theme.",
+    "href": "slides/intro_ggplot2/intro_ggplot2.html#theme_-modifying-elements-in-the-theme.",
+    "title": "Introduction to ggplot2",
+    "section": "theme_*(): modifying elements in the theme.",
+    "text": "theme_*(): modifying elements in the theme.\n\n\n\nggplot(penguins) +\n  geom_point(aes(x = body_mass_g, \n                 y = flipper_length_mm, \n                 color=island))+\n  theme(plot.background = element_rect(colour = 'green', fill = 'gray80'), \n        panel.background = element_rect(colour = 'orange', size = 3, fill = 'pink'),\n        panel.grid.major = element_line(color = 'blue', size = 2), \n        legend.position = 'bottom', \n        axis.title = element_text(size = 20))"
+  },
+  {
+    "objectID": "slides/intro_ggplot2/intro_ggplot2.html#theme_-modifying-elements-in-the-theme.-1",
+    "href": "slides/intro_ggplot2/intro_ggplot2.html#theme_-modifying-elements-in-the-theme.-1",
+    "title": "Introduction to ggplot2",
+    "section": "theme_*(): modifying elements in the theme.",
+    "text": "theme_*(): modifying elements in the theme.\n\nThis is my favorite theme cheatsheet\nTheme cheatsheet 2\nTheme cheatsheet 3"
   },
   {
     "objectID": "slides/intro_ggplot2/intro_ggplot2.html#auxiliary-packages",
@@ -123,7 +144,7 @@
     "href": "slides/intro_ggplot2/intro_ggplot2.html#free-online-books",
     "title": "Introduction to ggplot2",
     "section": "Free online books",
-    "text": "Free online books\n\nggplot2: Elegant Graphics for Data Analysis by Hadley Wickham\nR for Data Science by Hadley Wickham\nData Visualization: A Practical Introduction by Kieran Healy\nFundamentals of Data Visualization by Claus Wilke\nR Graph Gallery\nggplot2 Extension Gallery\n\n\n\n\nGuest lecture for Data Management and Analyses for Environmental Science - October 2023"
+    "text": "Free online books\n\nggplot2: Elegant Graphics for Data Analysis by Hadley Wickham\nR for Data Science by Hadley Wickham\nData Visualization: A Practical Introduction by Kieran Healy\nFundamentals of Data Visualization by Claus Wilke\nR Graph Gallery\nggplot2 Extension Gallery\n\n\n\n\nGuest lecture for Data Management and Analyses for Environmental Science - March 2024"
   },
   {
     "objectID": "presentations.html",
@@ -523,13 +544,6 @@
     "title": "Intro to ggplot2",
     "section": "Examples",
     "text": "Examples\nI try to keep the lecture to 45 min so I can live code the following examples with the students so they can code at the same time with me.\n\nPDF with examples"
-  },
-  {
-    "objectID": "presentations/intro_ggplot2/index.html#homework",
-    "href": "presentations/intro_ggplot2/index.html#homework",
-    "title": "Intro to ggplot2",
-    "section": "Homework",
-    "text": "Homework\nI give them these exercises at the end so they can work on them throughout the week. I took the data from the Valliere (2022) paper and cleaned it up a little so the data was easier for intro level students to work with.\n\nPDF with exercises\ndataset 1 and dataset 2\nOriginal paper"
   },
   {
     "objectID": "presentations/intro_ggplot2/index.html#my-favorite-cheatsheets",

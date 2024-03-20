@@ -29,7 +29,9 @@ website:
       - text: "CV"
         href: cv.qmd
       - text: "Presentations"
-        href: presentations.qmd 
+      - menu: 
+          - text: 'Introduction to ggplot2'
+            file: presentations/intro_ggplot2/index.qmd 
   cookie-consent:
     type: express
     style: simple

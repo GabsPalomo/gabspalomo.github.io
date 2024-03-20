@@ -11,21 +11,13 @@ Here are the slides embedded:
 <iframe class="slide-deck" src="/slides/intro_ggplot2/intro_ggplot2.html" width="960" height="569" allowfullscreen="true">
 </iframe>
 
-And here is a link to the [slides](/slides/intro_ggplot2/ggplot2.qmd)
+And here is a link to the [slides](/slides/intro_ggplot2/intro_ggplot2.qmd)
 
 ## Examples 
 
 I try to keep the lecture to 45 min so I can live code the following examples with the students so they can code at the same time with me. 
 
   - [PDF with examples](/slides/intro_ggplot2/exercises_ggplot2.pdf) 
-
-## Homework 
-
-I give them these exercises at the end so they can work on them throughout the week. I took the data from the Valliere (2022) paper and cleaned it up a little so the data was easier for intro level students to work with. 
-
-  - [PDF with exercises]()
-  - [dataset 1](/slides/intro_ggplot2/camera_data.csv) and [dataset 2](/slides/intro_ggplot2/scat_data.csv)
-  - [Original paper](https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.8985)
 
 ## My favorite cheatsheets
 
