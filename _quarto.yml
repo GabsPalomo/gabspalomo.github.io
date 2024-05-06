@@ -26,8 +26,8 @@ website:
             file: projects/portfolio.qmd
       - text: "Publications"
         href: publications.qmd
-      - text: "CV"
-        href: cv.qmd
+      # - text: "CV"
+      #   href: cv.qmd
       - text: "Presentations"
       - menu: 
           - text: 'Introduction to ggplot2'
