@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "workshops.html",
+    "href": "workshops.html",
+    "title": "Presentations/Workshops",
+    "section": "",
+    "text": "Presentations/Workshops\nI’m including here a list of my presentations or workshops (English or Spanish). All material is protected under Creative Commons CC-BY-NC 4.0.\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "slides/intro_ggplot2/intro_ggplot2.html#learning-objectives",
     "href": "slides/intro_ggplot2/intro_ggplot2.html#learning-objectives",
     "title": "Introduction to ggplot2",
@@ -145,13 +152,6 @@
     "title": "Introduction to ggplot2",
     "section": "Free online books",
     "text": "Free online books\n\nggplot2: Elegant Graphics for Data Analysis by Hadley Wickham\nR for Data Science by Hadley Wickham\nData Visualization: A Practical Introduction by Kieran Healy\nFundamentals of Data Visualization by Claus Wilke\nR Graph Gallery\nggplot2 Extension Gallery\n\n\n\nGuest lecture for Data Management and Analyses for Environmental Science - March 2024"
-  },
-  {
-    "objectID": "presentations.html",
-    "href": "presentations.html",
-    "title": "Presentations/Workshops",
-    "section": "",
-    "text": "Presentations/Workshops\nI’m including here a list of my presentations or workshops (English or Spanish). All material is protected under Creative Commons CC-BY-NC 4.0.\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nIntro to ggplot2\n\n\n\n\n\n\n\nrstats\n\n\nggplot2\n\n\n\n\nSlides and material for my Intro to ggplot2 class. The material here will help you understand the syntax of the 6 building blocks of ggplot2 and their main functions. In addition, I provide other material (PDFs) for examples and exercises, as well as links to my favorite cheatsheets.\n\n\n\n\n\n\nOct 10, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "old_404.html",
@@ -532,27 +532,6 @@
     "text": "University of Nebraska Lincoln, School of Natural Resources Lincoln, NE\nPh.D. in Natural Resources | August 2017 - January 2022\nUniversidad del Valle de Guatemala, Facultad de Educacion Guatemala City, Guatemala\nM.A. in Higher Education | August 2015 - June 2017\nUniversidad de San Carlos de Guatemala, Facultad de Medicina Veterinaria Guatemala City, Guatemala\nM.Sc. in Wildlife Management | August 2008 - June 2010\nUniversidad del Valle de Guatemala, Facultad de Educacion Guatemala City, Guatemala\nB.Sc in Biology | January 2001 - June 2007"
   },
   {
-    "objectID": "presentations/intro_ggplot2/index.html",
-    "href": "presentations/intro_ggplot2/index.html",
-    "title": "Intro to ggplot2",
-    "section": "",
-    "text": "Here are the slides embedded:\nAnd here is a link to the slides"
-  },
-  {
-    "objectID": "presentations/intro_ggplot2/index.html#examples",
-    "href": "presentations/intro_ggplot2/index.html#examples",
-    "title": "Intro to ggplot2",
-    "section": "Examples",
-    "text": "Examples\nI try to keep the lecture to 45 min so I can live code the following examples with the students so they can code at the same time with me.\n\nPDF with examples"
-  },
-  {
-    "objectID": "presentations/intro_ggplot2/index.html#my-favorite-cheatsheets",
-    "href": "presentations/intro_ggplot2/index.html#my-favorite-cheatsheets",
-    "title": "Intro to ggplot2",
-    "section": "My favorite cheatsheets",
-    "text": "My favorite cheatsheets\nHere are links to my favorite cheatsheets that may be useful to students.\n\nggplot2\nggplot2 theme"
-  },
-  {
     "objectID": "projects/portfolio.html",
     "href": "projects/portfolio.html",
     "title": "Tidy Tuesday contributions",
@@ -565,5 +544,26 @@
     "title": "Peer-reviewed publications",
     "section": "",
     "text": "Palomo-Munoz, Gabriela, Ty J Werdel, Colleen W Piper, Matthew S Peek, Andrew M Ricketts, and Adam A Ahlers. 2023. “Spatiotemporal Distributions of Mammals Occurring in an Agro-Prairie Ecosystem.” John Wiley & Sons, Inc. Hoboken, USA. https://doi.org/10.1002/ecy.3945.\n\n\nPalomo-Munoz, Gabriela, Nicolás Gálvez, Valentina Alarcón, Eduardo Minte, Belén Gallardo, and Thomas Kramer. 2023. “Straight from the güiñas Mouth: Diet of a Neotropical Carnivore Documented Through Camera Traps.” Food Webs, e00296. https://doi.org/10.1016/j.fooweb.2023.e00296.\n\n\nBurnett, Jessica L, Renee Dale, Chung-Yi Hou, Gabriela Palomo-Munoz, Kaitlin Stack Whitney, Steve Aulenbach, Robert Sky Bristol, Denis Valle, and Tristan P Wellman. 2021. “Ten Simple Rules for Creating a Scientific Web Application.” PLOS Computational Biology 17 (12): e1009574. https://doi.org/10.1371/journal.pcbi.1009574.\n\n\nMarmol-Kattan, Alejandro, Gabriela Palomo-Munoz, Juan Pablo Pinto-Meneses, and Isabella Rosito-Prado. 2019. “REGISTRO NOTABLE DE DOS MESOCARNÍVOROS EN EL BOSQUE NUBOSO DE BAJA VERAPAZ, GUATEMALA.” Revista Mexicana de Mastozoologia Nueva Epoca, no. 1: 56–61. https://doi.org/10.22201/ie.20074484e.2019.1.1.271.\n\n\nBurnett, Jessica L, Lyndsie Wszola, and Gabriela Palomo-Muñoz. 2019. “bbsAssistant: An r Package for Downloading and Handling Data and Information from the North American Breeding Bird Survey.” Journal of Open Source Software 4 (44): 1768. https://doi.org/10.21105/joss.01768.\n\n\nCano, Enio B, and Gabriela Palomo-Muñoz. 2017. “La Verdadera Identidad Del Chupacabras: La Importancia de Las Colecciones de Historia Natural En La Desarticulacion de Los Mitos Modernos.” Revista de La Universidad de Guatemala, no. 34: 50–57. https://www.uvg.edu.gt/servicios/volumen-34/.\n\n\nWDix, Michael, Gabriela Palomo-Muñoz, and Margaret A Dix. 2017. “Bromelias Del Jardı́n Botánico Del Departamento de Biologı́a de La Universidad Del Valle de Guatemala.” Revista de La Universidad Del Valle de Guatemala, no. 34: 20–30. https://www.uvg.edu.gt/servicios/volumen-34/.\n\n\nPalomo-Munoz, Gabriela, Rony Garcia-Anleu, Gabriela Ponce-Santizo, and Jose. Moreira Ramirez. 2014. “Abundancia, Densidad y Patrones de Adividad de Ocelotes (Leopardus Pardalis) Utilizando Trampas cámara En El Biotopo Protegido Dos Lagunas, Petén, Guatemala.” Revista de La Universidad Del Valle de Guatemala, no. 29: 39–46. https://www.uvg.edu.gt/servicios/volumen-29/."
+  },
+  {
+    "objectID": "workshops/intro_ggplot2/index.html",
+    "href": "workshops/intro_ggplot2/index.html",
+    "title": "Intro to ggplot2",
+    "section": "",
+    "text": "Here are the slides embedded:\nAnd here is a link to the slides"
+  },
+  {
+    "objectID": "workshops/intro_ggplot2/index.html#examples",
+    "href": "workshops/intro_ggplot2/index.html#examples",
+    "title": "Intro to ggplot2",
+    "section": "Examples",
+    "text": "Examples\nI try to keep the lecture to 45 min so I can live code the following examples with the students so they can code at the same time with me.\n\nPDF with examples"
+  },
+  {
+    "objectID": "workshops/intro_ggplot2/index.html#my-favorite-cheatsheets",
+    "href": "workshops/intro_ggplot2/index.html#my-favorite-cheatsheets",
+    "title": "Intro to ggplot2",
+    "section": "My favorite cheatsheets",
+    "text": "My favorite cheatsheets\nHere are links to my favorite cheatsheets that may be useful to students.\n\nggplot2\nggplot2 theme"
   }
 ]

@@ -28,10 +28,10 @@ website:
         href: publications.qmd
       # - text: "CV"
       #   href: cv.qmd
-      - text: "Presentations"
+      - text: "Workshops"
       - menu: 
           - text: 'Introduction to ggplot2'
-            file: presentations/intro_ggplot2/index.qmd 
+            file: workshops/intro_ggplot2/index.qmd 
   cookie-consent:
     type: express
     style: simple
