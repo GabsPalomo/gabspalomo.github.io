@@ -1,0 +1,14 @@
+---
+title: "Data Manipulation in R using the Tidyverse"
+date: 2024-05-13
+image: cover.png
+description: Slides and material for my workshop to UWIN on Introduction to Data Manipulation in R using the Tidyverse.   
+categories: [rstats, dplyr, tidyr, unmarked, tutorials, workshops]
+---
+
+Here are the slides embedded: 
+
+<iframe class="slide-deck" src="/slides/data_manipulation/data_manipulation.html" width="960" height="569" allowfullscreen="true">
+</iframe>
+
+And here is a link to the [slides](/slides/data_manipulation/data_manipulation.qmd)

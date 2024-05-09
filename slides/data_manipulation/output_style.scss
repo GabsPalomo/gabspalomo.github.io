@@ -1,0 +1,42 @@
+/*-- scss:defaults --*/
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+
+// fonts 
+$font-family-sans-serif: 'Cabin', sans-serif !default; 
+
+// font colors 
+$theme-blue: #76a2db;
+$theme-white: white;
+$theme-black: black;
+$theme-dark-blue: #112a41;
+$theme-dark-blue2: #2d3460;
+$theme-dark-blue3: #6497b1;
+$theme-skyblue: #76c3db;
+$theme-gray: #3b3b3b;
+
+$body-bg: $theme-white;
+$body-color: $theme-black;
+$link-color: $theme-skyblue;
+$code-color: $theme-dark-blue3; //this is whatever text I put inside backticks `text`
+
+// headings
+$presentation-heading-font: 'Raleway', sans-serif !default;
+
+
+
+/*-- scss:rules --*/
+h1 {
+  color: $theme-dark-blue;
+  font-family: 'Raleway';
+}
+
+h2, h3, h4 {
+  color: $theme-blue;
+  font-family: 'Raleway';
+}
+
+b, strong {
+   color: $theme-dark-blue2;
+   }

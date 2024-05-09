@@ -1,0 +1,75 @@
+/*-- scss:defaults --*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+// Our colors
+$links: #64CCC9;
+$text: #112a41;
+$text2: #3EB1C8;
+
+// fonts
+$font-family-sans-serif: 'Raleway', sans-serif !default;
+
+// colors
+$body-bg: white !default;
+$body-color: $text !default;
+$link-color: $links !default;
+
+// headings
+$presentation-heading-font: 'Raleway', sans-serif !default;
+$presentation-heading-color: $text2 !default;
+$presentation-h1-font-size: 1.5em;
+
+
+/*-- scss:rules --*/
+// Title slide (first slide)
+#title-slide {
+
+  .quarto-title-author-name {
+    color:  #00688B;
+    font-size: 120%;
+    padding-top: 1em;
+  }
+  
+  .quarto-title-author-email {
+    color: $text;
+    font-size: 80%;
+  }
+}
+
+
+// Annotation link
+.annotation-link {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 75px;
+}
+
+// When `#| output-location: column` is set, it is no longer 100% height
+.reveal .column-output-location .column:first-of-type div.sourceCode {
+  height: unset !important;
+}
+
+
+code.sourceCode {
+  font-size: 2.0em;
+  /* or try font-size: xx-large; */
+}
+
+.spacer {
+  height: 10px;
+}
+
+//* bold color 
+b, strong {
+   color: #00688B;
+   }
+
+
+.panel-tabset-tabA {
+  color: #00688B;
+}
+
+.reveal h2 {
+  text-align: left;
+}

@@ -26,12 +26,12 @@ website:
             file: projects/portfolio.qmd
       - text: "Publications"
         href: publications.qmd
-      # - text: "CV"
-      #   href: cv.qmd
       - text: "Workshops"
       - menu: 
           - text: 'Introduction to ggplot2'
-            file: workshops/intro_ggplot2/index.qmd 
+            file: workshops/intro_ggplot2/index.qmd   
+    # - text: "CV"
+    #   href: cv.qmd
   cookie-consent:
     type: express
     style: simple

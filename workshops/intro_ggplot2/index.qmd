@@ -13,15 +13,3 @@ Here are the slides embedded:
 
 And here is a link to the [slides](/slides/intro_ggplot2/intro_ggplot2.qmd)
 
-## Examples 
-
-I try to keep the lecture to 45 min so I can live code the following examples with the students so they can code at the same time with me. 
-
-  - [PDF with examples](/slides/intro_ggplot2/exercises_ggplot2.pdf) 
-
-## My favorite cheatsheets
-
-Here are links to my favorite cheatsheets that may be useful to students. 
-
-  - [ggplot2](/slides/intro_ggplot2/data_visualization.pdf)
-  - [ggplot2 theme](/slides/intro_ggplot2/ggplot_theme_system_cheatsheet.pdf)

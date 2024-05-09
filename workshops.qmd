@@ -1,12 +1,5 @@
 ---
-listing:
-  type: default
-  contents: presentations
-  sort: "date desc"
-  categories: true 
-  sort-ui: false
-  filter-ui: false
-# description: 
+title: "Workshops"
 page-layout: full
 title-block-banner: false
 fields: [title, date, categories, description, image] 
