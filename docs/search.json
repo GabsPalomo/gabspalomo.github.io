@@ -754,5 +754,208 @@
     "title": "Intro to ggplot2",
     "section": "",
     "text": "Here are the slides embedded:\n\n\nAnd here is a link to the slides"
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "",
+    "text": "After today’s lecture, you’ll be able to:\n\nUnderstand the structure of tidy data\n\nUnderstand the main tidy verbs in dplyr to help tidy data\nOrganize and clean data downloaded from UWIN to run a single species single season occupancy analysis"
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#learning-objectives",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#learning-objectives",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "",
+    "text": "After today’s lecture, you’ll be able to:\n\nUnderstand the structure of tidy data\n\nUnderstand the main tidy verbs in dplyr to help tidy data\nOrganize and clean data downloaded from UWIN to run a single species single season occupancy analysis"
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#packages",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#packages",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "Packages",
+    "text": "Packages\nThese are the packages that we are going to be working with for this tutorial.\n\nlibrary(dplyr) # grammar of data manipulation using set of verbs; tidyverse \nlibrary(tidyr) # tidy data; tidyverse\nlibrary(readr) # reads csv files; tidyverse\nlibrary(magrittr) # has the original pipe operator %&gt;%\nlibrary(janitor)"
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#organize-the-project-and-directory",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#organize-the-project-and-directory",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "Organize the project and directory",
+    "text": "Organize the project and directory\nPerhaps you are used to starting by setting your directory using setwd(). However, I highly recommend you use RStudio Projects. RStudio projects make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents.\nWe are going to start by creating a Project in RStudio. A Project is essentially a directory which will contain all the files you need for a specific project. It will have a *.RProj file associated with it to begin with.\nGo to RStudio and click on File &gt; New Project.\n\nNow you see three options:\n\nNew directory: choose this option if you want to create a folder that will contain all the subdirectories and files of this particular project.\nExisting directory: use this option if you already created a folder which will contain all the subdirectories and files for this particular project. Choose that folder here.\nVersion Control: choose this option if you are going to work with a repository already stored in GitHub.\n\nFor our own project, let’s go ahead and choose ‘New Directory’ and let’s name our project: ‘2024-data-manipulation-UWIN’\n\nOther files inside the main directory\nYou will have a series of directories inside your project, depending on the type of work that you’ll be working on. Some people recommend following the same structure that you would use if creating an r package. However, I think that at a minimum, you could have the following structure:\n\n\nData is a directory that has all your original .csv files with the data that you will use in your analysis.\nFunctions is a directory that houses all the functions you create and that you will be using throughout your analysis. Some people include this directory as a subdirectory of R.\nPlots is a directory in which you will put all the graphs you create as part of your analysis.\nR is a directory that will have all the scripts needed for your analysis.\nResults is a directory that you may or may not need. The idea is to include all the resulting .csv or .rds files in here and keep them separate from your original files.\nYou may need other directories, especially if you are working with spatial data, for example, shapefiles, rasters, maps, etc."
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#naming-files",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#naming-files",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "Naming files",
+    "text": "Naming files\nNow we should discuss a very important topic which is naming files.\n1. File names should be machine readable: avoid spaces, symbols, and special characters. Don’t rely on case sensitivity to distinguish files.\n2. File names should be human readable: use file names to describe what’s in the file.\n3. File names should play well with default ordering: start file names with numbers so that alphabetical sorting puts them in the order they get used.\nHere are a few examples of bad names:\n\nDocument 1.docx\nmanuscript_final.docx\nfinal_document_final.qmd\ndata.csv\n\nHere are a few examples of good names:\n\n2024_05_03_manuscript_name.R\n01_data_cleaning.R\n02_model.R\nfig-01.png\nexercise-uwin-workshop.qmd\n\nWhy are these good names? Well because if you have several of those, you can arrange them by date (descending or ascending), or by order of fig-01, fig-02.\n\n\n\n\n\n\nWarning\n\n\n\n\n\nIt’s important to note that fig-01.png is not the same as fig-1.png because your computer will read the following files in this order: fig1.png, fig10.png, fig11.png, fig2.png."
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#lets-talk-about-pipes",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#lets-talk-about-pipes",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "Let’s talk about pipes",
+    "text": "Let’s talk about pipes\n\nAt the beginning there was only one pipe operator, %&gt;%, which is from the magrittr package.\nThe idea is to have a way to pipe an object forward into a function or call expression.\nIt should be read as ‘then’. For example: The following code is read as follows: start with object df THEN select col1.\n\n\ndf %&gt;% select(col1)"
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#native-pipe-in-base-r",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#native-pipe-in-base-r",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "Native pipe in base R",
+    "text": "Native pipe in base R\n\nNow, base R has it’s own pipe called native pipe, |&gt;, which is also read as ‘then’.\nYou can activate this native pipe by going to Tools &gt; Global options &gt; Code and selecting that option.\n\n\n\n\n\n\n\nYou can read more about the differences between both pipes here."
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#dplyr-verbs-data-transformation",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#dplyr-verbs-data-transformation",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "dplyr verbs: data transformation",
+    "text": "dplyr verbs: data transformation\n\ndplyr is a package based on a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:\n\nmutate() adds new variables that are functions of existing variables\nselect() picks variables based on their names\nfilter() picks cases based on their values\nsummarise() reduces multiple values down to a single summary\narrange() changes the ordering of the rows\ngroup_by() groups variables for you to perform operations on the grouped data. Always remember to ungroup() once you are finished\n\nThese can be linked together by pipes |&gt; or %&gt;%\nCool cheatsheet for dplyr"
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#tidyr-for-tidying-data",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#tidyr-for-tidying-data",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "tidyr for tidying data",
+    "text": "tidyr for tidying data\n\nThe tidyr package has a series of functions that are named after verbs that will help you tidy and clean data.\nThe goal of tidyr is to help you create tidy data. Tidy data is data where:\n\nEach variable is a column; each column is a variable\nEach observation is a row; each row is an observation\nEach value is a cell; each cell is a single value\n\nCool cheatsheet for tidyr"
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#data-organization-for-an-occupancy-analysis",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#data-organization-for-an-occupancy-analysis",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "Data organization for an occupancy analysis!",
+    "text": "Data organization for an occupancy analysis!\nFirst things first, let’s see the data that we are going to be working with. To do so, let’s use a super handy package called readr which is part of the tidyverse, specifically a function called read_csv(). The data we want is a .csv document and is conveniently stored in a folder called data.\n\n\n\n\n\n\nImportant\n\n\n\n\n\nHowever, there is something we need to be aware of before we read in the file. The report that the UWIN database generates has this information at the top of the document on the first 3 rows. We will need this information later but not for the main data set, so we are going to create two data frames, one with the information on the top rows and one with the info starting on row 4:\n\n\n\n\n\nocc.data &lt;- readr::read_csv(file = './data/OccupancyReport.csv', \n                               # Skip row 1-3\n                               skip = 3,\n                               # identify how not available data are coded, you can use c('NA', 'N/A')\n                               na = 'NA', \n                               # define column types, readr guesses the ones we don't specify\n                               col_types = c('f', 'd', 'c', 'd', 'd'))\n\n# With glimpse we can see the name of each column, type, and the first rows \ndplyr::glimpse(occ.data)\n\nRows: 50\nColumns: 41\n$ Species   &lt;fct&gt; Coyote, Coyote, Coyote, Coyote, Coyote, Coyote, Coyote, Coyo…\n$ Season    &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ Site      &lt;chr&gt; \"NCAP-MD-BSP1\", \"NCAP-MD-CCC1\", \"NCAP-MD-CRG1\", \"NCAP-MD-CVH…\n$ Latitude  &lt;dbl&gt; 38.8452, 38.9939, 38.8145, 39.0284, 38.7699, 38.9553, 38.814…\n$ Longitude &lt;dbl&gt; -76.9015, -77.0838, -76.9872, -77.0586, -77.0286, -76.8917, …\n$ Day_1     &lt;dbl&gt; NA, 0, NA, 0, NA, NA, NA, 0, NA, 0, 0, 0, NA, NA, 0, NA, NA,…\n$ Day_2     &lt;dbl&gt; NA, 0, NA, 0, NA, NA, NA, 0, NA, 0, 0, 0, NA, NA, 0, NA, NA,…\n$ Day_3     &lt;dbl&gt; NA, 0, NA, 0, NA, NA, NA, 0, NA, 0, 0, 0, NA, NA, 0, NA, NA,…\n$ Day_4     &lt;dbl&gt; NA, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA, NA, 0, 0, 0, 0, 0,…\n$ Day_5     &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, NA, 0, 0, 0, 1, 0, NA…\n$ Day_6     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_7     &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, NA, 0, 1, 0, 0, 0, NA…\n$ Day_8     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_9     &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 1, 0, 0, 0, NA…\n$ Day_10    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_11    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_12    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_13    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, NA, 0, 0, 0, 0, 0, NA…\n$ Day_14    &lt;dbl&gt; 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_15    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_16    &lt;dbl&gt; 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_17    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 1, 0, 0, 0, NA…\n$ Day_18    &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_19    &lt;dbl&gt; 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_20    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_21    &lt;dbl&gt; 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 1, 0, 0, 0, NA…\n$ Day_22    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_23    &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_24    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_25    &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_26    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_27    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_28    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_29    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ Day_30    &lt;dbl&gt; 0, NA, 0, 0, 0, 0, 0, NA, 0, NA, NA, NA, 0, NA, NA, 0, 0, NA…\n$ Day_31    &lt;dbl&gt; 0, NA, 0, 0, 0, 0, 0, NA, 0, NA, NA, NA, 0, NA, NA, 0, 0, NA…\n$ Day_32    &lt;dbl&gt; 0, NA, 0, 0, 0, 0, 0, NA, 0, NA, NA, NA, 0, NA, NA, 0, 0, NA…\n$ Day_33    &lt;dbl&gt; NA, NA, NA, NA, NA, 0, NA, NA, 0, NA, NA, NA, NA, NA, NA, 0,…\n$ Day_34    &lt;dbl&gt; NA, NA, NA, NA, NA, 0, NA, NA, 0, NA, NA, NA, NA, NA, NA, 0,…\n$ Day_35    &lt;dbl&gt; NA, NA, NA, NA, NA, 0, NA, NA, 0, NA, NA, NA, NA, NA, NA, 0,…\n$ Day_36    &lt;dbl&gt; NA, NA, NA, NA, NA, 0, NA, NA, 0, NA, NA, NA, NA, NA, NA, 0,…\n\n\nNow let’s extract the Start and End dates, we may need them later on.\n\nocc.info &lt;- read_csv(file = './data/OccupancyReport.csv', \n                        n_max = 1) |&gt; \n  select('Start Date', 'End Date')\n  \nglimpse(occ.info)\n\nRows: 1\nColumns: 2\n$ `Start Date` &lt;chr&gt; \"1/10/2022\"\n$ `End Date`   &lt;chr&gt; \"2/14/2022\"\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nLet’s look at the column names. They start with a capital letter and are separated by an underscore _. Let’s review the current name conventions:\n\nThis is important to remember so that you (and your team) can always stick to a name convention to make things easier for everyone. Whichever you use, DO NOT USE A SPACE TO SEPARATE WORDS.\n\nThese are ok for the name of a column: ‘day01’, ‘Day_1’, ‘day1’, ‘day-01’, ‘day-1’\nThis is not ok: ‘day 1’\n\n\n\n\nYou can leave the column names as is, but I want to show you a super handy function in package janitor that can help us rename all the columns to fit one naming convention. The options for case are ‘snake’, ‘lower_camel’, ‘title’, ‘upper_camel’.\n\nocc.data &lt;- janitor::clean_names(dat = occ.data, \n                                 case = 'snake')\nglimpse(occ.data)\n\nRows: 50\nColumns: 41\n$ species   &lt;fct&gt; Coyote, Coyote, Coyote, Coyote, Coyote, Coyote, Coyote, Coyo…\n$ season    &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ site      &lt;chr&gt; \"NCAP-MD-BSP1\", \"NCAP-MD-CCC1\", \"NCAP-MD-CRG1\", \"NCAP-MD-CVH…\n$ latitude  &lt;dbl&gt; 38.8452, 38.9939, 38.8145, 39.0284, 38.7699, 38.9553, 38.814…\n$ longitude &lt;dbl&gt; -76.9015, -77.0838, -76.9872, -77.0586, -77.0286, -76.8917, …\n$ day_1     &lt;dbl&gt; NA, 0, NA, 0, NA, NA, NA, 0, NA, 0, 0, 0, NA, NA, 0, NA, NA,…\n$ day_2     &lt;dbl&gt; NA, 0, NA, 0, NA, NA, NA, 0, NA, 0, 0, 0, NA, NA, 0, NA, NA,…\n$ day_3     &lt;dbl&gt; NA, 0, NA, 0, NA, NA, NA, 0, NA, 0, 0, 0, NA, NA, 0, NA, NA,…\n$ day_4     &lt;dbl&gt; NA, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA, NA, 0, 0, 0, 0, 0,…\n$ day_5     &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, NA, 0, 0, 0, 1, 0, NA…\n$ day_6     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_7     &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, NA, 0, 1, 0, 0, 0, NA…\n$ day_8     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_9     &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 1, 0, 0, 0, NA…\n$ day_10    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_11    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_12    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_13    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, NA, 0, 0, 0, 0, 0, NA…\n$ day_14    &lt;dbl&gt; 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_15    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_16    &lt;dbl&gt; 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_17    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 1, 0, 0, 0, NA…\n$ day_18    &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_19    &lt;dbl&gt; 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_20    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_21    &lt;dbl&gt; 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 1, 0, 0, 0, NA…\n$ day_22    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_23    &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_24    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_25    &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_26    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_27    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_28    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_29    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, NA…\n$ day_30    &lt;dbl&gt; 0, NA, 0, 0, 0, 0, 0, NA, 0, NA, NA, NA, 0, NA, NA, 0, 0, NA…\n$ day_31    &lt;dbl&gt; 0, NA, 0, 0, 0, 0, 0, NA, 0, NA, NA, NA, 0, NA, NA, 0, 0, NA…\n$ day_32    &lt;dbl&gt; 0, NA, 0, 0, 0, 0, 0, NA, 0, NA, NA, NA, 0, NA, NA, 0, 0, NA…\n$ day_33    &lt;dbl&gt; NA, NA, NA, NA, NA, 0, NA, NA, 0, NA, NA, NA, NA, NA, NA, 0,…\n$ day_34    &lt;dbl&gt; NA, NA, NA, NA, NA, 0, NA, NA, 0, NA, NA, NA, NA, NA, NA, 0,…\n$ day_35    &lt;dbl&gt; NA, NA, NA, NA, NA, 0, NA, NA, 0, NA, NA, NA, NA, NA, NA, 0,…\n$ day_36    &lt;dbl&gt; NA, NA, NA, NA, NA, 0, NA, NA, 0, NA, NA, NA, NA, NA, NA, 0,…\n\n\nHave you noticed that we have two species in our data?\n\nunique(occ.data$species)\n\n[1] Coyote                    Eastern cottontail rabbit\nLevels: Coyote Eastern cottontail rabbit"
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#dividing-data-into-occasions",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#dividing-data-into-occasions",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "Dividing data into occasions",
+    "text": "Dividing data into occasions\nImagine we want to perform an occupancy analysis with our data.\nWe begin by dividing our data into occasions. In this case we have 36 days of sampling so now we want each occasion to have 7 days.\n\n# Separate only the days \ndays_oc &lt;- occ.data |&gt; \n  filter(species == 'Coyote')|&gt; \n  select(contains('day_')) \n  \n# Calculate number of weeks or occasions based on 7 day groups \nn_weeks &lt;- ceiling(ncol(days_oc)/7)\n# Create a vector where you assign the number of week to the day\nweek_groups &lt;- rep(1:n_weeks, each = 7)[1:ncol(days_oc)]\n\n# and write a function that keeps each occasion with all NA's as such and those with all 0's as 0, and those with at least 1 detection, as 1\ncombine_days &lt;- function(y, groups){\n  ans &lt;- rep(NA, max(groups))\n  for(i in 1:length(groups)){\n    tmp &lt;- as.numeric(y[groups == i])\n    if(all(is.na(tmp))){\n      next\n    } else {\n      ans[i] &lt;- as.numeric(sum(tmp, na.rm = TRUE)&gt;0)\n    }\n  }\n  return(ans)\n}\n\n# Apply this function across rows (in groups of 6)\ndata.weeks &lt;- t( # this transposes our matrix\n  apply(\n    days_oc, \n    1, # 1 is for rows\n    combine_days,\n    groups = week_groups\n  )\n)\n\n# Rename columns to match number of week \ndata.wk &lt;- data.weeks |&gt; \n  as.data.frame() |&gt; \n  rename_with(~paste0('week_', 1:n_weeks))\n\n# Now we can combine the species, season, site, latitude, longitude from coyote.data to our occasions.\ndata.occ &lt;- occ.data |&gt; \n  filter(species == 'Coyote')|&gt; \n  select(species, season, site, latitude, longitude) |&gt; \n  cbind(data.wk)\n\n\n\n\n\n\n\nImportant\n\n\n\n\n\nLet’s review what we just did. We have 36 days, so we collapsed them all into 7-day occasions. In total, we have 6 columns or occasions (weeks) but our 6th week only has 1 day worth of data. We will delete it for the sake of the exercise, but make sure that you consider the ecological implications for your species of the length of your occasions."
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#dashboard-of-our-data-so-far",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#dashboard-of-our-data-so-far",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "Dashboard of our data so far",
+    "text": "Dashboard of our data so far\n\nlibrary(ggplot2)\n\nocc_long &lt;- data.occ |&gt; \n  pivot_longer(cols = starts_with('week_'), \n               names_to = 'week', \n               values_to = 'values') |&gt; \n  mutate(values = factor(values))\n\nggplot(occ_long, aes(x = week, y = site, fill = values))+\n  geom_tile( \n            color = 'white', \n            lwd = 1, \n            linetype = 1)+\n  coord_equal()+\n  labs(title = paste0('Weekly detections by site'))+\n  scale_fill_manual(values = c('#6F9CDE', '#FC8955'), \n                    na.value = '#A9A9A9') +\n  theme(legend.position = 'left', \n        axis.text.x = element_text(angle = 90), \n        legend.title = element_blank(), \n        axis.title = element_blank(), \n        plot.title = element_text(hjust=0, face = 'bold', size = 16)) -&gt; tile.plot \n\ntab &lt;- as.data.frame(\n  c(Start = occ.info$`Start Date`, \n    End = occ.info$`End Date`, \n    Sites = nrow(data.occ), \n    Species = as.character(occ_long$species[[1]]), \n    Occassions = n_weeks, \n    'Days per occassion' = 7)\n)\n\nlibrary(gridExtra)\np_tab &lt;- tableGrob(unname(tab), theme = ttheme_minimal(core=list(fg_params=list(hjust=0, x=0)),\n                                                       rowhead=list(fg_params=list(hjust=0, x=0, \n                                                                                   col = 'black'))))\ngrid.arrange(tile.plot, p_tab, ncol = 2, padding = unit(0, 'cm'))"
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#lets-tidy-the-spatial-covariates",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#lets-tidy-the-spatial-covariates",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "Let’s tidy the spatial covariates",
+    "text": "Let’s tidy the spatial covariates\nThese are covariates that vary at the site level.\n\n# read in the file with covariates \ncovariates &lt;- read_csv('./data/covariates.csv')\n\n# make sure column names follow snake convention \ncovariates &lt;- janitor::clean_names(covariates, \n                                   \"snake\")\nglimpse(covariates)\n\nRows: 25\nColumns: 6\n$ site       &lt;chr&gt; \"NCAP-MD-BSP1\", \"NCAP-MD-CCC1\", \"NCAP-MD-CRG1\", \"NCAP-MD-CV…\n$ latitude   &lt;dbl&gt; 38.8452, 38.9939, 38.8145, 39.0284, 38.7699, 38.9553, 38.81…\n$ longitude  &lt;dbl&gt; -76.9015, -77.0838, -76.9872, -77.0586, -77.0286, -76.8917,…\n$ forest     &lt;dbl&gt; 0.5990142, 0.7361551, 0.6614681, 0.4533951, 0.7374635, 0.59…\n$ ag         &lt;dbl&gt; 0.19148783, 0.14867841, 0.23992384, 0.10802248, 0.09503045,…\n$ dist_water &lt;dbl&gt; 379.6535, 618.4484, 605.5428, 560.6045, 566.1160, 337.4902,…\n\n\nFirst thing we should do is scale our covariates so we can compare across them.\n\ncovariates.sc &lt;- covariates |&gt; \n  # Select only the columns you wish to scale\n  select(forest:dist_water) |&gt;\n  # mutate across all the columsn you wish to scale \n  mutate(across(forest:dist_water, \n                ~as.vector(scale(.x)))) |&gt; \n  # rename the columns you selected and add _scaled at the end of each one\n  rename_with(~paste0(.x, '_scaled')) |&gt; \n  # combine all the columns here and with the file covariates\n  cbind(covariates) |&gt; \n  # reorganize the columns in the order you want\n  relocate(site, latitude, longitude, forest, ag, dist_water, forest_scaled, ag_scaled, dist_water_scaled)\n\nglimpse(covariates.sc)\n\nRows: 25\nColumns: 9\n$ site              &lt;chr&gt; \"NCAP-MD-BSP1\", \"NCAP-MD-CCC1\", \"NCAP-MD-CRG1\", \"NCA…\n$ latitude          &lt;dbl&gt; 38.8452, 38.9939, 38.8145, 39.0284, 38.7699, 38.9553…\n$ longitude         &lt;dbl&gt; -76.9015, -77.0838, -76.9872, -77.0586, -77.0286, -7…\n$ forest            &lt;dbl&gt; 0.5990142, 0.7361551, 0.6614681, 0.4533951, 0.737463…\n$ ag                &lt;dbl&gt; 0.19148783, 0.14867841, 0.23992384, 0.10802248, 0.09…\n$ dist_water        &lt;dbl&gt; 379.6535, 618.4484, 605.5428, 560.6045, 566.1160, 33…\n$ forest_scaled     &lt;dbl&gt; -0.1500416, 0.6588543, 0.2183293, -1.0089438, 0.6665…\n$ ag_scaled         &lt;dbl&gt; 0.117804331, -0.812708927, 1.170618390, -1.696413643…\n$ dist_water_scaled &lt;dbl&gt; -0.56135757, 0.63584774, 0.57114511, 0.34584580, 0.3…"
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#lets-tidy-the-observational-covariates",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#lets-tidy-the-observational-covariates",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "Let’s tidy the observational covariates",
+    "text": "Let’s tidy the observational covariates\nThese are covariates that vary by occasions or within sites.\n\ntemp_covs &lt;- read_csv('./data/temp_covs.csv') |&gt; \n  select(!Site)\n\n# We have to summarize it for each occasion, remember you only have 6 occasions \nlibrary(purrr)\nrow_means &lt;- function(data) {\n  map(seq(1, ncol(data), by = 7),\n      ~rowMeans(select(data, .x:min(.x + 6, ncol(data))), na.rm = TRUE)) |&gt; \n       set_names(paste0(\"week_\", seq(1, 6, by = 1))) |&gt; \n       tibble::as_tibble()\n}\n\n\n# Apply the function and coerce the object to be a matrix \ntemp_avg &lt;-  row_means(temp_covs)"
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#now-we-are-ready-to-create-our-unmarkedframeoccu-to-begin-an-occupancy-model.",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#now-we-are-ready-to-create-our-unmarkedframeoccu-to-begin-an-occupancy-model.",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "Now we are ready to create our unmarkedFrameOccu() to begin an occupancy model.",
+    "text": "Now we are ready to create our unmarkedFrameOccu() to begin an occupancy model.\n\nlibrary(unmarked)\n\n# Detection data must only include the columns with the occasions\ny &lt;- data.occ |&gt; \n  select(week_1:week_6)\n\n# Site covariates must only be the columns with the scaled covariates   \nsiteCovs &lt;- covariates.sc |&gt; \n  select(forest_scaled:dist_water_scaled)\n\n# You need a list of matrices for the observation covariates, \n# And each matrix must be named \nobsCovs &lt;- list(temp_avg=temp_avg)\n\noccu.df &lt;- unmarkedFrameOccu(y = y, \n                             siteCovs = siteCovs, \n                             obsCovs = obsCovs)"
+  },
+  {
+    "objectID": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#end",
+    "href": "slides/data_manipulation/tutorial/tutorial-data-manipulation.html#end",
+    "title": "Introduction to Data Manipulation in R using the Tidyverse",
+    "section": "END",
+    "text": "END"
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "",
+    "text": "Gabriela Palomo gabriella.palomo@gmail.com\n\nhttps://twitter.com/gabbspalomo\nPostdoc at the University of Maryland\nCarnivore ecologist but nowadays I am more of a Data Scientist\n\n\n\n\n\n\n\nHannah Griebling\nhgriebli@mail.ubc.ca\n\nPhD Candidate at University of British Columbia\nCognitive ecologist: focus on urban raccoon cognition and behavior"
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html#instructors",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html#instructors",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "",
+    "text": "Gabriela Palomo gabriella.palomo@gmail.com\n\nhttps://twitter.com/gabbspalomo\nPostdoc at the University of Maryland\nCarnivore ecologist but nowadays I am more of a Data Scientist\n\n\n\n\n\n\n\nHannah Griebling\nhgriebli@mail.ubc.ca\n\nPhD Candidate at University of British Columbia\nCognitive ecologist: focus on urban raccoon cognition and behavior"
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html#learning-objectives",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html#learning-objectives",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nAfter today’s lecture, you’ll be able to:\n\nUnderstand the structure of tidy data\n\nUnderstand the main tidy verbs in dplyr to help tidy data\nOrganize and clean data downloaded from UWIN to run a single species single season occupancy analysis"
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html#organize-the-project-and-directory",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html#organize-the-project-and-directory",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "Organize the project and directory",
+    "text": "Organize the project and directory\n\nI highly recommend you use RStudio Projects instead of setwd()\nGo to RStudio and click on File &gt; New Project.\n\n. . ."
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html#now-you-see-three-options",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html#now-you-see-three-options",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "Now you see three options:",
+    "text": "Now you see three options:\n\n\nNew directory: choose this option if you want to create a folder that will contain all the subdirectories and files of this particular project.\nExisting directory: use this option if you already created a folder which will contain all the subdirectories and files for this particular project. Choose that folder here.\nVersion Control: choose this option if you are going to work with a repository already stored in GitHub.\n\n\n. . .\nFor our own project, let’s go ahead and choose New Directory and let’s name our project: 2024-data-manipulation-UWIN."
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html#other-files-inside-the-main-directory",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html#other-files-inside-the-main-directory",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "Other files inside the main directory",
+    "text": "Other files inside the main directory\nYou will have a series of directories inside your project, depending on the type of work that you’ll be working on. Some people recommend following the same structure that you would use if creating an r package. However, I think that at a minimum, you could have the following structure:\n. . ."
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html#other-files-inside-the-main-directory-1",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html#other-files-inside-the-main-directory-1",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "Other files inside the main directory",
+    "text": "Other files inside the main directory\n\nData is a directory that has all your original .csv files with the data that you will use in your analysis.\nFunctions is a directory that houses all the functions you create and that you will be using throughout your analysis. Some people include this directory as a subdirectory of R.\nPlots is a directory in which you will put all the graphs you create as part of your analysis.\nR is a directory that will have all the scripts needed for your analysis.\nResults is a directory that you may or may not need. The idea is to include all the resulting .csv or .rds files in here and keep them separate from your original files.\nYou may need other directories, especially if you are working with spatial data, for example, shapefiles, rasters, maps, etc."
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html#naming-files",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html#naming-files",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "Naming files",
+    "text": "Naming files\n\nFile names should be machine readable: avoid spaces, symbols, and special characters. Don’t rely on case sensitivity to distinguish files.\nFile names should be human readable: use file names to describe what’s in the file.\nFile names should play well with default ordering: start file names with numbers so that alphabetical sorting puts them in the order they get used."
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html#examples",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html#examples",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "Examples:",
+    "text": "Examples:\n\nBad namesGood names\n\n\n\nDocument 1.docx\nmanuscript_final.docx\nfinal_document_final.qmd\ndata.csv\n\n\n\n\n2024_05_03_manuscript_name.R\n01_data_cleaning.R\n02_model.R\nfig-01.png\nexercise-uwin-workshop.qmd\n\n\n\n\n. . .\nWhy are these good names? Well because if you have several of those, you can arrange them by date (descending or ascending), or by order of fig-01, fig-02.\n. . .\n\n\n\n\n\n\nWarning\n\n\n\n\n\nIt’s important to note that fig-01.png is not the same as fig-1.png because your computer will read the following files in this order: fig1.png, fig10.png, fig11.png, fig2.png."
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html#lets-talk-about-pipes",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html#lets-talk-about-pipes",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "Let’s talk about pipes",
+    "text": "Let’s talk about pipes\n\nAt the beginning there was only one pipe operator, %&gt;%, which is from the magrittr package.\nThe idea is to have a way to pipe an object forward into a function or call expression.\nIt should be read as ‘then’. For example: The following code is read as follows: start with object df THEN select col1.\n\n\ndf %&gt;% select(col1)"
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html#native-pipe-in-base-r",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html#native-pipe-in-base-r",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "Native pipe in base R",
+    "text": "Native pipe in base R\n\nNow, base R has it’s own pipe called native pipe, |&gt;, which is also read as ‘then’.\nYou can activate this native pipe by going to Tools &gt; Global options &gt; Code and selecting that option.\n\n. . .\n\n\n\n\n\n\nYou can read more about the differences between both pipes here."
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html#dplyr-verbs-data-transformation",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html#dplyr-verbs-data-transformation",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "dplyr verbs: data transformation",
+    "text": "dplyr verbs: data transformation\n\ndplyr is a package based on a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:\n\nmutate() adds new variables that are functions of existing variables\nselect() picks variables based on their names\nfilter() picks cases based on their values\nsummarise() reduces multiple values down to a single summary\narrange() changes the ordering of the rows\ngroup_by() groups variables for you to perform operations on the grouped data. Always remember to ungroup() once you are finished\n\nThese can be linked together by pipes |&gt; or %&gt;%\nCool cheatsheet for dplyr"
+  },
+  {
+    "objectID": "slides/data_manipulation/ppt/ppt_data_manipulation.html#tidyr-for-tidying-data",
+    "href": "slides/data_manipulation/ppt/ppt_data_manipulation.html#tidyr-for-tidying-data",
+    "title": "Introduction to  Data Manipulation in R  using the Tidyverse",
+    "section": "tidyr for tidying data",
+    "text": "tidyr for tidying data\n\nThe tidyr package has a series of functions that are named after verbs that will help you tidy and clean data.\nThe goal of tidyr is to help you create tidy data. Tidy data is data where:\n\nEach variable is a column; each column is a variable\nEach observation is a row; each row is an observation\nEach value is a cell; each cell is a single value\n\nCool cheatsheet for tidyr"
   }
 ]
