@@ -6,6 +6,7 @@ fields: [title, date, categories, description, image]
 date-format: medium
 comments: false
 toc: true
+theme: ["css/styles.css",  "slides/data_manipulation/tutorial/output_style.scss"]
 ---
 
 # Presentations/Workshops

@@ -52,8 +52,7 @@ website:
 
 format:
   html:
-    theme: Lux
-    css: css/styles.css
+    theme: [Lux, "css/styles.css",  "slides/data_manipulation/tutorial/output_style.scss"]
     toc: true
 
 # comments:

@@ -3,7 +3,7 @@ title: "Introduction to Data Manipulation in R using the Tidyverse"
 author: "Gabriela Palomo & Hannah Griebling"
 format: html
 toc: true
-theme: output_style.scss
+theme: ["slides/data_manipulation/tutorial/output_style.scss"]
 ---
 
 ```{r setup, include=FALSE}
