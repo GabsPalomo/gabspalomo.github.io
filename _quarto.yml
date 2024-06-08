@@ -52,7 +52,7 @@ website:
 
 format:
   html:
-    theme: [Lux, "css/styles.css",  "slides/data_manipulation/tutorial/output_style.scss"]
+    theme: [Lux, "css/styles.css"]
     toc: true
 
 # comments:
