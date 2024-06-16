@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gabriela Palomo-Munoz">
+
+<title>Gabriela Palomo - Different ways to install and load libraries in R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CKLD1G1PM7"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CKLD1G1PM7', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"express",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+
+<meta property="og:title" content="Gabriela Palomo - Different ways to install and load libraries in R">
+<meta property="og:description" content="">
+<meta property="og:image" content="../../..\blog/posts/installing_loading_libraries/error_package.png">
+<meta property="og:site-name" content="Gabriela Palomo">
+<meta name="twitter:title" content="Gabriela Palomo - Different ways to install and load libraries in R">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="../../..\blog/posts/installing_loading_libraries/error_package.png">
+<meta name="twitter:creator" content="@gabbspalomo">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Gabriela Palomo</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cliparts.html" rel="" target="">
+ <span class="menu-text">ClipArts</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Projects</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-projects">    
+        <li>
+    <a class="dropdown-item" href="../../../projects/portfolio.html" rel="" target="">
+ <span class="dropdown-text">Portfolio - Data Visualization</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../../publications.html" rel="" target="">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text">Workshops</span></li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../workshops/intro_ggplot2/index.html" rel="" target="">
+ <span class="dropdown-text">Introduction to ggplot2</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Different ways to install and load libraries in R</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">basics</div>
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">pak</div>
+                <div class="quarto-category">pacman</div>
+                <div class="quarto-category">devtools</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Gabriela Palomo-Munoz </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Last Updated on June 16, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#installing-and-loading-libraries-in-r" id="toc-installing-and-loading-libraries-in-r" class="nav-link active" data-scroll-target="#installing-and-loading-libraries-in-r">Installing and loading libraries in R</a>
+  <ul class="collapse">
+  <li><a href="#basic-way-install-and-load" id="toc-basic-way-install-and-load" class="nav-link" data-scroll-target="#basic-way-install-and-load">Basic way (install and load)</a></li>
+  <li><a href="#install-packages-using-package-pak" id="toc-install-packages-using-package-pak" class="nav-link" data-scroll-target="#install-packages-using-package-pak">Install packages using package <code>pak</code></a></li>
+  <li><a href="#install-and-load-packages-using-package-pacman" id="toc-install-and-load-packages-using-package-pacman" class="nav-link" data-scroll-target="#install-and-load-packages-using-package-pacman">Install and load packages using package <code>pacman</code></a></li>
+  <li><a href="#my-preferred-way-of-installing-and-loading-packages" id="toc-my-preferred-way-of-installing-and-loading-packages" class="nav-link" data-scroll-target="#my-preferred-way-of-installing-and-loading-packages">My preferred way of installing and loading packages</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="installing-and-loading-libraries-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="installing-and-loading-libraries-in-r">Installing and loading libraries in R</h2>
+<p>There are many ways in which you can install and load libraries into R besides the basic <code>install.packages()</code> and <code>library()</code>. Here, I explain a few of my favorite ones including custom functions. I also added pros and cons for each one.</p>
+<section id="basic-way-install-and-load" class="level3">
+<h3 class="anchored" data-anchor-id="basic-way-install-and-load">Basic way (install and load)</h3>
+<p>The default way to install a package from CRAN is to use the function <code>install.packages()</code>. It accepts the following arguments: - pkgs: character vector of the names of packages you wish to download; must be inside quotes (e.g., <code>"tidyr"</code>) - To see other arguments, go to the <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/install.packages">documentation file</a>.</p>
+<p>The function <code>library()</code> lets you load one library at a time into R. If a package is not installed it will let you know with an error such as the one below. The packages can be inside quotes or without quotes</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install packages </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pacman"</span>, <span class="st">"devtools"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># load libraries </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pacman)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check to see which libraries are loaded</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>(<span class="fu">.packages</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "devtools"  "usethis"   "pacman"    "stats"     "graphics"  "grDevices"
+ [7] "utils"     "datasets"  "methods"   "base"     </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Error loading uninstalled package">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Error loading uninstalled package
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you load a library that you haven’t installed, then you will get the following error. So install the library first, and then try loading it again.</p>
+<p><img src="../../..\blog/posts/installing_loading_libraries/error_package.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Alternatively, you can also install packages in RStudio by going to the Packages window on the lower left and click on the install button. You can install several packages by separating them by commas.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../..\blog/posts/installing_loading_libraries/install_rstudio.png" class="img-fluid figure-img" style="width:3in"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Installing packages on GitHub or other repositories">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Installing packages on GitHub or other repositories
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to load a package that is available on GitHub but hasn’t been submitted to CRAN then you might want to use <code>devtools::install_github()</code>. Package <a href="https://devtools.r-lib.org/"><code>devtools</code></a> is super useful for package development but it has a function that we can all use to install packages from GitHub or package development versions too. To use it, you have to install it first, and then just include the package you want inside quotes. Usually, the right paths to download a package (e.g., devtools is inside the r-lib directory) can be found on their GitHub repo or website.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install devtools from CRAN</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Or the development version from GitHub:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/devtools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="install-packages-using-package-pak" class="level3">
+<h3 class="anchored" data-anchor-id="install-packages-using-package-pak">Install packages using package <code>pak</code></h3>
+<p>Pak is one of my favorite ways to install packages because it doesn’t matter where your package lives (e.g., CRAN, GitHub, Bioconductor, local) you can download or update it using one single function. Another cool thing about <code>pak</code> is that it will automatically install any dependencies that the package requires.</p>
+<p>Make sure you have it installed. One thing to note is that you don’t have to load a library if you include the name of the package before the function like this: <code>pak::repo_get()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The main function is <code>pkg_install()</code> and it accepts the following arguments (for a list of all arguments, check their <a href="https://pak.r-lib.org/index.html">website</a>): - pkg: the package you want to install inside quotes (e.g., “ggplot2”) - upgrade: logical (TRUE, FALSE). If set to FALSE then it will only upgrade dependent packages if pkg, or one of their dependencies explicitly require a higher version than what you currently have. When it’s set to TRUE, then you will install the latest version of that package and all its dependencies.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can install packages from GitHub by specifying the directory in the repo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">"tidyverse/ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can also install previous versions of a package by including the version you want:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(tidyverse<span class="sc">/</span>ggplot2<span class="sc">@</span>v3.<span class="fl">4.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can check the dependencies and their versions for a specific package by drawing the dependency tree with the function <code>pkg_deps_tree()</code>.</p>
+<p>But what exactly does this mean? These are all the packages that <code>ggplot2</code>depend on and need to in order to work, which means they need to be installed. The tree also includes the installed versions of each package on your computer.</p>
+<p>The key at the bottom of the tree let’s you know the status of the packages in your specific library. So for example, for me <code>ggplot2</code> has a [new][dl] tag next to it. It is telling me that I have the newest version installed. If it shows an [old][dl] tag next to it then it means your version is outdated and you could upgrade to the latest version. It also shows you what version you have and which one is the latest.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_deps_tree</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Loading metadata database</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Loading metadata database ... done</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ggplot2 3.5.1 [new][dl] (4.82 MB)
+├─cli 3.6.2 [new][dl] (1.34 MB)
+├─glue 1.7.0 [new][dl] (161.28 kB)
+├─gtable 0.3.5 [new][dl] (225.67 kB)
+│ ├─cli
+│ ├─glue
+│ ├─lifecycle 1.0.4 [new][dl] (139.76 kB)
+│ │ ├─cli
+│ │ ├─glue
+│ │ └─rlang 1.1.4 [new][dl] (1.57 MB)
+│ └─rlang
+├─isoband 0.2.7 [new][dl] (1.97 MB)
+├─lifecycle
+├─MASS 7.3-60.0.1 &lt; 7.3-61 [old]
+├─mgcv 1.9-1 
+│ ├─nlme 3.1-164 -&gt; 3.1-165 [upd][dl] (2.34 MB)
+│ │ └─lattice 0.22-5 -&gt; 0.22-6 [upd][dl] (1.38 MB)
+│ └─Matrix 1.6-5 &lt; 1.7-0 [old]
+│   └─lattice
+├─rlang
+├─scales 1.3.0 [new][dl] (703.35 kB)
+│ ├─cli
+│ ├─farver 2.1.2 [new][dl] (1.51 MB)
+│ ├─glue
+│ ├─labeling 0.4.3 [new][dl] (62.57 kB)
+│ ├─lifecycle
+│ ├─munsell 0.5.1 [new][dl] (245.61 kB)
+│ │ └─colorspace 2.1-0 [new][dl] (2.63 MB)
+│ ├─R6 2.5.1 [new][dl] (84.30 kB)
+│ ├─RColorBrewer 1.1-3 [new][dl] (56.07 kB)
+│ ├─rlang
+│ └─viridisLite 0.4.2 [new][dl] (1.30 MB)
+├─tibble 3.2.1 [new][dl] (690.81 kB)
+│ ├─fansi 1.0.6 [new][dl] (314.08 kB)
+│ ├─lifecycle
+│ ├─magrittr 2.0.3 [new][dl] (226.87 kB)
+│ ├─pillar 1.9.0 [new][dl] (659.41 kB)
+│ │ ├─cli
+│ │ ├─fansi
+│ │ ├─glue
+│ │ ├─lifecycle
+│ │ ├─rlang
+│ │ ├─utf8 1.2.4 [new][dl] (149.79 kB)
+│ │ └─vctrs 0.6.5 [new][dl] (1.34 MB)
+│ │   ├─cli
+│ │   ├─glue
+│ │   ├─lifecycle
+│ │   └─rlang
+│ ├─pkgconfig 2.0.3 [new][dl] (22.44 kB)
+│ ├─rlang
+│ └─vctrs
+├─vctrs
+└─withr 3.0.0 [new][dl] (246.02 kB)
+
+Key:  [new] new | [upd] update | [old] outdated | [dl] download</code></pre>
+</div>
+</div>
+</section>
+<section id="install-and-load-packages-using-package-pacman" class="level3">
+<h3 class="anchored" data-anchor-id="install-and-load-packages-using-package-pacman">Install and load packages using package <code>pacman</code></h3>
+<p>Here is the website for <a href="https://trinker.github.io/pacman/vignettes/Introduction_to_pacman.html">pacman</a>. All their functions have the following syntax: <code>p_*</code>where the <code>*</code> is the action you want it to perform, like load or install.</p>
+<p>If you only want to install a package then you may want to use function: <code>pacman::p_install()</code> which is the equivalent to <code>install.packages()</code> from base R. One of the arguments is <code>try.bioconductor = TRUE</code> if you want the package to also check Bioconductor in case your package is not available on CRAN.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># packages can be inside quotes or not. </span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_install</span>(<span class="st">"tibble"</span>, <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you want to load libraries, then use <code>pacman::p_load()</code>. It has the argument <code>install = TRUE</code> if you want to install the package first. This means that you can install and load libraries in one function. Super efficient!! It also has the argument <code>update = TRUE</code> in case you want to update an out of date package you already have installed. Set it to FALSE to continue working with the versions you already have installed.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># packages can be inside quotes or not.</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This will load the libraries tibble and ggplot2, </span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># and in case you don't have them installed pacman will install them for you. </span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># However, if you have any of these packages already installed it WON'T update those versions</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(<span class="st">"tibble"</span>, <span class="st">"ggplot2"</span>, </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">install =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">update =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you want to install and load packages form GitHub then you might like function <code>pacman::p_install_gh()</code> and <code>pacman::p_load_gh()</code>. The path follows the convention: <code>username/repo[/subdir][@ref|#pull]</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p_install_gh</span>(<span class="fu">c</span>(<span class="st">"Dasonk/githubSearch"</span>, <span class="st">"trinker/regexr"</span>, <span class="st">"hadley/httr@v0.4"</span>))</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p_load_gh</span>(<span class="fu">c</span>(<span class="st">"Dasonk/githubSearch"</span>, <span class="st">"trinker/regexr"</span>, <span class="st">"hadley/httr@v0.4"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Install packages for only a temporary session">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Install packages for only a temporary session
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a super cool function <code>pacman::p_temp()</code> that allows you to temporarily install packages on one session but not permanently in your user’s library. This means that once you close the session, the package is no longer available in future sessions. This is useful in case you want to test a package but not necessarily install it.</p>
+</div>
+</div>
+</section>
+<section id="my-preferred-way-of-installing-and-loading-packages" class="level3">
+<h3 class="anchored" data-anchor-id="my-preferred-way-of-installing-and-loading-packages">My preferred way of installing and loading packages</h3>
+<p>I have two preferred ways to load libraries in a project, depending on what I’m working on:</p>
+<ol type="1">
+<li><p>If I already know all the packages I need to use for a specific project, then I create a script with the following code which I can <code>source()</code> at the beginning of every script.</p></li>
+<li><p>If I don’t know what packages I will use for all the parts of a project, then I load all libraries at the beginning of each script like this.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(ggplot2, </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>               tidyr, </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>               cowplot, </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">install =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">update =</span> <span class="cn">FALSE</span>) <span class="co"># Update? </span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>(<span class="fu">.packages</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "cowplot"   "tidyr"     "ggplot2"   "pak"       "devtools"  "usethis"  
+ [7] "pacman"    "stats"     "graphics"  "grDevices" "utils"     "datasets" 
+[13] "methods"   "base"     </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>And that’s it! I hope you found this blog post useful. I want to start blogging more, especially about coding in R. I named my blog “My digital notebook” because I want it to be a way for me to keep records of how and what I’m learning. Also, maybe having access to my notes may be useful to others too!</p>
+<p>Thanks Philippe Massicotte <span class="emoji" data-emoji="heart">❤️</span> and the Data Science Learning Community Slack <span class="emoji" data-emoji="blue_heart">💙</span> for your help understanding package <code>pak</code>!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="gabspalomo/gabspalomo.github.io" data-repo-id="R_kgDOH9PFzQ" data-category="Blog" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Copyright 2024 Gabriela Palomo-Munoz. All text and images licensed CC-BY-NC 4.0.<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

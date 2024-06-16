@@ -1,0 +1,178 @@
+---
+title: "Different ways to install and load libraries in R"
+# image: rphylopic.png
+author: "Gabriela Palomo-Munoz"
+date: last-modified
+date-format: "[Last Updated on] MMMM DD, YYYY"
+categories: [basics, R, pak, pacman, devtools]
+toc: true
+toc-depth: 3
+toc-expand: 3
+code-copy: true
+code-block-bg: true
+from: markdown+emoji
+# draft: true
+---
+
+## Installing and loading libraries in R 
+
+There are many ways in which you can install and load libraries into R besides the basic `install.packages()` and `library()`. Here, I explain a few of my favorite ones including custom functions. I also added pros and cons for each one. 
+
+### Basic way (install and load)
+
+The default way to install a package from CRAN is to use the function `install.packages()`. It accepts the following arguments: 
+  - pkgs: character vector of the names of packages you wish to download; must be inside quotes (e.g., `"tidyr"`)
+  - To see other arguments, go to the [documentation file](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/install.packages). 
+
+The function `library()` lets you load one library at a time into R. If a package is not installed it will let you know with an error such as the one below. The packages can be inside quotes or without quotes 
+
+```{r basic, eval=FALSE, warning=FALSE, message=FALSE}
+# install packages 
+install.packages("pacman", "devtools")
+# load libraries 
+library(pacman)
+library(devtools)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(pacman)
+library(devtools)
+```
+
+
+```{r, packages-basic}
+# Check to see which libraries are loaded
+(.packages())
+```
+
+::: {.callout-important title="Error loading uninstalled package"}
+If you load a library that you haven't installed, then you will get the following error. So install the library first, and then try loading it again.
+
+![](/blog/posts/installing_loading_libraries/error_package.png)
+:::
+
+Alternatively, you can also install packages in RStudio by going to the Packages window on the lower left and click on the install button. You can install several packages by separating them by commas.
+
+![](/blog/posts/installing_loading_libraries/install_rstudio.png){width=3in fig-align="center"}
+
+::: {.callout-tip title="Installing packages on GitHub or other repositories"}
+If you want to load a package that is available on GitHub but hasn't been submitted to CRAN then you might want to use `devtools::install_github()`. Package [`devtools`](https://devtools.r-lib.org/) is super useful for package development but it has a function that we can all use to install packages from GitHub or package development versions too. To use it, you have to install it first, and then just include the package you want inside quotes. Usually, the right paths to download a package (e.g., devtools is inside the r-lib directory) can be found on their GitHub repo or website.   
+
+```{r devtools, eval=FALSE}
+# Install devtools from CRAN
+install.packages("devtools")
+
+# Or the development version from GitHub:
+# install.packages("devtools")
+devtools::install_github("r-lib/devtools")
+```
+
+:::
+
+### Install packages using package `pak`
+
+Pak is one of my favorite ways to install packages because it doesn't matter where your package lives (e.g., CRAN, GitHub, Bioconductor, local) you can download or update it using one single function. Another cool thing about `pak` is that it will automatically install any dependencies that the package requires. 
+
+Make sure you have it installed. One thing to note is that you don't have to load a library if you include the name of the package before the function like this: `pak::repo_get()`. 
+
+```{r pak, eval=FALSE}
+install.packages("pak")
+```
+
+
+```{r, echo=FALSE}
+library(pak)
+```
+
+The main function is `pkg_install()` and it accepts the following arguments (for a list of all arguments, check their [website](https://pak.r-lib.org/index.html)): 
+  - pkg: the package you want to install inside quotes (e.g., "ggplot2")
+  - upgrade: logical (TRUE, FALSE). If set to FALSE then it will only upgrade dependent packages if pkg, or one of their dependencies explicitly require a higher version than what you currently have. When it's set to TRUE, then you will install the latest version of that package and all its dependencies.
+
+```{r, eval=FALSE}
+pak::pkg_install("ggplot2")
+```
+
+You can install packages from GitHub by specifying the directory in the repo: 
+
+```{r, eval=FALSE}
+pak::pkg_install("tidyverse/ggplot2")
+```
+
+
+You can also install previous versions of a package by including the version you want: 
+
+```{r, eval=FALSE}
+pak::pkg_install(tidyverse/ggplot2@v3.4.0)
+```
+
+You can check the dependencies and their versions for a specific package by drawing the dependency tree with the function `pkg_deps_tree()`. 
+
+But what exactly does this mean? These are all the packages that `ggplot2`depend on and need to in order to work, which means they need to be installed. The tree also includes the installed versions of each package on your computer. 
+
+The key at the bottom of the tree let's you know the status of the packages in your specific library. So for example, for me `ggplot2` has a [new][dl] tag next to it. It is telling me that I have the newest version installed. If it shows an [old][dl] tag next to it then it means your version is outdated and you could upgrade to the latest version. It also shows you what version you have and which one is the latest. 
+
+```{r}
+pak::pkg_deps_tree("ggplot2")
+```
+### Install and load packages using package `pacman`
+
+Here is the website for [pacman](https://trinker.github.io/pacman/vignettes/Introduction_to_pacman.html). All their functions have the following syntax: `p_*`where the `*` is the action you want it to perform, like load or install. 
+
+If you only want to install a package then you may want to use function: `pacman::p_install()` which is the equivalent to `install.packages()` from base R. One of the arguments is `try.bioconductor = TRUE` if you want the package to also check Bioconductor in case your package is not available on CRAN.  
+
+```{r, eval = FALSE}
+# packages can be inside quotes or not. 
+pacman::p_install("tibble", "ggplot2")
+```
+
+If you want to load libraries, then use `pacman::p_load()`. It has the argument `install = TRUE` if you want to install the package first. This means that you can install and load libraries in one function. Super efficient!! It also has the argument `update = TRUE` in case you want to update an out of date package you already have installed. Set it to FALSE to continue working with the versions you already have installed. 
+
+```{r, eval=FALSE}
+# packages can be inside quotes or not.
+# This will load the libraries tibble and ggplot2, 
+# and in case you don't have them installed pacman will install them for you. 
+# However, if you have any of these packages already installed it WON'T update those versions
+pacman::p_load("tibble", "ggplot2", 
+               install = TRUE, 
+               update = FALSE)
+```
+
+If you want to install and load packages form GitHub then you might like function `pacman::p_install_gh()` and `pacman::p_load_gh()`. The path follows the convention: `username/repo[/subdir][@ref|#pull]`
+
+```{r, eval=FALSE}
+p_install_gh(c("Dasonk/githubSearch", "trinker/regexr", "hadley/httr@v0.4"))
+p_load_gh(c("Dasonk/githubSearch", "trinker/regexr", "hadley/httr@v0.4"))
+```
+
+
+::: {.callout-tip title="Install packages for only a temporary session"}
+
+There is a super cool function `pacman::p_temp()` that allows you to temporarily install packages on one session but not permanently in your user's library. This means that once you close the session, the package is no longer available in future sessions. This is useful in case you want to test a package but not necessarily install it. 
+
+:::
+
+### My preferred way of installing and loading packages
+
+I have two preferred ways to load libraries in a project, depending on what I'm working on:  
+
+  1. If I already know all the packages I need to use for a specific project, then I create a script with the following code which I can `source()` at the beginning of every script. 
+  
+  2. If I don't know what packages I will use for all the parts of a project, then I load all libraries at the beginning of each script like this. 
+  
+```{r}
+pacman::p_load(ggplot2, 
+               tidyr, 
+               cowplot, 
+               install = TRUE,
+               update = FALSE) # Update? 
+
+(.packages())
+```
+## Conclusion
+
+And that's it! I hope you found this blog post useful. I want to start blogging more, especially about coding in R. I named my blog "My digital notebook" because I want it to be a way for me to keep records of how and what I'm learning. Also, maybe having access to my notes may be useful to others too! 
+
+Thanks Philippe Massicotte :heart: and the Data Science Learning Community Slack :blue_heart: for your help understanding package `pak`! 
+  
+
+  

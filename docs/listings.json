@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blog/posts/installing_loading_libraries/index.html",
       "/blog/posts/attributions_rphylopic/index.html",
       "/blog/posts/rphylopic_baser/index.html",
       "/blog/posts/rphylopic_ggplot2/index.html",
