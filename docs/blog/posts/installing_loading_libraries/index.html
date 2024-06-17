@@ -295,11 +295,48 @@ Error loading uninstalled package
 <p><img src="../../..\blog/posts/installing_loading_libraries/error_package.png" class="img-fluid"></p>
 </div>
 </div>
-<p>Alternatively, you can also install packages in RStudio by going to the Packages window on the lower left and click on the install button. You can install several packages by separating them by commas.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../..\blog/posts/installing_loading_libraries/install_rstudio.png" class="img-fluid figure-img" style="width:3in"></p>
-</figure>
+<section id="creating-a-function-to-install-and-load-libraries" class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-function-to-install-and-load-libraries">Creating a function to install and load libraries</h4>
+<p>You can create a function that can install and load several libraries in one go. It could be useful when sharing your project with others, because you don’t know what packages they have installed.</p>
+<p>Using lapply from <code>base</code> R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List of packages you want to work with </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ggplot2"</span>, <span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Install packages </span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>install_packages <span class="ot">&lt;-</span> pkgs <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(install_packages <span class="sc">==</span> <span class="cn">FALSE</span>)) {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Installs only missing packages </span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(pkgs[<span class="sc">!</span>install_packages])</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Packages loading</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(pkgs, library, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Check what packages were installed </span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>(<span class="fu">.packages</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Using map from <code>purrr</code>:</p>
+<p>Make sure you have previously installed package <code>purrr</code> which is part of the tidyverse:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List of packages you want to work with </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ggplot2"</span>, <span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Install packages </span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>install_packages <span class="ot">&lt;-</span> pkgs <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(install_packages <span class="sc">==</span> <span class="cn">FALSE</span>)) {</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Installs only missing packages </span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(pkgs[<span class="sc">!</span>install_packages])</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Packages loading</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map</span>(pkgs, \(x) <span class="fu">library</span>(x, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>, <span class="at">character.only =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternatively you can wrap the function into `invisible()` to prevent any messages or results to be printed </span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(purrr<span class="sc">::</span><span class="fu">map</span>(pkgs, \(x) <span class="fu">library</span>(x, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>, <span class="at">character.only =</span> <span class="cn">TRUE</span>)))</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Check what packages were installed </span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>(<span class="fu">.packages</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Installing packages on GitHub or other repositories">
 <div class="callout-header d-flex align-content-center">
@@ -313,40 +350,42 @@ Installing packages on GitHub or other repositories
 <div class="callout-body-container callout-body">
 <p>If you want to load a package that is available on GitHub but hasn’t been submitted to CRAN then you might want to use <code>devtools::install_github()</code>. Package <a href="https://devtools.r-lib.org/"><code>devtools</code></a> is super useful for package development but it has a function that we can all use to install packages from GitHub or package development versions too. To use it, you have to install it first, and then just include the package you want inside quotes. Usually, the right paths to download a package (e.g., devtools is inside the r-lib directory) can be found on their GitHub repo or website.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install devtools from CRAN</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Or the development version from GitHub:</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/devtools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install devtools from CRAN</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Or the development version from GitHub:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/devtools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </section>
+</section>
 <section id="install-packages-using-package-pak" class="level3">
 <h3 class="anchored" data-anchor-id="install-packages-using-package-pak">Install packages using package <code>pak</code></h3>
-<p>Pak is one of my favorite ways to install packages because it doesn’t matter where your package lives (e.g., CRAN, GitHub, Bioconductor, local) you can download or update it using one single function. Another cool thing about <code>pak</code> is that it will automatically install any dependencies that the package requires.</p>
+<p>Pak is great package to install packages because it doesn’t matter where your package lives (e.g., CRAN, GitHub, Bioconductor, local) you can download or update it using one single function. Another cool thing about <code>pak</code> is that it will automatically install any dependencies that the package requires.</p>
 <p>Make sure you have it installed. One thing to note is that you don’t have to load a library if you include the name of the package before the function like this: <code>pak::repo_get()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The main function is <code>pkg_install()</code> and it accepts the following arguments (for a list of all arguments, check their <a href="https://pak.r-lib.org/index.html">website</a>): - pkg: the package you want to install inside quotes (e.g., “ggplot2”) - upgrade: logical (TRUE, FALSE). If set to FALSE then it will only upgrade dependent packages if pkg, or one of their dependencies explicitly require a higher version than what you currently have. When it’s set to TRUE, then you will install the latest version of that package and all its dependencies.</p>
+<p>The main function is <code>pkg_install()</code> and it accepts the following arguments (for a list of all arguments, check their <a href="https://pak.r-lib.org/index.html">website</a>): - pkg: the package you want to install inside quotes (e.g., “ggplot2”) - upgrade: logical (TRUE, FALSE). If set to FALSE then it will only upgrade dependent packages if pkg, or one of their dependencies explicitly require a higher version than what you currently have. When it’s set to TRUE, then you will install the latest version of that package and all its dependencies. I recommend setting it to FALSE when sharing your work with others, so that your code doesn’t change anything on another computer without them knowing about it.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">"ggplot2"</span>, <span class="st">"tidyr"</span>, </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">upgrade =</span> <span class="cn">TRUE</span>) <span class="co"># Change to FALSE if you do not want to upgrade any packages </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can install packages from GitHub by specifying the directory in the repo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">"tidyverse/ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">"tidyverse/ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can also install previous versions of a package by including the version you want:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(tidyverse<span class="sc">/</span>ggplot2<span class="sc">@</span>v3.<span class="fl">4.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(tidyverse<span class="sc">/</span>ggplot2<span class="sc">@</span>v3.<span class="fl">4.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can check the dependencies and their versions for a specific package by drawing the dependency tree with the function <code>pkg_deps_tree()</code>.</p>
 <p>But what exactly does this mean? These are all the packages that <code>ggplot2</code>depend on and need to in order to work, which means they need to be installed. The tree also includes the installed versions of each package on your computer.</p>
 <p>The key at the bottom of the tree let’s you know the status of the packages in your specific library. So for example, for me <code>ggplot2</code> has a [new][dl] tag next to it. It is telling me that I have the newest version installed. If it shows an [old][dl] tag next to it then it means your version is outdated and you could upgrade to the latest version. It also shows you what version you have and which one is the latest.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_deps_tree</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_deps_tree</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>ℹ Loading metadata database</code></pre>
 </div>
@@ -381,12 +420,12 @@ Installing packages on GitHub or other repositories
 │ ├─cli
 │ ├─farver 2.1.2 [new][dl] (1.51 MB)
 │ ├─glue
-│ ├─labeling 0.4.3 [new][dl] (62.57 kB)
+│ ├─labeling 0.4.3 [new]
 │ ├─lifecycle
 │ ├─munsell 0.5.1 [new][dl] (245.61 kB)
 │ │ └─colorspace 2.1-0 [new][dl] (2.63 MB)
 │ ├─R6 2.5.1 [new][dl] (84.30 kB)
-│ ├─RColorBrewer 1.1-3 [new][dl] (56.07 kB)
+│ ├─RColorBrewer 1.1-3 [new]
 │ ├─rlang
 │ └─viridisLite 0.4.2 [new][dl] (1.30 MB)
 ├─tibble 3.2.1 [new][dl] (690.81 kB)
@@ -420,23 +459,23 @@ Key:  [new] new | [upd] update | [old] outdated | [dl] download</code></pre>
 <p>Here is the website for <a href="https://trinker.github.io/pacman/vignettes/Introduction_to_pacman.html">pacman</a>. All their functions have the following syntax: <code>p_*</code>where the <code>*</code> is the action you want it to perform, like load or install.</p>
 <p>If you only want to install a package then you may want to use function: <code>pacman::p_install()</code> which is the equivalent to <code>install.packages()</code> from base R. One of the arguments is <code>try.bioconductor = TRUE</code> if you want the package to also check Bioconductor in case your package is not available on CRAN.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># packages can be inside quotes or not. </span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_install</span>(<span class="st">"tibble"</span>, <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># packages can be inside quotes or not. </span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_install</span>(<span class="st">"tibble"</span>, <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you want to load libraries, then use <code>pacman::p_load()</code>. It has the argument <code>install = TRUE</code> if you want to install the package first. This means that you can install and load libraries in one function. Super efficient!! It also has the argument <code>update = TRUE</code> in case you want to update an out of date package you already have installed. Set it to FALSE to continue working with the versions you already have installed.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># packages can be inside quotes or not.</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This will load the libraries tibble and ggplot2, </span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># and in case you don't have them installed pacman will install them for you. </span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># However, if you have any of these packages already installed it WON'T update those versions</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(<span class="st">"tibble"</span>, <span class="st">"ggplot2"</span>, </span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">install =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">update =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># packages can be inside quotes or not.</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This will load the libraries tibble and ggplot2, </span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># and in case you don't have them installed pacman will install them for you. </span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># However, if you have any of these packages already installed it WON'T update those versions</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(<span class="st">"tibble"</span>, <span class="st">"ggplot2"</span>, </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">install =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">update =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you want to install and load packages form GitHub then you might like function <code>pacman::p_install_gh()</code> and <code>pacman::p_load_gh()</code>. The path follows the convention: <code>username/repo[/subdir][@ref|#pull]</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p_install_gh</span>(<span class="fu">c</span>(<span class="st">"Dasonk/githubSearch"</span>, <span class="st">"trinker/regexr"</span>, <span class="st">"hadley/httr@v0.4"</span>))</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p_load_gh</span>(<span class="fu">c</span>(<span class="st">"Dasonk/githubSearch"</span>, <span class="st">"trinker/regexr"</span>, <span class="st">"hadley/httr@v0.4"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p_install_gh</span>(<span class="fu">c</span>(<span class="st">"Dasonk/githubSearch"</span>, <span class="st">"trinker/regexr"</span>, <span class="st">"hadley/httr@v0.4"</span>))</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p_load_gh</span>(<span class="fu">c</span>(<span class="st">"Dasonk/githubSearch"</span>, <span class="st">"trinker/regexr"</span>, <span class="st">"hadley/httr@v0.4"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Install packages for only a temporary session">
 <div class="callout-header d-flex align-content-center">
@@ -460,18 +499,15 @@ Install packages for only a temporary session
 <li><p>If I don’t know what packages I will use for all the parts of a project, then I load all libraries at the beginning of each script like this.</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(ggplot2, </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>               tidyr, </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>               cowplot, </span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">install =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">update =</span> <span class="cn">FALSE</span>) <span class="co"># Update? </span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>(<span class="fu">.packages</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "cowplot"   "tidyr"     "ggplot2"   "pak"       "devtools"  "usethis"  
- [7] "pacman"    "stats"     "graphics"  "grDevices" "utils"     "datasets" 
-[13] "methods"   "base"     </code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make sure you already have pacman installed so you can just call the function</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("pacman")</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(ggplot2, </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>               tidyr, </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>               cowplot, </span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">install =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">update =</span> <span class="cn">FALSE</span>) <span class="co"># Update? </span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>(<span class="fu">.packages</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>

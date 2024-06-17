@@ -51,9 +51,58 @@ If you load a library that you haven't installed, then you will get the followin
 ![](/blog/posts/installing_loading_libraries/error_package.png)
 :::
 
-Alternatively, you can also install packages in RStudio by going to the Packages window on the lower left and click on the install button. You can install several packages by separating them by commas.
 
-![](/blog/posts/installing_loading_libraries/install_rstudio.png){width=3in fig-align="center"}
+#### Creating a function to install and load libraries 
+
+You can create a function that can install and load several libraries in one go. It could be useful when sharing your project with others, because you don't know what packages they have installed. 
+
+Using lapply from `base` R: 
+
+```{r, eval=FALSE}
+# List of packages you want to work with 
+pkgs <- c("ggplot2", "dplyr", "tidyr")
+
+# Install packages 
+install_packages <- pkgs %in% rownames(installed.packages())
+if (any(install_packages == FALSE)) {
+  ## Installs only missing packages 
+  install.packages(pkgs[!install_packages])
+}
+
+# Packages loading
+lapply(pkgs, library, warn.conflicts = FALSE, verbose = FALSE, character.only = TRUE)
+
+## Check what packages were installed 
+(.packages())
+
+```
+
+
+Using map from `purrr`: 
+
+Make sure you have previously installed package `purrr` which is part of the tidyverse:
+
+```{r, eval=FALSE}
+# List of packages you want to work with 
+pkgs <- c("ggplot2", "dplyr", "tidyr")
+
+# Install packages 
+install_packages <- pkgs %in% rownames(installed.packages())
+if (any(install_packages == FALSE)) {
+  ## Installs only missing packages 
+  install.packages(pkgs[!install_packages])
+}
+
+# Packages loading
+purrr::map(pkgs, \(x) library(x, warn.conflicts = FALSE, verbose = FALSE, character.only = TRUE))
+
+# Alternatively you can wrap the function into `invisible()` to prevent any messages or results to be printed 
+invisible(purrr::map(pkgs, \(x) library(x, warn.conflicts = FALSE, verbose = FALSE, character.only = TRUE)))
+
+## Check what packages were installed 
+(.packages())
+
+```
 
 ::: {.callout-tip title="Installing packages on GitHub or other repositories"}
 If you want to load a package that is available on GitHub but hasn't been submitted to CRAN then you might want to use `devtools::install_github()`. Package [`devtools`](https://devtools.r-lib.org/) is super useful for package development but it has a function that we can all use to install packages from GitHub or package development versions too. To use it, you have to install it first, and then just include the package you want inside quotes. Usually, the right paths to download a package (e.g., devtools is inside the r-lib directory) can be found on their GitHub repo or website.   
@@ -71,7 +120,7 @@ devtools::install_github("r-lib/devtools")
 
 ### Install packages using package `pak`
 
-Pak is one of my favorite ways to install packages because it doesn't matter where your package lives (e.g., CRAN, GitHub, Bioconductor, local) you can download or update it using one single function. Another cool thing about `pak` is that it will automatically install any dependencies that the package requires. 
+Pak is great package to install packages because it doesn't matter where your package lives (e.g., CRAN, GitHub, Bioconductor, local) you can download or update it using one single function. Another cool thing about `pak` is that it will automatically install any dependencies that the package requires. 
 
 Make sure you have it installed. One thing to note is that you don't have to load a library if you include the name of the package before the function like this: `pak::repo_get()`. 
 
@@ -86,10 +135,11 @@ library(pak)
 
 The main function is `pkg_install()` and it accepts the following arguments (for a list of all arguments, check their [website](https://pak.r-lib.org/index.html)): 
   - pkg: the package you want to install inside quotes (e.g., "ggplot2")
-  - upgrade: logical (TRUE, FALSE). If set to FALSE then it will only upgrade dependent packages if pkg, or one of their dependencies explicitly require a higher version than what you currently have. When it's set to TRUE, then you will install the latest version of that package and all its dependencies.
+  - upgrade: logical (TRUE, FALSE). If set to FALSE then it will only upgrade dependent packages if pkg, or one of their dependencies explicitly require a higher version than what you currently have. When it's set to TRUE, then you will install the latest version of that package and all its dependencies. I recommend setting it to FALSE when sharing your work with others, so that your code doesn't change anything on another computer without them knowing about it. 
 
 ```{r, eval=FALSE}
-pak::pkg_install("ggplot2")
+pak::pkg_install("ggplot2", "tidyr", 
+                 upgrade = TRUE) # Change to FALSE if you do not want to upgrade any packages 
 ```
 
 You can install packages from GitHub by specifying the directory in the repo: 
@@ -114,6 +164,7 @@ The key at the bottom of the tree let's you know the status of the packages in y
 ```{r}
 pak::pkg_deps_tree("ggplot2")
 ```
+
 ### Install and load packages using package `pacman`
 
 Here is the website for [pacman](https://trinker.github.io/pacman/vignettes/Introduction_to_pacman.html). All their functions have the following syntax: `p_*`where the `*` is the action you want it to perform, like load or install. 
@@ -159,7 +210,9 @@ I have two preferred ways to load libraries in a project, depending on what I'm 
   
   2. If I don't know what packages I will use for all the parts of a project, then I load all libraries at the beginning of each script like this. 
   
-```{r}
+```{r, eval=FALSE}
+# Make sure you already have pacman installed so you can just call the function
+# install.packages("pacman")
 pacman::p_load(ggplot2, 
                tidyr, 
                cowplot, 
