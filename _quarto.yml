@@ -27,7 +27,7 @@ website:
       - text: "Publications"
         href: publications.qmd
       - text: "Workshops"
-      - menu: 
+        menu: 
           - text: 'Introduction to ggplot2'
             file: workshops/intro_ggplot2/index.qmd   
     # - text: "CV"

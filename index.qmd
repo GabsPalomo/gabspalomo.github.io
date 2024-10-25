@@ -1,11 +1,12 @@
 ---
 title: "Gabriela Palomo"
+subtitle: "Ecologist | Data Science | Educator"
 about: 
   template: trestles
   image: /images/Collage.jpg
   links: 
-    - icon: twitter
-      text: Twitter
+    - icon: twitter-x
+      text: X
       href: https://twitter.com/gabbspalomo
     - icon: mastodon
       text: Fosstodon

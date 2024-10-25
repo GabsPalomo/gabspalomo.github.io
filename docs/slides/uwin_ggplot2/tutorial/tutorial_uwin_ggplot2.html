@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dan Herrera and Gabby Palomo">
-<meta name="dcterms.date" content="2024-06-01">
+<meta name="dcterms.date" content="2024-10-01">
 
-<title>Gabriela Palomo - Data Visualization in R</title>
+<title>Data Visualization in R – Gabriela Palomo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -83,7 +83,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -92,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -118,88 +125,87 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
   
-
 <script src="../../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
 <link href="../../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
+
 <link rel="stylesheet" href="documentstyle.scss">
-<meta property="og:title" content="Gabriela Palomo - Data Visualization in R">
+<meta property="og:title" content="Data Visualization in R – Gabriela Palomo">
 <meta property="og:description" content="">
-<meta property="og:image" content="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-4-1.png">
-<meta property="og:site-name" content="Gabriela Palomo">
-<meta name="twitter:title" content="Gabriela Palomo - Data Visualization in R">
+<meta property="og:site_name" content="Gabriela Palomo">
+<meta name="twitter:title" content="Data Visualization in R – Gabriela Palomo">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-4-1.png">
 <meta name="twitter:creator" content="@gabbspalomo">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Gabriela Palomo</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../blog.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../../blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../cliparts.html" rel="" target="">
- <span class="menu-text">ClipArts</span></a>
+    <a class="nav-link" href="../../../cliparts.html"> 
+<span class="menu-text">ClipArts</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Projects</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-projects">    
         <li>
-    <a class="dropdown-item" href="../../../projects/portfolio.html" rel="" target="">
+    <a class="dropdown-item" href="../../../projects/portfolio.html">
  <span class="dropdown-text">Portfolio - Data Visualization</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../../publications.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../../publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
-  <li class="dropdown-header">
- <span class="menu-text">Workshops</span></li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
- <span class="menu-text"></span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-workshops" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Workshops</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">    
         <li>
-    <a class="dropdown-item" href="../../../workshops/intro_ggplot2/index.html" rel="" target="">
+    <a class="dropdown-item" href="../../../workshops/intro_ggplot2/index.html">
  <span class="dropdown-text">Introduction to ggplot2</span></a>
   </li>  
     </ul>
   </li>
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -247,7 +253,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 1, 2024</p>
+      <p class="date">October 1, 2024</p>
     </div>
   </div>
   
@@ -255,7 +261,9 @@ cookieconsent.run({
   </div>
   
 
+
 </header>
+
 
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
@@ -322,24 +330,23 @@ Note
 </div>
 <div class="cell">
 <div class="cell-output-display">
-
-<div id="jqpvpgnyii" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jqpvpgnyii table {
+<div id="eppbpqecot" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eppbpqecot table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jqpvpgnyii thead, #jqpvpgnyii tbody, #jqpvpgnyii tfoot, #jqpvpgnyii tr, #jqpvpgnyii td, #jqpvpgnyii th {
+#eppbpqecot thead, #eppbpqecot tbody, #eppbpqecot tfoot, #eppbpqecot tr, #eppbpqecot td, #eppbpqecot th {
   border-style: none;
 }
 
-#jqpvpgnyii p {
+#eppbpqecot p {
   margin: 0;
   padding: 0;
 }
 
-#jqpvpgnyii .gt_table {
+#eppbpqecot .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -365,12 +372,12 @@ Note
   border-left-color: #D3D3D3;
 }
 
-#jqpvpgnyii .gt_caption {
+#eppbpqecot .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jqpvpgnyii .gt_title {
+#eppbpqecot .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -382,7 +389,7 @@ Note
   border-bottom-width: 0;
 }
 
-#jqpvpgnyii .gt_subtitle {
+#eppbpqecot .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -394,7 +401,7 @@ Note
   border-top-width: 0;
 }
 
-#jqpvpgnyii .gt_heading {
+#eppbpqecot .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -406,13 +413,13 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#jqpvpgnyii .gt_bottom_border {
+#eppbpqecot .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jqpvpgnyii .gt_col_headings {
+#eppbpqecot .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -427,7 +434,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#jqpvpgnyii .gt_col_heading {
+#eppbpqecot .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -447,7 +454,7 @@ Note
   overflow-x: hidden;
 }
 
-#jqpvpgnyii .gt_column_spanner_outer {
+#eppbpqecot .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -459,15 +466,15 @@ Note
   padding-right: 4px;
 }
 
-#jqpvpgnyii .gt_column_spanner_outer:first-child {
+#eppbpqecot .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jqpvpgnyii .gt_column_spanner_outer:last-child {
+#eppbpqecot .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jqpvpgnyii .gt_column_spanner {
+#eppbpqecot .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -479,11 +486,11 @@ Note
   width: 100%;
 }
 
-#jqpvpgnyii .gt_spanner_row {
+#eppbpqecot .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jqpvpgnyii .gt_group_heading {
+#eppbpqecot .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -509,7 +516,7 @@ Note
   text-align: left;
 }
 
-#jqpvpgnyii .gt_empty_group_heading {
+#eppbpqecot .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -524,15 +531,15 @@ Note
   vertical-align: middle;
 }
 
-#jqpvpgnyii .gt_from_md > :first-child {
+#eppbpqecot .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jqpvpgnyii .gt_from_md > :last-child {
+#eppbpqecot .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jqpvpgnyii .gt_row {
+#eppbpqecot .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -551,7 +558,7 @@ Note
   overflow-x: hidden;
 }
 
-#jqpvpgnyii .gt_stub {
+#eppbpqecot .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -564,7 +571,7 @@ Note
   padding-right: 5px;
 }
 
-#jqpvpgnyii .gt_stub_row_group {
+#eppbpqecot .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -578,15 +585,15 @@ Note
   vertical-align: top;
 }
 
-#jqpvpgnyii .gt_row_group_first td {
+#eppbpqecot .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jqpvpgnyii .gt_row_group_first th {
+#eppbpqecot .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jqpvpgnyii .gt_summary_row {
+#eppbpqecot .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -596,16 +603,16 @@ Note
   padding-right: 5px;
 }
 
-#jqpvpgnyii .gt_first_summary_row {
+#eppbpqecot .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jqpvpgnyii .gt_first_summary_row.thick {
+#eppbpqecot .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jqpvpgnyii .gt_last_summary_row {
+#eppbpqecot .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -615,7 +622,7 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#jqpvpgnyii .gt_grand_summary_row {
+#eppbpqecot .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -625,7 +632,7 @@ Note
   padding-right: 5px;
 }
 
-#jqpvpgnyii .gt_first_grand_summary_row {
+#eppbpqecot .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -635,7 +642,7 @@ Note
   border-top-color: #D3D3D3;
 }
 
-#jqpvpgnyii .gt_last_grand_summary_row_top {
+#eppbpqecot .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -645,11 +652,11 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#jqpvpgnyii .gt_striped {
+#eppbpqecot .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jqpvpgnyii .gt_table_body {
+#eppbpqecot .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -658,7 +665,7 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#jqpvpgnyii .gt_footnotes {
+#eppbpqecot .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -672,7 +679,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#jqpvpgnyii .gt_footnote {
+#eppbpqecot .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -681,7 +688,7 @@ Note
   padding-right: 5px;
 }
 
-#jqpvpgnyii .gt_sourcenotes {
+#eppbpqecot .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -695,7 +702,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#jqpvpgnyii .gt_sourcenote {
+#eppbpqecot .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -703,162 +710,176 @@ Note
   padding-right: 5px;
 }
 
-#jqpvpgnyii .gt_left {
+#eppbpqecot .gt_left {
   text-align: left;
 }
 
-#jqpvpgnyii .gt_center {
+#eppbpqecot .gt_center {
   text-align: center;
 }
 
-#jqpvpgnyii .gt_right {
+#eppbpqecot .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jqpvpgnyii .gt_font_normal {
+#eppbpqecot .gt_font_normal {
   font-weight: normal;
 }
 
-#jqpvpgnyii .gt_font_bold {
+#eppbpqecot .gt_font_bold {
   font-weight: bold;
 }
 
-#jqpvpgnyii .gt_font_italic {
+#eppbpqecot .gt_font_italic {
   font-style: italic;
 }
 
-#jqpvpgnyii .gt_super {
+#eppbpqecot .gt_super {
   font-size: 65%;
 }
 
-#jqpvpgnyii .gt_footnote_marks {
+#eppbpqecot .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jqpvpgnyii .gt_asterisk {
+#eppbpqecot .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jqpvpgnyii .gt_indent_1 {
+#eppbpqecot .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jqpvpgnyii .gt_indent_2 {
+#eppbpqecot .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jqpvpgnyii .gt_indent_3 {
+#eppbpqecot .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jqpvpgnyii .gt_indent_4 {
+#eppbpqecot .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jqpvpgnyii .gt_indent_5 {
+#eppbpqecot .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="10" class="gt_heading gt_title gt_font_normal" style=""><strong>Landcover Covariates</strong></td>
-    </tr>
-    <tr class="gt_heading">
-      <td colspan="10" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">NLCD landcover classes</td>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="sites">sites</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="water">water</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="lawn_grass">lawn_grass</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="urban">urban</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="forest">forest</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="shrub">shrub</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="herbaceous">herbaceous</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="wetland">wetland</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ag">ag</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><th id="stub_1_1" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">1</th>
-<td headers="stub_1_1 sites" class="gt_row gt_left">C04-MBP1</td>
-<td headers="stub_1_1 water" class="gt_row gt_right">0.01</td>
-<td headers="stub_1_1 lawn_grass" class="gt_row gt_right">0.01</td>
-<td headers="stub_1_1 urban" class="gt_row gt_right">0.82</td>
-<td headers="stub_1_1 forest" class="gt_row gt_right">0.05</td>
-<td headers="stub_1_1 shrub" class="gt_row gt_right">0.00</td>
-<td headers="stub_1_1 herbaceous" class="gt_row gt_right">0.00</td>
-<td headers="stub_1_1 wetland" class="gt_row gt_right">0.08</td>
-<td headers="stub_1_1 ag" class="gt_row gt_right">0.00</td></tr>
-    <tr><th id="stub_1_2" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">2</th>
-<td headers="stub_1_2 sites" class="gt_row gt_left">C05-BEA1</td>
-<td headers="stub_1_2 water" class="gt_row gt_right">0.08</td>
-<td headers="stub_1_2 lawn_grass" class="gt_row gt_right">0.06</td>
-<td headers="stub_1_2 urban" class="gt_row gt_right">0.52</td>
-<td headers="stub_1_2 forest" class="gt_row gt_right">0.04</td>
-<td headers="stub_1_2 shrub" class="gt_row gt_right">0.00</td>
-<td headers="stub_1_2 herbaceous" class="gt_row gt_right">0.13</td>
-<td headers="stub_1_2 wetland" class="gt_row gt_right">0.11</td>
-<td headers="stub_1_2 ag" class="gt_row gt_right">0.01</td></tr>
-    <tr><th id="stub_1_3" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">3</th>
-<td headers="stub_1_3 sites" class="gt_row gt_left">C05-BMP1</td>
-<td headers="stub_1_3 water" class="gt_row gt_right">0.26</td>
-<td headers="stub_1_3 lawn_grass" class="gt_row gt_right">0.13</td>
-<td headers="stub_1_3 urban" class="gt_row gt_right">0.32</td>
-<td headers="stub_1_3 forest" class="gt_row gt_right">0.02</td>
-<td headers="stub_1_3 shrub" class="gt_row gt_right">0.01</td>
-<td headers="stub_1_3 herbaceous" class="gt_row gt_right">0.04</td>
-<td headers="stub_1_3 wetland" class="gt_row gt_right">0.19</td>
-<td headers="stub_1_3 ag" class="gt_row gt_right">0.00</td></tr>
-    <tr><th id="stub_1_4" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">4</th>
-<td headers="stub_1_4 sites" class="gt_row gt_left">C05-BMP2</td>
-<td headers="stub_1_4 water" class="gt_row gt_right">0.15</td>
-<td headers="stub_1_4 lawn_grass" class="gt_row gt_right">0.00</td>
-<td headers="stub_1_4 urban" class="gt_row gt_right">0.28</td>
-<td headers="stub_1_4 forest" class="gt_row gt_right">0.04</td>
-<td headers="stub_1_4 shrub" class="gt_row gt_right">0.01</td>
-<td headers="stub_1_4 herbaceous" class="gt_row gt_right">0.20</td>
-<td headers="stub_1_4 wetland" class="gt_row gt_right">0.24</td>
-<td headers="stub_1_4 ag" class="gt_row gt_right">0.00</td></tr>
-    <tr><th id="stub_1_5" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">5</th>
-<td headers="stub_1_5 sites" class="gt_row gt_left">C05-EGG1</td>
-<td headers="stub_1_5 water" class="gt_row gt_right">0.07</td>
-<td headers="stub_1_5 lawn_grass" class="gt_row gt_right">0.02</td>
-<td headers="stub_1_5 urban" class="gt_row gt_right">0.71</td>
-<td headers="stub_1_5 forest" class="gt_row gt_right">0.03</td>
-<td headers="stub_1_5 shrub" class="gt_row gt_right">0.00</td>
-<td headers="stub_1_5 herbaceous" class="gt_row gt_right">0.01</td>
-<td headers="stub_1_5 wetland" class="gt_row gt_right">0.13</td>
-<td headers="stub_1_5 ag" class="gt_row gt_right">0.03</td></tr>
-    <tr><th id="stub_1_6" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier; font-size: x-small; background-color: #E4E4E4;">6..118</th>
-<td headers="stub_1_6 sites" class="gt_row gt_left" style="background-color: #E4E4E4;"></td>
-<td headers="stub_1_6 water" class="gt_row gt_right" style="background-color: #E4E4E4;"></td>
-<td headers="stub_1_6 lawn_grass" class="gt_row gt_right" style="background-color: #E4E4E4;"></td>
-<td headers="stub_1_6 urban" class="gt_row gt_right" style="background-color: #E4E4E4;"></td>
-<td headers="stub_1_6 forest" class="gt_row gt_right" style="background-color: #E4E4E4;"></td>
-<td headers="stub_1_6 shrub" class="gt_row gt_right" style="background-color: #E4E4E4;"></td>
-<td headers="stub_1_6 herbaceous" class="gt_row gt_right" style="background-color: #E4E4E4;"></td>
-<td headers="stub_1_6 wetland" class="gt_row gt_right" style="background-color: #E4E4E4;"></td>
-<td headers="stub_1_6 ag" class="gt_row gt_right" style="background-color: #E4E4E4;"></td></tr>
-    <tr><th id="stub_1_7" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">119</th>
-<td headers="stub_1_7 sites" class="gt_row gt_left">S10-LPP0</td>
-<td headers="stub_1_7 water" class="gt_row gt_right">0.12</td>
-<td headers="stub_1_7 lawn_grass" class="gt_row gt_right">0.03</td>
-<td headers="stub_1_7 urban" class="gt_row gt_right">0.19</td>
-<td headers="stub_1_7 forest" class="gt_row gt_right">0.05</td>
-<td headers="stub_1_7 shrub" class="gt_row gt_right">0.00</td>
-<td headers="stub_1_7 herbaceous" class="gt_row gt_right">0.05</td>
-<td headers="stub_1_7 wetland" class="gt_row gt_right">0.49</td>
-<td headers="stub_1_7 ag" class="gt_row gt_right">0.06</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="10" class="gt_heading gt_title gt_font_normal"><strong>Landcover Covariates</strong></th>
+</tr>
+<tr class="odd gt_heading">
+<th colspan="10" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">NLCD landcover classes</th>
+</tr>
+<tr class="header gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="sites" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">sites</th>
+<th id="water" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">water</th>
+<th id="lawn_grass" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">lawn_grass</th>
+<th id="urban" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">urban</th>
+<th id="forest" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">forest</th>
+<th id="shrub" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">shrub</th>
+<th id="herbaceous" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">herbaceous</th>
+<th id="wetland" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">wetland</th>
+<th id="ag" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">ag</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td id="stub_1_1" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row" style="font-family: Courier">1</td>
+<td class="gt_row gt_left" headers="stub_1_1 sites">C04-MBP1</td>
+<td class="gt_row gt_right" headers="stub_1_1 water">0.01</td>
+<td class="gt_row gt_right" headers="stub_1_1 lawn_grass">0.01</td>
+<td class="gt_row gt_right" headers="stub_1_1 urban">0.82</td>
+<td class="gt_row gt_right" headers="stub_1_1 forest">0.05</td>
+<td class="gt_row gt_right" headers="stub_1_1 shrub">0.00</td>
+<td class="gt_row gt_right" headers="stub_1_1 herbaceous">0.00</td>
+<td class="gt_row gt_right" headers="stub_1_1 wetland">0.08</td>
+<td class="gt_row gt_right" headers="stub_1_1 ag">0.00</td>
+</tr>
+<tr class="even">
+<td id="stub_1_2" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row" style="font-family: Courier">2</td>
+<td class="gt_row gt_left" headers="stub_1_2 sites">C05-BEA1</td>
+<td class="gt_row gt_right" headers="stub_1_2 water">0.08</td>
+<td class="gt_row gt_right" headers="stub_1_2 lawn_grass">0.06</td>
+<td class="gt_row gt_right" headers="stub_1_2 urban">0.52</td>
+<td class="gt_row gt_right" headers="stub_1_2 forest">0.04</td>
+<td class="gt_row gt_right" headers="stub_1_2 shrub">0.00</td>
+<td class="gt_row gt_right" headers="stub_1_2 herbaceous">0.13</td>
+<td class="gt_row gt_right" headers="stub_1_2 wetland">0.11</td>
+<td class="gt_row gt_right" headers="stub_1_2 ag">0.01</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_3" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row" style="font-family: Courier">3</td>
+<td class="gt_row gt_left" headers="stub_1_3 sites">C05-BMP1</td>
+<td class="gt_row gt_right" headers="stub_1_3 water">0.26</td>
+<td class="gt_row gt_right" headers="stub_1_3 lawn_grass">0.13</td>
+<td class="gt_row gt_right" headers="stub_1_3 urban">0.32</td>
+<td class="gt_row gt_right" headers="stub_1_3 forest">0.02</td>
+<td class="gt_row gt_right" headers="stub_1_3 shrub">0.01</td>
+<td class="gt_row gt_right" headers="stub_1_3 herbaceous">0.04</td>
+<td class="gt_row gt_right" headers="stub_1_3 wetland">0.19</td>
+<td class="gt_row gt_right" headers="stub_1_3 ag">0.00</td>
+</tr>
+<tr class="even">
+<td id="stub_1_4" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row" style="font-family: Courier">4</td>
+<td class="gt_row gt_left" headers="stub_1_4 sites">C05-BMP2</td>
+<td class="gt_row gt_right" headers="stub_1_4 water">0.15</td>
+<td class="gt_row gt_right" headers="stub_1_4 lawn_grass">0.00</td>
+<td class="gt_row gt_right" headers="stub_1_4 urban">0.28</td>
+<td class="gt_row gt_right" headers="stub_1_4 forest">0.04</td>
+<td class="gt_row gt_right" headers="stub_1_4 shrub">0.01</td>
+<td class="gt_row gt_right" headers="stub_1_4 herbaceous">0.20</td>
+<td class="gt_row gt_right" headers="stub_1_4 wetland">0.24</td>
+<td class="gt_row gt_right" headers="stub_1_4 ag">0.00</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_5" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row" style="font-family: Courier">5</td>
+<td class="gt_row gt_left" headers="stub_1_5 sites">C05-EGG1</td>
+<td class="gt_row gt_right" headers="stub_1_5 water">0.07</td>
+<td class="gt_row gt_right" headers="stub_1_5 lawn_grass">0.02</td>
+<td class="gt_row gt_right" headers="stub_1_5 urban">0.71</td>
+<td class="gt_row gt_right" headers="stub_1_5 forest">0.03</td>
+<td class="gt_row gt_right" headers="stub_1_5 shrub">0.00</td>
+<td class="gt_row gt_right" headers="stub_1_5 herbaceous">0.01</td>
+<td class="gt_row gt_right" headers="stub_1_5 wetland">0.13</td>
+<td class="gt_row gt_right" headers="stub_1_5 ag">0.03</td>
+</tr>
+<tr class="even">
+<td id="stub_1_6" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row" style="font-family: Courier; font-size: x-small; background-color: #E4E4E4">6..118</td>
+<td class="gt_row gt_left" headers="stub_1_6 sites" style="background-color: #E4E4E4"></td>
+<td class="gt_row gt_right" headers="stub_1_6 water" style="background-color: #E4E4E4"></td>
+<td class="gt_row gt_right" headers="stub_1_6 lawn_grass" style="background-color: #E4E4E4"></td>
+<td class="gt_row gt_right" headers="stub_1_6 urban" style="background-color: #E4E4E4"></td>
+<td class="gt_row gt_right" headers="stub_1_6 forest" style="background-color: #E4E4E4"></td>
+<td class="gt_row gt_right" headers="stub_1_6 shrub" style="background-color: #E4E4E4"></td>
+<td class="gt_row gt_right" headers="stub_1_6 herbaceous" style="background-color: #E4E4E4"></td>
+<td class="gt_row gt_right" headers="stub_1_6 wetland" style="background-color: #E4E4E4"></td>
+<td class="gt_row gt_right" headers="stub_1_6 ag" style="background-color: #E4E4E4"></td>
+</tr>
+<tr class="odd">
+<td id="stub_1_7" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row" style="font-family: Courier">119</td>
+<td class="gt_row gt_left" headers="stub_1_7 sites">S10-LPP0</td>
+<td class="gt_row gt_right" headers="stub_1_7 water">0.12</td>
+<td class="gt_row gt_right" headers="stub_1_7 lawn_grass">0.03</td>
+<td class="gt_row gt_right" headers="stub_1_7 urban">0.19</td>
+<td class="gt_row gt_right" headers="stub_1_7 forest">0.05</td>
+<td class="gt_row gt_right" headers="stub_1_7 shrub">0.00</td>
+<td class="gt_row gt_right" headers="stub_1_7 herbaceous">0.05</td>
+<td class="gt_row gt_right" headers="stub_1_7 wetland">0.49</td>
+<td class="gt_row gt_right" headers="stub_1_7 ag">0.06</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -901,7 +922,11 @@ Note
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> covariate, <span class="co">#specify aesthetic mapping by stating we want our covariate categories to be on the y axis</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">x =</span> value)) <span class="co">#specify we want the covariate value to be on the x axis</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>You probably noticed that this chunk of code didn’t actually plot any of our data. That’s because the <code>ggplot(data,aes)</code> argument tells R how to structure our plot and where to look for data, but it doesn’t actually plot any data. This will always be the first line of code when you make a new graph.</p>
@@ -913,7 +938,11 @@ Note
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">x =</span> value))<span class="sc">+</span> <span class="co">#specify we want the covariate value to be on the x axis</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges2</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Did you notice that we included parentheses after <code>geom_density_ridges2</code> but we didn’t put anything inside the parentheses? We can put additional arguments inside the parentheses that control the aesthetics of the plot type. For example, we can scale the height of these density plots to make sure they don’t overlap one another using the <code>scale</code> argument inside the <code>geom_density_ridges2</code> function.</p>
@@ -923,7 +952,11 @@ Note
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">x =</span> value))<span class="sc">+</span> <span class="co">#specify we want the covariate value to be on the x axis</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges2</span>(<span class="at">scale =</span> <span class="fl">0.7</span>) <span class="co">#reduce the height of each density plot to 70% of its original height</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>While it’s helpful to see the distribution of our variables, it can be difficult to tell what our mean value is for each variable. We can add the <code>quantile</code> argument to tell R to draw the 25%, 50%, and 75% quantiles to our plot. Alternatively we could use specify different quantiles, such as 2.5% and 97.5%, by using the <code>probs</code> argument: <code>quantile(probs = c(0.025,0.975))</code></p>
@@ -934,7 +967,11 @@ Note
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges2</span>(<span class="at">scale =</span> <span class="fl">0.7</span>, <span class="co">#reduce the height of each density plot to 70% of its original height</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">quantile_lines =</span> <span class="cn">TRUE</span>) <span class="co">#adds quantile lines (default are 25%, 50%, and 75%) </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Something important to consider is that the density plots are smoothed estimations. That is, we don’t actually have data points for every location depicted in the plot. To provide a more complete visualization of our data, we can add the actual data points to the plot using the <code>jittered_points</code> argument. If used alone, this plots the points within the density plot itself. We can place the points beneath the density plots using the <code>position</code> argument.</p>
@@ -947,7 +984,11 @@ Note
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">jittered_points =</span> <span class="cn">TRUE</span>, <span class="co">#adds data points to the plot in a scattered pattern so they don't overlap each other </span></span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">position =</span> <span class="st">"raincloud"</span>) <span class="co">#positions the data points below the density plots</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Even when the points are spread out (aka jittered), they still overlap and blend to form a blob in areas of high point density. We can overcome this by adjusting the opacity of our graphic components using the <code>alpha</code> argument, where a value of 1 is completely opaque and a value of 0 is completely transparent.</p>
@@ -961,7 +1002,11 @@ Note
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">position =</span> <span class="st">"raincloud"</span>, <span class="co">#positions the data points below the density plots</span></span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="co">#adjust opacity of figure components</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Let’s add some color to our plot! There are actually two main color arguments: <code>color</code> and <code>fill</code>. We use <code>fill</code> to define the color of the inside of an object, such as our density plots. Whereas <code>color</code> changes the color of points and lines, such as the outline of our density plots or the data points plotted below.</p>
@@ -977,7 +1022,11 @@ Note
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">color =</span> <span class="st">"orange"</span>, <span class="co">#control color of lines and points</span></span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">fill =</span> <span class="st">"blue"</span>) <span class="co">#control color of polygons</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>In the last plot, we put both the <code>color</code> and <code>fill</code> arguments within <code>geom_density_ridges2</code>. That told R to use the same <code>color</code> and <code>fill</code> for all three of our variables. If we want to use separate colors for each variable, we have to tell R upfront. To do this, we include <code>color</code> and <code>fill</code> as arguments inside the aesthetic mapping argument (<code>aes()</code>) of our initiating argument (<code>ggplot()</code>).</p>
@@ -993,7 +1042,11 @@ Note
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">position =</span> <span class="st">"raincloud"</span>, <span class="co">#positions the data points below the density plots</span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="co">#adjust opacity of figure components</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The colors in the previous plot are part of R’s default color palette. This is fine for quick visualizations, but you’ll probably want to choose your own colors. To do this, we use one of the <code>scale</code> commands. Let’s say I want to use the colors of the rainbow. An easy way to do this would be through the <code>scale_fill_manual</code> and <code>scale_color_manual</code> commands, which allow you to set the colors you will use manually.</p>
@@ -1011,7 +1064,11 @@ Note
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>,<span class="st">"orange"</span>,<span class="st">"yellow"</span>))<span class="sc">+</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"green"</span>,<span class="st">"blue"</span>,<span class="st">"purple"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>While <code>scale_fill_manual</code> and <code>scale_color_manual</code> offer a lot of flexibility in color choice, it can be irritating (and messy) to have to add this to every graph you make. This becomes especially problematic if you need to alter your color scheme, requiring you to go back and change the code for every single graph. Thankfully, we can avoid this headache altogether by saving our own color palette!</p>
@@ -1034,14 +1091,22 @@ Color theory
 <p>Before we talk about how to pick the best color palette for your data, let’s cover some basic principles of color. When we think of a color, we are often thinking of a <em>hue</em>. Conceptually, hues are raw colors without any alterations. The color wheel below shows twelve familiar hues arranged across the warm-cool spectrum.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p><br></p>
 <p>Of course, we can make slightly different colors by “mixing” white, grey, or black with each hue. The new colors are called tints, tones, or shades, respectively.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p><br></p>
@@ -1049,7 +1114,11 @@ Color theory
 <p>While the color wheel’s organization may seem coincidental, it is actually built to allow us to quickly select colors that work well with each other based on their position in the wheel. Depending on what you are trying to communicate, each of these methods of selecting colors has strengths and weaknesses.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p><br></p>
@@ -1059,7 +1128,11 @@ Color theory
 <p>While most of our data will be inherently quantitative, that does not mean our color palettes should be! A quantitative color palette implies meaning from the colors themselves, and especially from the distance (aka similarity) between two colors. Thus, analogous color palettes tend to be used in cases where the color of the data itself is meant to communicate meaning. Non-analogous palettes, on the other hand, simply imply that datapoints (or features, or objects, etc.) are distinct from one another. In other words, qualitative color palettes are primarily aesthetic while quantitative palettes have inherent meaning. Consider the plots below. Without knowing what the plots are depicting, can you intuit the story that is being told? Do the stories differ based on the color palette that is used?</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Let’s work our way around the plot clockwise starting with the line graph.</p>
@@ -1073,14 +1146,22 @@ Color theory
 <p>There are some instance where using both types of palettes makes sense. In the last section, we discussed how the colors in a pie chart are mean to primarily separate data groups rather than imply a relationship between them. However, if you have sub-categories of data, you may wish to use colors to imply that each of those subcategories has a relationship to the larger category. In this instance, you can use a qualitative palette for the major categories, but quantitative palettes based off the qualitative colors to further separate data. For instance, the example below shows three subgroups in the blue category, two in the red, etc.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p><br></p>
 <p>You may also want to use color to highlight one particular aspect of your data. In that case, you can use a subtle quantitative palette to mute the background data, while pulling an accent color from a qualitative palette to highlight your main finding.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p><br></p>
@@ -1108,7 +1189,11 @@ Color theory
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> my_colors)<span class="sc">+</span> <span class="co">#feed R our custom color palette</span></span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> my_colors) <span class="co">#feed R our custom color palette</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>You might have noticed that all of our plots so far have included a grey background with a white grid. You may have also noticed a legend that, although not incorrect, is probably not something you would want to include in a publication.</p>
@@ -1150,7 +1235,11 @@ Color theory
 <span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>) <span class="co">#adjust text size of the legend (aka key)</span></span>
 <span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1177,7 +1266,11 @@ wetland  0.28 -0.72    1.00</code></pre>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Note that we type "ggcorrplot::" before the command so R knows that our command is from a specific package. This is not always needed, but good practice.</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>ggcorrplot<span class="sc">::</span><span class="fu">ggcorrplot</span>(cor_mat) <span class="co">#feed our correlation matrix to the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Since we only specified our data, but not any additional arguments, the above plot used the default settings for this type of plot. Under the default settings, we can see that warmer colors indicate strong positive correlation between variables (correlation coeficients closer to 1), whereas cooler colors indicate strong negative correlation between variables (correlation coeficients closer to -1). White indicates no correlation exists between two variables.</p>
@@ -1188,7 +1281,11 @@ wetland  0.28 -0.72    1.00</code></pre>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">lab_col =</span> <span class="st">"black"</span>, <span class="co">#specify the color of our labels</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">lab_size =</span> <span class="dv">6</span>) <span class="co">#specify the text size of our labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>You may have noticed that the upper left half of the plot is exactly the same as the lower right half of the plot. That’s because our variables are arranged in the exact same way on both the x and y axes.</p>
@@ -1200,7 +1297,11 @@ wetland  0.28 -0.72    1.00</code></pre>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">lab_size =</span> <span class="dv">6</span>, <span class="co">#specify the text size of our labels</span></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">type =</span> <span class="st">"lower"</span>)<span class="co">#re-order x and y axes and remove duplicated information</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Again, since you will never try to publish this plot, the default colors are probably sufficient. But for the sake of learning, let’s change our color palette.</p>
@@ -1219,7 +1320,11 @@ Pre-set color palettes
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" width="2880"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="2880"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 2
@@ -1243,7 +1348,11 @@ Pre-set color palettes
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">type =</span> <span class="st">"lower"</span>)<span class="sc">+</span><span class="co">#re-order x and y axes and remove duplicated information</span></span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous_diverging</span>(<span class="at">palette =</span> <span class="st">"Vik"</span>) <span class="co">#specify color palette from colorspace on a continuous gradient</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Alternatively, we could build our own color palette creating a named vector of colors which represent our extreme, low, and opposite extreme values.</p>
@@ -1257,7 +1366,11 @@ Pre-set color palettes
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">type =</span> <span class="st">"lower"</span>,<span class="co">#re-order x and y axes and remove duplicated information</span></span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">col =</span> my_ramp) <span class="co">#feed R my custom palette</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Finally, let’s change a few components of the theme just for practice</p>
@@ -1288,7 +1401,11 @@ Pre-set color palettes
 <span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">'Correlation'</span>)) <span class="co">#With guides, you can modify the legend title, or else it automatically takes the name of the column 'value'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1299,7 +1416,7 @@ Pre-set color palettes
 <p>First, let’s explore the range of our covariates, both scaled and non-scaled.</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">covariates</th>
@@ -1390,7 +1507,11 @@ Pre-set color palettes
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>, <span class="co">#Specify the width of the line</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">'black'</span>) <span class="co">#Specify the color of the line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>We’re off to a good start! Notice that we used a new geom here: <code>geom_line()</code>. While this geom shows us our predicted outcome using a point estimate, it doesn’t show us uncertainty. To add our 95% confidence intervals, we use <code>geom_ribbon()</code>, which is similar to <code>geom_line()</code> but adds a polygon to the plot around the line.</p>
@@ -1403,7 +1524,11 @@ Pre-set color palettes
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ymax =</span> upper), <span class="co">#Specify the column that holds the upper estimate of our 95%CI</span></span>
 <span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">'#B8BADD'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Uh oh…when we added our confidence interval it covered up our line. That’s because order matters <em>for graphical objects only.</em> That means we could specify the theme in the first line of code or the last line of code and it wouldn’t make a difference. But when it comes to objects being plotted within the graph, the first object listed in the code is the first object plotted in the graph. In the last graph, we plotted the line before the ribbon. As a result, the ribbon was placed on top of the line. We can switch this around by re-ordering our code to make the ribbon come first and the line come second.</p>
@@ -1416,7 +1541,11 @@ Pre-set color palettes
 <span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>, <span class="co">#Specify the width of the line</span></span>
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">'black'</span>) <span class="co">#Specify the color of the line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now that looks better! Now that our graphic objects look good, let’s adjust the axes.</p>
@@ -1434,7 +1563,11 @@ Pre-set color palettes
 <span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="co">#set the y axis to go between zero and one</span></span>
 <span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">by =</span><span class="fl">0.2</span>)) <span class="co">#set the y axis to show an axis tick in increments of 0.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Lastly, let’s adjust our theme. Particularly, let’s get rid of the grey background and add some horizontal lines that will help us see changes on the y axis a bit easier.</p>
@@ -1482,7 +1615,11 @@ Pre-set color palettes
 <span id="cb33-41"><a href="#cb33-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-42"><a href="#cb33-42" aria-hidden="true" tabindex="-1"></a>ag_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>This looks great! A quick note on the horizontal lines behind the plot: <code>theme_classic()</code> removes all gridlines and colored background panels. In this case, we opted to add them back in by using the <code>panel.grid.minor.y</code> and <code>panel.grid.major.y</code>arguments. If you scroll up to look at the grey background in our plot before we adjusted the theme, you’ll notice that the horizontal lines consist of alternating thicker and thinner lines. The difference is subtle, but the thicker lines are the major lines, while the thinner lines are the minor lines. By using the <code>size</code> argument in both <code>panel.grid.minor.y</code> and <code>panel.grid.major.y</code>, we removed this difference and effectively made both types of lines into the same type of line (aesthetically). Despite looking the same, the code requires that we handle them separately.</p>
@@ -1513,7 +1650,11 @@ Pre-set color palettes
 <span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>all.plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>This plot looks terrible because it fits to the screen’s dimensions without considering its own dimensions. Fortunately we can export it and make the resulting image file wider.</p>
@@ -1594,7 +1735,11 @@ Bootstrap iterations: 0 </code></pre>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> estimates, <span class="at">y =</span> names))<span class="sc">+</span> <span class="co">#Specify our aesthetic mapping (axes)</span></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="co">#Tell R to plot a point for each estimate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-48-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-48-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>This does a good job showing us how each of our estimates compare to eachother, but the information in this graph is pretty limited without also showing the uncertainty around each estimate. Let’s overcome that by adding our 95% confidence intervals using <code>geom_errorbar()</code>.</p>
@@ -1607,7 +1752,11 @@ Bootstrap iterations: 0 </code></pre>
 <span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">linewidth =</span> <span class="dv">1</span>, <span class="co">#Set the thickness of the error bar line</span></span>
 <span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> .<span class="dv">2</span>) <span class="co">#Set the height of the vertical ticks at the end of each error bar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-49-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-49-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now let’s tinker with our axis limits and theme to make this a little more polished.</p>
@@ -1624,7 +1773,11 @@ Bootstrap iterations: 0 </code></pre>
 <span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Variable"</span>)<span class="sc">+</span> <span class="co">#Specify the y axis label</span></span>
 <span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="co">#specify our desired theme (no need to further adjust, you can simply use a pre-set theme as is if you'd like)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-50-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-50-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Nice! This gives us a much better understanding of our estiamtes!</p>
@@ -1647,7 +1800,11 @@ Bootstrap iterations: 0 </code></pre>
 <span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Variable"</span>)<span class="sc">+</span> <span class="co">#Specify the y axis label</span></span>
 <span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="co">#specify our desired theme (no need to further adjust, you can simply use a pre-set theme as is if you'd like)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-51-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-51-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Alternatively, we could change the shape of our points by adding the <code>shape</code> argument to <code>geom_point()</code>.</p>
@@ -1665,7 +1822,11 @@ Bootstrap iterations: 0 </code></pre>
 <span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Variable"</span>)<span class="sc">+</span> <span class="co">#Specify the y axis label</span></span>
 <span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="co">#specify our desired theme (no need to further adjust, you can simply use a pre-set theme as is if you'd like)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-52-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-52-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Again, it wouldn’t be super helpful to use a different shape for each variable. But it might be appropriate to do that in certain circumstances. For example, if we wanted to plot the results from two different species side by side, we could use a different shape to denote each species.</p>
@@ -1696,7 +1857,11 @@ Bootstrap iterations: 0 </code></pre>
 <span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Variable"</span>)<span class="sc">+</span> <span class="co">#Specify the y axis label</span></span>
 <span id="cb49-25"><a href="#cb49-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="co">#specify our desired theme (no need to further adjust, you can simply use a pre-set theme as is if you'd like)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-53-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-53-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Whoops! In the previous plot we added <code>shape = factor(species)</code> to <code>aes()</code>, which tells R to change the shape based on the value in the “species” column. But because the variables are still the same between the two species, they are plotted along the same axis. As a result, our data are plotted on top of each other and we can’t differentiate the 95% confidence intervals. Let’s fix that by adjusting the position of the points and error bars via the <code>position</code> argument.</p>
@@ -1716,7 +1881,11 @@ Bootstrap iterations: 0 </code></pre>
 <span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Variable"</span>)<span class="sc">+</span> <span class="co">#Specify the y axis label</span></span>
 <span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="co">#specify our desired theme (no need to further adjust, you can simply use a pre-set theme as is if you'd like)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-54-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-54-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Alternatively, we could use the same point shape for both species and change the color instead. If you’re thinking “but you said not to do that,” you’re absolutely right. When we discussed varying the color earlier, the different colors carried no actual meaning. But in cases like this, different colors mean different species and are thus appropriate. Just note that we swap <code>aes(shape = factor(species))</code> for <code>aes(color = factor(species))</code>.</p>
@@ -1736,7 +1905,11 @@ Bootstrap iterations: 0 </code></pre>
 <span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Variable"</span>)<span class="sc">+</span> <span class="co">#Specify the y axis label</span></span>
 <span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="co">#specify our desired theme (no need to further adjust, you can simply use a pre-set theme as is if you'd like)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-55-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-55-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Just like before, R will use its default color palette unless you specify alternate colors. In our final plot, we’ll specify the colors we want using <code>scale_color_manual</code>, give our variables more formal names using <code>scale_y_discrete</code>, and modify our theme to remove the legend title.</p>
@@ -1764,7 +1937,11 @@ Bootstrap iterations: 0 </code></pre>
 <span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a>point.est_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-56-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-56-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Do you remember how we used the <code>plot_grid()</code> function from the <code>cowplot</code> package earlier? That function is great for automatically arranging plots, but we can exercise more control by using the <code>ggdraw</code> function, which allows us to specify the location of each plot within the larger figure using the <code>draw_plot()</code> function.</p>
@@ -1790,7 +1967,11 @@ Bootstrap iterations: 0 </code></pre>
 <span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a>all_panels</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-57-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="tutorial_uwin_ggplot2_files/figure-html/unnamed-chunk-57-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Once again, this plot doesn’t look great since its components are being squeezed into our screen dimensions. We can fix this by saving the plot.</p>
@@ -1858,18 +2039,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1901,11 +2071,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1915,8 +2124,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1928,7 +2146,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1972,6 +2313,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1997,6 +2339,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2062,12 +2430,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Copyright 2024 Gabriela Palomo-Munoz. All text and images licensed CC-BY-NC 4.0.<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center">
+<p>Copyright 2024 Gabriela Palomo-Munoz. All text and images licensed CC-BY-NC 4.0.</p>
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
