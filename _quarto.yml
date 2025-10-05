@@ -18,18 +18,14 @@ website:
         href: blog.qmd
       - text: "ClipArts"
         href: cliparts.qmd
-      - text: "Projects"
-        # href: projects.qmd
-        menu:
-          - text: "Portfolio - Data Visualization"
-            #icon: "bug"
-            file: projects/portfolio.qmd
+      - text: "Data Visualization"
+        href: projects/portfolio.qmd
       - text: "Publications"
         href: publications.qmd
-      - text: "Workshops"
-        menu: 
-          - text: 'Introduction to ggplot2'
-            file: workshops/intro_ggplot2/index.qmd   
+      # - text: "Workshops"
+      #   menu: 
+      #     - text: 'Introduction to ggplot2'
+      #       file: workshops/intro_ggplot2/index.qmd   
     # - text: "CV"
     #   href: cv.qmd
   cookie-consent:

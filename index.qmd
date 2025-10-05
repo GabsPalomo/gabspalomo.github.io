@@ -5,12 +5,12 @@ about:
   template: trestles
   image: /images/Collage.jpg
   links: 
-    - icon: twitter-x
-      text: X
-      href: https://twitter.com/gabbspalomo
-    - icon: mastodon
-      text: Fosstodon
-      href: https://fosstodon.org/@gabbspalomo
+    - icon: "{{< ai google-scholar >}}"
+      text: Google Scholar 
+      href: https://scholar.google.com/citations?hl=en&user=AyKbaIYAAAAJ
+    - icon: linkedin
+      text: LinkedIn 
+      href: https://www.linkedin.com/in/gabriela-palomo-phd-bb0b572b5/
     - text: Bluesky
       href: https://bsky.app/profile/gabspalomo.bsky.social
     - icon: github
@@ -28,7 +28,7 @@ about:
 <!-- <img src="/images/banner.jpg" height="300" class="center"/>  -->
 
 ::: column-page
-Welcome to my website! My name is Gabriela Palomo and I am a carnivore ecologist from Guatemala (Central America) doing a post doc in the US at the University of Maryland with [Dr Travis Gallo](https://urbanxnaturelab.com/). I use this website to keep my blog called [My Digital Notebook](blog.html), description of my projects, my [CV](/docs/gabriela_palomo_cv.pdf), and information on how to contact me.
+Welcome to my website! My name is Gabriela Palomo and I am a carnivore ecologist from Guatemala (Central America). I am currently an Assistant Professor at Universidad del Valle de Guatemala. Previously, I did a post doc in the US at the University of Maryland with [Dr Travis Gallo](https://urbanxnaturelab.com/) and a post doc at Kansas University with [Dr Adam Ahlers](https://hnr.k-state.edu/about/people/faculty/ahlers-adam/). I use this website to keep my blog called [My Digital Notebook](blog.html) and my data visualization portfolio. I also include here information on how to contact me.
 
 **If you would like me to review a paper please email me here:** 
 

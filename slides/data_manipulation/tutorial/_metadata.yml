@@ -1,7 +1,0 @@
-format:
-  html:
-    theme: ["slides/data_manipulation/tutorial/output_style.scss"]
-toc: true
-# freeze computational output
-# (see https://quarto.org/docs/projects/code-execution.html#freeze)
-freeze: true

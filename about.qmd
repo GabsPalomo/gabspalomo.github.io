@@ -3,20 +3,25 @@ title: "About"
 about:
   template: jolla
   links: 
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/gabbspalomo
+    - icon: google-scholar
+      text: Google Scholar 
+      href: https://scholar.google.com/citations?hl=en&user=AyKbaIYAAAAJ
+    - icon: linkedin
+      text: LinkedIn 
+      href: https://www.linkedin.com/in/gabriela-palomo-phd-bb0b572b5/
+    - text: bluesky
+      href: https://bsky.app/profile/gabspalomo.bsky.social
     - icon: code-square
-      text: Github
+      text: GitHub
       href: https://github.com/gabspalomo
     - icon: envelope-check
-      text: email 
-      href: mailto:gpalomo@umd.edu
+      text: Email 
+      href: mailto:mgpalomo@uvg.edu.gt
 ---
 
 <img style="float: left; padding-right:25px" width="250" src="https://raw.githubusercontent.com/GabsPalomo/gabspalomo.github.io/master/images/IMG_0973.JPG">
 
-My name is Gabriela Palomo, I am a carnivore ecologist. I started this website to mainly talk about my projects and house my blog called `My digital notebook`. The idea behind my blog was to have a place that I can use as a digital notebook with notes on how I am learning and improving how to code in R. I like the idea of having a centralized website with an organized repository of all my scripts instead of having them scattered across multiple laptops and external hard drives. However, I think that others may find my code and explanations (i.e., blog posts) useful so I hope this blog can help others learn as well. I plan to cover from the most basic tasks/models to the more complex ones. 
+My name is Gabriela Palomo, I am a carnivore ecologist and data scientist. I started this website to mainly talk about my projects and house my blog called `My digital notebook`. The idea behind my blog was to have a place that I can use as a digital notebook with notes on how I am learning and improving how to code in R. I like the idea of having a centralized website with an organized repository of all my scripts instead of having them scattered across multiple laptops and external hard drives. However, I think that others may find my code and explanations (i.e., blog posts) useful so I hope this blog can help others learn as well. I plan to cover from the most basic tasks/models to the more complex ones. 
 
-The easiest way to contact me is on **Twitter**, where I'm very active, or you can send me an email to **gpalomo (at) umd.edu** 
+The easiest way to contact me is on **BlueSky**, where I'm very active, or you can send me an email to **mgpalomo (at) uvg.edu.gt** 
 
