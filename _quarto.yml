@@ -16,12 +16,12 @@ website:
         href: index.qmd
       - text: "Blog"
         href: blog.qmd
-      - text: "ClipArts"
-        href: cliparts.qmd
       - text: "Data Visualization"
         href: projects/portfolio.qmd
       - text: "Publications"
         href: publications.qmd
+      - text: "ClipArts"
+        href: cliparts.qmd
       # - text: "Workshops"
       #   menu: 
       #     - text: 'Introduction to ggplot2'
