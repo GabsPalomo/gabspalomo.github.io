@@ -13,9 +13,7 @@ title-block-banner: false
 linkcolor: blue
 ---
 
-# Tidy Tuesday contributions  
-
-These are my contributions to [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) which is a weekly social data project. I share my contributions on [Fosstodon](https://fosstodon.org/@gabbspalomo), [X or Twitter](https://twitter.com/gabbspalomo), and [Bluesky](https://bsky.app/profile/gabspalomo.bsky.social). Feedback is always welcome! And if you find my code useful, please either fork my repo or let me know. 
+# Data Visualization   
 
 ::: {layout="[1,1,1]"}
 
