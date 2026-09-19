@@ -1,14 +1,51 @@
 ---
-title: "Peer-reviewed publications"
+title: "Peer-reviewed publications by year"
 toc: false
 page-layout: full
 linestretch: 2
 title-block-banner: false
-bibliography: publications/publications.bib
+# bibliography: publications/publications.bib
 reference-section-title: none
-link-citations: true
-nocite: '@*'
-csl: publications/chicago-author-date.csl
+output: asis
+# link-citations: true
+# nocite: '@*'
+# csl: publications/chicago-author-date.csl
 linkcolor: blue
 ---
 
+```{r}
+#| echo: false
+#| results: asis
+#| message: false 
+#| warning: false
+library(bib2df)
+library(dplyr)
+library(stringr)
+library(glue)
+
+pubs <- bib2df("publications/publications.bib") |>
+  mutate(
+    month_num = coalesce(
+      match(str_to_title(str_sub(MONTH, 1, 3)), month.abb),
+      suppressWarnings(as.integer(MONTH)),
+      0L
+    )
+  ) |>
+  arrange(desc(YEAR), desc(month_num))
+
+fmt_entry <- function(row) {
+  authors <- paste(row$AUTHOR[[1]], collapse = ", ")
+  title   <- str_remove_all(row$TITLE, "[{}]")
+  venue   <- coalesce(row$JOURNAL, row$BOOKTITLE, "")
+  doi     <- if (!is.na(row$DOI)) glue(" [[DOI](https://doi.org/{row$DOI})]") else ""
+  glue("{authors} ({row$YEAR}). {title}. *{venue}*.{doi}")
+}
+
+for (y in unique(pubs$YEAR)) {
+  cat("\n\n## ", y, "\n\n", sep = "")
+  yr <- filter(pubs, YEAR == y)
+  for (i in seq_len(nrow(yr))) {
+    cat("- ", fmt_entry(yr[i, ]), "\n", sep = "")
+  }
+}
+```
