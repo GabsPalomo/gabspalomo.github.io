@@ -20,9 +20,9 @@ website:
         href: projects/dataviz.qmd
       - text: "Publications"
         href: publications.qmd
-      - text: "ClipArts"
-        href: cliparts.qmd
-      # - text: "Workshops"
+      - text: "Workshops"
+        href: workshops.qmd
+      
       #   menu: 
       #     - text: 'Introduction to ggplot2'
       #       file: workshops/intro_ggplot2/index.qmd   
@@ -35,7 +35,7 @@ website:
   google-analytics:
     tracking-id: "G-CKLD1G1PM7"
     anonymize-ip: true
-  page-footer: 'Copyright 2024 Gabriela Palomo-Munoz. All text and images licensed CC-BY-NC 4.0.'
+  page-footer: 'Copyright 2026 Gabriela Palomo-Munoz. All text and images licensed CC-BY-NC 4.0.'
 
 # sidebar:
 #   - title: "Projects"

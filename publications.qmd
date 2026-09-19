@@ -11,6 +11,10 @@ output: asis
 # nocite: '@*'
 # csl: publications/chicago-author-date.csl
 linkcolor: blue
+format:
+  html:
+    include-in-header:
+      text: '<script async src="https://embed.altmetric.com/assets/embed.js"></script>'
 ---
 
 ```{r}
@@ -23,17 +27,20 @@ library(dplyr)
 library(stringr)
 library(glue)
 
+# Path is relative to this .qmd file
 pubs <- bib2df("publications/publications.bib") |>
-  mutate(
-    month_num = coalesce(
-      match(str_to_title(str_sub(MONTH, 1, 3)), month.abb),
-      suppressWarnings(as.integer(MONTH)),
-      0L
-    )
-  ) |>
-  arrange(desc(YEAR), desc(month_num))
+  arrange(desc(YEAR))
 
-my_name <- "Palomo-Munoz, Gabriela"
+# Matches "Palomo-Munoz", "Palomo‐Munoz" (odd hyphen) and "Palomo"
+my_name <- "Palomo"
+
+get_doi <- function(row) {
+  doi <- row$DOI
+  if (is.na(doi) && !is.na(row$URL)) {
+    doi <- str_extract(row$URL, "10\\.\\d{4,9}/\\S+")
+  }
+  str_remove(doi, "^https?://(dx\\.)?doi\\.org/")
+}
 
 fmt_entry <- function(row) {
   authors <- row$AUTHOR[[1]]
@@ -42,21 +49,38 @@ fmt_entry <- function(row) {
   authors <- paste(authors, collapse = ", ")
 
   title <- str_remove_all(row$TITLE, "[{}]")
-  venue <- coalesce(row$JOURNAL, row$BOOKTITLE, "")
 
-  doi <- if (!is.na(row$DOI)) {
-    d <- str_remove(row$DOI, "^https?://(dx\\.)?doi\\.org/")
-    glue(" <https://doi.org/{d}>")
+  venue <- coalesce(row$JOURNAL, row$BOOKTITLE, "")
+  venue <- if (nzchar(venue)) glue(" *{venue}*.") else ""
+
+  doi  <- get_doi(row)
+  link <- if (!is.na(doi)) {
+    glue(" <https://doi.org/{doi}>")
+  } else if (!is.na(row$URL)) {
+    glue(" <{row$URL}>")
   } else ""
 
-  glue("{authors} ({row$YEAR}). {title}. *{venue}*.{doi}")
+  glue("{authors} ({row$YEAR}). {title}.{venue}{link}")
+}
+
+fmt_badge <- function(row) {
+  if (is.na(row$DOI)) return("")
+  d <- str_remove(row$DOI, "^https?://(dx\\.)?doi\\.org/")
+  glue('<div class="altmetric-embed" data-badge-type="donut" data-doi="{d}" data-hide-no-mentions="true"></div>')
 }
 
 for (y in unique(pubs$YEAR)) {
   cat("\n\n## ", y, "\n\n", sep = "")
   yr <- filter(pubs, YEAR == y)
   for (i in seq_len(nrow(yr))) {
-    cat("- ", fmt_entry(yr[i, ]), "\n", sep = "")
+    cat(
+      "\n::::: {.grid}\n\n",
+      "::: {.g-col-11}\n", fmt_entry(yr[i, ]), "\n:::\n\n",
+      "::: {.g-col-1}\n", fmt_badge(yr[i, ]), "\n:::\n\n",
+      ":::::\n",
+      sep = ""
+    )
   }
 }
+
 ```
