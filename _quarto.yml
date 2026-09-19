@@ -16,8 +16,8 @@ website:
         href: index.qmd
       - text: "Blog"
         href: blog.qmd
-      - text: "Data Visualization"
-        href: projects/portfolio.qmd
+      - text: "Data Viz"
+        href: projects/dataviz.qmd
       - text: "Publications"
         href: publications.qmd
       - text: "ClipArts"
