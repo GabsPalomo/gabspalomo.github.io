@@ -33,11 +33,22 @@ pubs <- bib2df("publications/publications.bib") |>
   ) |>
   arrange(desc(YEAR), desc(month_num))
 
+my_name <- "Palomo-Munoz, Gabriela"
+
 fmt_entry <- function(row) {
-  authors <- paste(row$AUTHOR[[1]], collapse = ", ")
-  title   <- str_remove_all(row$TITLE, "[{}]")
-  venue   <- coalesce(row$JOURNAL, row$BOOKTITLE, "")
-  doi     <- if (!is.na(row$DOI)) glue(" [[DOI](https://doi.org/{row$DOI})]") else ""
+  authors <- row$AUTHOR[[1]]
+  is_me   <- str_detect(authors, regex(my_name, ignore_case = TRUE))
+  authors <- if_else(is_me, paste0("**", authors, "**"), authors)
+  authors <- paste(authors, collapse = ", ")
+
+  title <- str_remove_all(row$TITLE, "[{}]")
+  venue <- coalesce(row$JOURNAL, row$BOOKTITLE, "")
+
+  doi <- if (!is.na(row$DOI)) {
+    d <- str_remove(row$DOI, "^https?://(dx\\.)?doi\\.org/")
+    glue(" <https://doi.org/{d}>")
+  } else ""
+
   glue("{authors} ({row$YEAR}). {title}. *{venue}*.{doi}")
 }
 
