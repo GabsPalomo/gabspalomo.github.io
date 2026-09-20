@@ -20,8 +20,12 @@ website:
         href: projects/dataviz.qmd
       - text: "Publications"
         href: publications.qmd
+      - text: "Talks"
+        href: talks.qmd
       - text: "Workshops"
         href: workshops.qmd
+      - text: "Teaching"
+        href: teaching.qmd
       
       #   menu: 
       #     - text: 'Introduction to ggplot2'
